@@ -2,7 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxtjs/google-fonts'],
+  googleFonts: {
+    display: 'swap',
+    //TODO: for soon page only
+    families: {
+      Itim: true,
+      'Russo One': 400
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {

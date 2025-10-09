@@ -11,6 +11,11 @@ export default defineNuxtConfig({
       'Russo One': 400
     }
   },
+  app: {
+    head: {
+      titleTemplate: '%s | TIFW'
+    }
+  },
   vite: {
     css: {
       preprocessorOptions: {

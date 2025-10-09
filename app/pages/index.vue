@@ -18,7 +18,11 @@
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+useHead({
+  title: 'Coming Soon'
+});
+</script>
 
 <style lang="scss" scoped>
 .soon {

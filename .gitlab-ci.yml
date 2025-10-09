@@ -15,7 +15,7 @@ pages:
   # - pm2 delete tifw
   # - NODE_OPTIONS="--max-old-space-size=1024" npm run generate
   #   - pm2 restart tifw
-  # - PORT=3001 pm2 start .output/server/index.mjs --name tifw
+  - PORT=3003 pm2 start .output/server/index.mjs --name tifw
   artifacts:
     paths:
       - ./*

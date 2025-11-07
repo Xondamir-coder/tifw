@@ -1,17 +1,49 @@
-@use './variables' as *;
+@use './variables' as vars;
 
-// @mixin section-margin-inline {
-//   margin-inline: max(16px, 7rem);
-//   @media only screen and (max-width: $bp-xxl) {
-//     margin-inline: max(16px, 4rem);
-//   }
-// }
-// @mixin section-padding-inline {
-//   padding-inline: max(16px, 7rem);
-//   @media only screen and (max-width: $bp-xxl) {
-//     padding-inline: max(16px, 4rem);
-//   }
-// }
+// Typography related
+
+// Heading
+@mixin heading-base() {
+  font-family: vars.$font-prosto;
+  line-height: 1.25;
+  letter-spacing: -0.013em;
+  color: vars.$clr-a;
+}
+
+@mixin heading-lg($min-size: 32px) {
+  @include heading-base;
+  font-size: max(4.2rem, $min-size);
+}
+
+@mixin heading-md($min-size: 22px) {
+  @include heading-base;
+  font-size: max(3.2rem, $min-size);
+}
+
+@mixin heading-sm($min-size: 18px) {
+  @include heading-base;
+  font-size: max(2rem, $min-size);
+}
+
+// Text
+@mixin text-base {
+  line-height: 1.6;
+}
+
+@mixin text-lg($min-size: 16px) {
+  @include text-base;
+  font-size: max(1.8rem, $min-size);
+}
+@mixin text-md($min-size: 14px) {
+  @include text-base;
+  font-size: max(1.6rem, $min-size);
+}
+@mixin text-sm($min-size: 12px) {
+  @include text-base;
+  font-size: max(1.4rem, $min-size);
+}
+
+// Layout related
 
 @mixin grid-center {
   display: grid;

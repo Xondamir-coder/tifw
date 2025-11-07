@@ -2,20 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint', '@nuxtjs/google-fonts'],
-  googleFonts: {
-    display: 'swap',
-    //TODO: for soon page only
-    families: {
-      Itim: true,
-      'Russo One': 400
-    }
-  },
-  app: {
-    head: {
-      titleTemplate: '%s | TIFW'
-    }
-  },
+  modules: ['@nuxt/eslint', '@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxtjs/seo'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -28,5 +15,52 @@ export default defineNuxtConfig({
       }
     }
   },
-  css: ['~/assets/scss/main.scss']
+  css: ['~/assets/scss/main.scss'],
+  app: {
+    head: {
+      titleTemplate: '%s | TIFW'
+    }
+  },
+  googleFonts: {
+    display: 'swap',
+    families: {
+      'Prosto One': [400],
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900]
+    }
+  },
+  seo: {
+    meta: {
+      author: 'https://spacelabs.studio',
+      publisher: 'Spacelabs'
+    }
+  },
+  i18n: {
+    defaultLocale: 'en',
+    baseUrl: 'https://www.tifw.uz/',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
+    locales: [
+      {
+        code: 'en',
+        language: 'en-US',
+        name: 'English',
+        file: 'en.json'
+      },
+      {
+        code: 'ru',
+        language: 'ru-RU',
+        name: 'Русский',
+        file: 'ru.json'
+      },
+      {
+        code: 'uz',
+        language: 'uz-UZ',
+        name: "O'zbekcha",
+        file: 'uz.json'
+      }
+    ]
+  }
 });

@@ -1,0 +1,30 @@
+@use '../abstracts/mixins' as mix;
+
+// Texts
+.section-subtitle {
+  @include mix.text-md;
+  max-width: 60ch;
+}
+
+.text-lg {
+  @include mix.text-lg;
+}
+
+.text-md {
+  @include mix.text-md;
+}
+
+.text-sm {
+  @include mix.text-sm;
+}
+
+// Headings
+.heading-md {
+  @include mix.heading-md;
+}
+.heading-lg {
+  @include mix.heading-lg;
+}
+.heading-sm {
+  @include mix.heading-sm;
+}

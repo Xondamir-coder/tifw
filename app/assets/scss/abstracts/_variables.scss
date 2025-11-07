@@ -1,3 +1,8 @@
+$clr-a: #0c141e;
+$clr-b: #555f70;
+$clr-c: #eceff5;
+$clr-d: #e8b45a;
+
 $bp-xs: 425px;
 $bp-sm: 576px;
 $bp-md: 768px;
@@ -5,4 +10,7 @@ $bp-lg: 992px;
 $bp-xl: 1200px;
 $bp-xxl: 1400px;
 
-// $font-base: 'Itim';
+$font-prosto: 'Prosto One', sans-serif;
+$font-inter: 'Inter', sans-serif;
+
+$spacing-inline: max(7rem, 16px);

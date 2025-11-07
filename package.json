@@ -7,12 +7,18 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "transform-images": "bash transform-images.sh",
+    "push": "git add . && git commit && git push gitlab && git push github"
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.6.2",
     "@nuxt/eslint": "^1.9.0",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/i18n": "^10.2.0",
+    "@nuxtjs/seo": "^3.2.2",
     "@unhead/vue": "^2.0.19",
     "eslint": "^9.37.0",
     "nuxt": "^4.1.3",

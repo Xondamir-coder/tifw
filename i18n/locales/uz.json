@@ -74,6 +74,15 @@
       "title": "Kelajak moliyasining bir qismi bo‘lish imkoniyatingiz",
       "subtitle": "Yangiliklardan xabardor bo‘lish uchun bizni ijtimoiy tarmoqlarda kuzating.",
       "button": "Qo‘shilish"
+    },
+
+    "cards": {
+      "title": "Innovatsiyalar g'oyalik g'oyalar, texnologiya va odamlar uchrashgan joyida tug'iladi",
+      "texts": [
+        "Ilmiy-texnikik hamkorlikni rivojlantirish",
+        "Yangi texnologiyalarni joriy etishni qo'llab quvvatish",
+        "Milliy va xalqaro sarmoyalarni jalb qilishni qo'llab quvvatish"
+      ]
     }
   },
 

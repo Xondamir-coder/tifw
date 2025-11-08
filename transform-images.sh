@@ -1,28 +1,33 @@
 #!/usr/bin/env bash
-# Converts all images in public/images/original into AVIF at multiple resolutions.
-# Cleans previous outputs before generating new ones.
+# Converts all images in public/images/original into:
+#  - AVIF responsive variants (576/1024/1440)
+#  - Compressed legacy JPEG/PNG fallbacks (in /compressed)
 
 set -e  # stop on first error
 
 INPUT_DIR="public/images/original"
 OUTPUT_DIR="public/images"
+
 SIZES=(
   "576:40%"
   "1024:70%"
   "1440:100%"
 )
 
-echo "🧹 Cleaning old resized folders..."
+echo "🧹 Cleaning old output folders..."
 for size in "${SIZES[@]}"; do
   folder="${size%%:*}"
   outdir="$OUTPUT_DIR/$folder"
-  if [ -d "$outdir" ]; then
-    rm -rf "$outdir"
-  fi
+  [ -d "$outdir" ] && rm -rf "$outdir"
 done
 
-echo "🖼️  Transforming images from $INPUT_DIR..."
+# clean compressed fallback folder
+COMPRESSED_DIR="$OUTPUT_DIR/compressed"
+[ -d "$COMPRESSED_DIR" ] && rm -rf "$COMPRESSED_DIR"
 
+echo "🖼️ Transforming images from $INPUT_DIR..."
+
+# Generate AVIF scaled versions
 for size in "${SIZES[@]}"; do
   folder="${size%%:*}"     # e.g. 576
   scale="${size##*:}"      # e.g. 40%
@@ -30,7 +35,7 @@ for size in "${SIZES[@]}"; do
 
   mkdir -p "$outdir"
 
-  echo "➡️  Generating ${folder}px images at $scale scale..."
+  echo "➡️ Generating ${folder}px AVIF images at $scale scale..."
 
   for f in "$INPUT_DIR"/*.{png,PNG,jpg,JPG,jpeg,JPEG}; do
     [ -f "$f" ] || continue
@@ -39,4 +44,26 @@ for size in "${SIZES[@]}"; do
   done
 done
 
-echo "✅ All images transformed successfully!"
+# Generate compressed legacy fallbacks
+echo "📦 Generating compressed JPEG/PNG fallbacks..."
+
+mkdir -p "$COMPRESSED_DIR"
+
+for f in "$INPUT_DIR"/*.{png,PNG,jpg,JPG,jpeg,JPEG}; do
+  [ -f "$f" ] || continue
+  filename="$(basename "$f")"
+  ext="${filename##*.}"
+  out="$COMPRESSED_DIR/$filename"
+
+  echo "➡️ Compressing $filename..."
+  case "$ext" in
+    jpg|JPG|jpeg|JPEG)
+      magick "$f" -strip -interlace Plane -quality 75 "$out"
+      ;;
+    png|PNG)
+      magick "$f" -strip -define png:compression-level=9 "$out"
+      ;;
+  esac
+done
+
+echo "✅ All images transformed and compressed successfully!"

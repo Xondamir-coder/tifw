@@ -21,9 +21,9 @@
       media="(min-width: 1024px)"
     />
 
-    <!-- Fallback original -->
+    <!-- Fallback compressed -->
     <img
-      :src="`/images/original/${src}`"
+      :src="`/images/compressed/${src}`"
       :alt="alt"
       :class="imageClass"
       class="my-picture__image"

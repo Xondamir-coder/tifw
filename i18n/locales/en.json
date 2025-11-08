@@ -77,6 +77,15 @@
       "title": "Your chance to be part of the future of finance",
       "subtitle": "Follow us on social media to stay updated.",
       "button": "Join Now"
+    },
+
+    "cards": {
+      "title": "Innovations are born where ideas, technology, and people meet",
+      "texts": [
+        "Develop scientific and technical cooperation",
+        "Support the introduction of new technologies",
+        "Attract national and international investments"
+      ]
     }
   },
 

@@ -1,11 +1,6 @@
 @use '../abstracts/mixins' as mix;
 
 // Texts
-.section-subtitle {
-  @include mix.text-md;
-  max-width: 60ch;
-}
-
 .text-lg {
   @include mix.text-lg;
 }

@@ -1,4 +1,7 @@
 {
+  "become-sponsor": "Become a sponsor",
+  "see-all": "See all",
+
   "nav": {
     "about": "About",
     "events": "Events",
@@ -93,5 +96,116 @@
     "title": "Your chance to be part of the future of finance",
     "follow": "Follow us on social media",
     "copyright": "Copyright {'©'} {year} Soluxe"
+  },
+
+  "home": {
+    "hero": {
+      "title": "Financial innovations",
+      "highlight": "start here",
+      "subtitle": "Join global leaders, investors, and innovators shaping the future of finance in Tashkent."
+    },
+    "about": {
+      "title": "About the Week",
+      "text": "Tashkent International Finance Week brings together the region’s leading events in finance, insurance, and fintech. It serves as a hub for collaboration among innovators, experts, and institutions. The platform fosters knowledge exchange, sustainable growth, and digital transformation."
+    },
+    "event": {
+      "title": "Event highlight",
+      "description": "Experience the vision, innovation, and collaboration of Tashkent International Finance Week. From global insights to real-world solutions — discover what makes this platform a defining moment for the region’s financial future."
+    },
+    "speakers": {
+      "title": "Speakers",
+      "description": "Tashkent International Finance Week brings together leading voices — visionaries shaping the future of finance, insurance, and technology. Each speaker shares practical insights, inspiring ideas, and strategies that drive real progress across the region.",
+      "list": [
+        { "name": "Timur Rakhimov", "role": "Lead AI Engineer" },
+        { "name": "Isobella Gabriellova", "role": "Lead AI Engineer, Agrobank" },
+        { "name": "Asal Shodmonova", "role": "Lead AI Engineer" },
+        { "name": "Timur Rakhimov", "role": "Lead AI Engineer, Agrobank" }
+      ]
+    },
+    "participants-info": {
+      "title": "Our Participants",
+      "text": "Tashkent International Finance Week brings together visionaries from across Central Asia — financiers, policymakers, entrepreneurs, and innovators. Together, they represent the driving force behind a smarter, more connected financial future built on collaboration, innovation, and trust.",
+      "sectors": ["Fintech", "Banking", "Insurance"],
+      "stats": [
+        { "value": "1k+", "label": "Speakers" },
+        { "value": "100", "label": "Participants" }
+      ]
+    },
+    "schedule": {
+      "title": "Schedule",
+      "location": "Location: Tashkent, Central House of Entrepreneurs",
+      "events": [
+        {
+          "day": "24",
+          "month": "oct.",
+          "title": "Opening Ceremony",
+          "subtitle": "Kick off the National Insurance week!",
+          "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
+        },
+        {
+          "day": "25",
+          "month": "oct.",
+          "title": "Development & Mentorship Day",
+          "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
+        },
+        {
+          "day": "26",
+          "month": "oct.",
+          "title": "Development & Mentorship Day",
+          "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
+        },
+        {
+          "day": "27",
+          "month": "oct.",
+          "title": "Development & Mentorship Day",
+          "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
+        }
+      ]
+    },
+    "participants": {
+      "title": "Our Participants",
+      "description": "Tashkent International Finance Week is supported by leading institutions united by one vision — to foster innovation and shape the future of finance in Central Asia. Together, we’re building a sustainable ecosystem where ideas evolve into real impact."
+    },
+    "promo": {
+      "button": "Learn More",
+      "blocks": [
+        {
+          "title": "Connecting Leaders"
+        },
+        {
+          "title": "Week of Opportunities"
+        }
+      ]
+    }
+  },
+
+  "events": {
+    "title": "Events",
+    "text": "TIFW events bring together a series of specialized exhibitions and forums, focusing on key areas of modern economy and technology. Here, leaders from various industries, investors, and startups gather to discuss trends, share experiences, and find new growth points."
+  },
+
+  "participants": {
+    "title": "Participants",
+    "text": "The TIFW Innovation week brings together a series of specialized exhibitions and forums, focusing on key areas of modern economy and technology. Here, leaders from various industries, investors, and startups gather to discuss trends, share experiences, and find new growth points."
+  },
+
+  "info-modal": {
+    "areas": "Main areas of focus"
+  },
+
+  "sponsors": {
+    "title": "Sponsors",
+    "text": "The TIFW Innovation week brings together a series of specialized exhibitions and forums, focusing on key areas of modern economy and technology. Here, leaders from various industries, investors, and startups gather to discuss trends, share experiences, and find new growth points."
+  },
+
+  "speakers": {
+    "title": "Speakers",
+    "text": "The TIFW Innovation week brings together a series of specialized exhibitions and forums, focusing on key areas of modern economy and technology. Here, leaders from various industries, investors, and startups gather to discuss trends, share experiences, and find new growth points.",
+    "banner": {
+      "name": "Aleksey Morozov",
+      "role": "Project Manager",
+      "title": "Inspiration is the start of every success",
+      "text": "At this stage, speakers are not just speakers — they are people who shape the future. Their experience and ideas inspire others to move forward. Our goal is to pass on this inspiration to every participant."
+    }
   }
 }

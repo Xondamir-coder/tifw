@@ -2,7 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
-  modules: ['@nuxt/eslint', '@nuxtjs/google-fonts', '@nuxtjs/i18n', '@nuxtjs/seo'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/google-fonts',
+    '@nuxtjs/i18n',
+    '@nuxtjs/seo',
+    'nuxt-swiper'
+  ],
   vite: {
     css: {
       preprocessorOptions: {

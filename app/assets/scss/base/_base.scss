@@ -1,5 +1,12 @@
 @use '../abstracts/variables' as vars;
 
+:root {
+  --spacing-inline: max(7rem, 16px);
+
+  @media screen and (max-width: vars.$bp-lg) {
+    --spacing-inline: max(3rem, 16px);
+  }
+}
 *,
 *::before,
 *::after {

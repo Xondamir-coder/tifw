@@ -63,7 +63,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .header {
-  padding-inline: vars.$spacing-inline;
+  padding-inline: var(--spacing-inline);
   color: #fff;
   font-size: max(1.2rem, 10px);
   display: grid;
@@ -85,6 +85,9 @@ onMounted(() => {
       gap: max(2.5rem, 14px);
       background: #034c8c8c;
       border-radius: 10px;
+      @media screen and (max-width: vars.$bp-md) {
+        display: none;
+      }
     }
 
     &-item {

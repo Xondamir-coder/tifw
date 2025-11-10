@@ -1,7 +1,20 @@
 <template>
-  <div>Hallo</div>
+  <main class="home">
+    <HomeHero />
+    <HomeAbout />
+    <HomeEventHighlight />
+    <HomeSpeakers />
+    <HomeParticipantsInfo />
+    <HomeSchedule />
+    <HomeParticipants />
+    <HomePromo />
+  </main>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home {
+  overflow: hidden;
+}
+</style>

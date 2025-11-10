@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero__container">
-        <MyPicture src="about-hero.jpg" alt="Conference meeting" class="hero__picture" />
+        <UiPicture src="about-hero.jpg" alt="Conference meeting" class="hero__picture" />
         <div class="hero__overlay">
           <h1 class="hero__title">{{ $t('about.hero.title') }}</h1>
           <p class="section-subtitle hero__subtitle">{{ $t('about.hero.subtitle') }}</p>
@@ -65,7 +65,7 @@
               <h3 class="heading-md">{{ $rt(person.name) }}</h3>
               <p class="text-sm">{{ $rt(person.role) }}</p>
             </div>
-            <MyPicture :src="$rt(person.image)" :alt="$rt(person.name)" class="team__image" />
+            <UiPicture :src="$rt(person.image)" :alt="$rt(person.name)" class="team__image" />
           </li>
         </ul>
       </section>
@@ -76,7 +76,7 @@
           <h2 v-for="i in 4" :key="i" class="cards__title">{{ $t('about.cards.title') }}</h2>
         </div>
         <div v-for="(item, index) in $tm('about.cards.texts')" :key="index" class="cards__item">
-          <MyPicture
+          <UiPicture
             :src="`about-card-${index + 1}.jpg`"
             alt="text banner"
             class="cards__item-image"
@@ -246,7 +246,7 @@ onMounted(() => {
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-start;
-      padding-inline: vars.$spacing-inline;
+      padding-inline: var(--spacing-inline);
       padding-bottom: max(4.5rem, 24px);
       color: #fff;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
@@ -261,7 +261,7 @@ onMounted(() => {
   }
 
   .stats {
-    padding-inline: vars.$spacing-inline;
+    padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
     gap: max(6.9rem, 40px);
@@ -383,7 +383,7 @@ onMounted(() => {
     }
   }
   .team {
-    padding-inline: vars.$spacing-inline;
+    padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
     gap: max(6rem, 40px);
@@ -421,7 +421,7 @@ onMounted(() => {
   }
 
   .venue {
-    padding-inline: vars.$spacing-inline;
+    padding-inline: var(--spacing-inline);
     background-color: vars.$clr-c;
     padding-block: max(9rem, 16px);
     display: flex;

@@ -1,4 +1,7 @@
 {
+  "become-sponsor": "Homiy bo'ling",
+  "see-all": "Barchasini ko'rish",
+
   "nav": {
     "about": "Biz haqimizda",
     "events": "Tadbirlar",
@@ -90,5 +93,116 @@
     "title": "Kelajak moliyasining bir qismi bo‘lish imkoniyatingiz",
     "follow": "Bizni ijtimoiy tarmoqlarda kuzating",
     "copyright": "Copyright {'©'} {year} Soluxe"
+  },
+
+  "home": {
+    "hero": {
+      "title": "Moliyaviy innovatsiyalar shu yerdan boshlanadi",
+      "subtitle": "Toshkentda moliya kelajagini shakllantirayotgan global yetakchilar, investorlar va innovatorlarga qo‘shiling.",
+      "button": "Ro‘yxatdan o‘tish"
+    },
+    "about": {
+      "title": "Hafta haqida",
+      "text": "Toshkent Xalqaro Moliya Haftaligi moliya, sug‘urta va fintech sohasidagi mintaqaning yetakchi tadbirlarini birlashtiradi. Bu innovatorlar, mutaxassislar va tashkilotlar o‘rtasidagi hamkorlik markazi bo‘lib, bilim almashinuvi, barqaror o‘sish va raqamli transformatsiyani rag‘batlantiradi."
+    },
+    "event": {
+      "title": "Asosiy voqealar",
+      "description": "Toshkent Xalqaro Moliya Haftaligidagi innovatsiya va hamkorlik ruhini his eting. Global g‘oyalar va real yechimlar orqali mintaqaning moliyaviy kelajagini shakllantirayotgan sahnani kashf eting."
+    },
+    "speakers": {
+      "title": "Spikerlar",
+      "description": "Toshkent Xalqaro Moliya Haftaligi moliya, sug‘urta va texnologiyalar kelajagini belgilovchi yetakchi shaxslarni birlashtiradi. Har bir spiker o‘zining tajribasi, ilhomlantiruvchi g‘oyalari va strategiyalari bilan bo‘lishadi.",
+      "list": [
+        { "name": "Timur Rahimov", "role": "Bosh AI muhandis" },
+        { "name": "Izobella Gabriellova", "role": "Bosh AI muhandis, Agrobank" },
+        { "name": "Asal Shodmonova", "role": "Bosh AI muhandis" },
+        { "name": "Timur Rahimov", "role": "Bosh AI muhandis, Agrobank" }
+      ]
+    },
+    "participants-info": {
+      "title": "Ishtirokchilarimiz",
+      "text": "Toshkent Xalqaro Moliya Haftaligi Markaziy Osiyoning turli davlatlaridan moliyachilar, siyosatchilar, tadbirkorlar va innovatorlarni birlashtiradi. Ular moliyaning kelajagini birgalikda shakllantiruvchi, hamkorlik va ishonch asosida rivojlanayotgan aqlli ekotizimni yaratadilar.",
+      "sectors": ["Fintech", "Bank", "Sug‘urta"],
+      "stats": [
+        { "value": "1k+", "label": "Spikerlar" },
+        { "value": "100", "label": "Ishtirokchilar" }
+      ]
+    },
+    "schedule": {
+      "title": "Dastur jadvali",
+      "location": "Joy: Toshkent, Tadbirkorlar uyi",
+      "events": [
+        {
+          "day": "24",
+          "month": "okt.",
+          "title": "Ochilish marosimi",
+          "subtitle": "Milliy sug‘urta haftaligi boshlanmoqda!",
+          "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
+        },
+        {
+          "day": "25",
+          "month": "okt.",
+          "title": "Rivojlanish va murabbiylik kuni",
+          "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
+        },
+        {
+          "day": "26",
+          "month": "okt.",
+          "title": "Rivojlanish va murabbiylik kuni",
+          "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
+        },
+        {
+          "day": "27",
+          "month": "okt.",
+          "title": "Rivojlanish va murabbiylik kuni",
+          "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
+        }
+      ]
+    },
+    "participants": {
+      "title": "Ishtirokchilarimiz",
+      "description": "Toshkent Xalqaro Moliya Haftaligi yetakchi tashkilotlar tomonidan qo‘llab-quvvatlanadi. Ularning maqsadi — innovatsiyalarni rivojlantirish va Markaziy Osiyoda moliya kelajagini shakllantirishdir. Birgalikda biz g‘oyalar amaliy natijalarga aylanuvchi barqaror ekotizimni yaratmoqdamiz."
+    },
+    "promo": {
+      "button": "Batafsil ma’lumot",
+      "blocks": [
+        {
+          "title": "Liderlarni birlashtiramiz"
+        },
+        {
+          "title": "Imkoniyatlar haftaligi"
+        }
+      ]
+    }
+  },
+
+  "events": {
+    "title": "Tadbirlar",
+    "text": "TIFW tadbirlari modern iqtisodiyot va texnologiyalar sohasidagi bo'yicha maxsus ko'rgazmalar va forumlarni o'z ichiga oladi. Bu yerda turli sanoat yetakchilari, investorlar va startaplarga qo'shilishadi, trendlarni muhokama qilishadi, tajribalarni bo'lishadi va yangi o'sish nuqtalarini topishadi."
+  },
+
+  "participants": {
+    "title": "Ishtirokchilar",
+    "text": "Toshkent Xalqaro Moliya haftaligi yetakchi tashkilotlar tomonidan qo'llab-quvvatlanadi. Ularning maqsadi — innovatsiyalarni rivojlantirish va Markaziy Osiyoda moliya kelajagini shakllantirishdir. Birgalikda biz g'oyalar amaliy natijalarga aylanuvchi barqaror ekotizimni yaratmoqdamiz."
+  },
+
+  "sponsors": {
+    "title": "Sponsorlar",
+    "text": "Toshkent Xalqaro Moliya haftaligi yetakchi tashkilotlar tomonidan qo'llab-quvvatlanadi. Ularning maqsadi — innovatsiyalarni rivojlantirish va Markaziy Osiyoda moliya kelajagini shakllantirishdir. Birgalikda biz g'oyalar amaliy natijalarga aylanuvchi barqaror ekotizimni yaratmoqdamiz."
+  },
+
+  "speakers": {
+    "title": "Spikerlar",
+    "text": "Toshkent Xalqaro Moliya haftaligi yetakchi tashkilotlar tomonidan qo'llab-quvvatlanadi. Ularning maqsadi — innovatsiyalarni rivojlantirish va Markaziy Osiyoda moliya kelajagini shakllantirishdir. Birgalikda biz g'oyalar amaliy natijalarga aylanuvchi barqaror ekotizimni yaratmoqdamiz.",
+    "banner": {
+      "name": "Алексей Морозов",
+      "role": "Loyiha rahbari",
+      "title": "Ilhomlanish boshlanish",
+      "text": "«Bu sahnada faqat spikerlar emas, kelajakni shakllantiruvchi odamlar. Ularning tajribalari, g'oyalari va strategiyalari boshqa qilishadi. Bizning maqsadi — har bir ishtirokchiga ilhomlanishni o'tkazish va barcha qilishishini aniqishdir.»"
+    }
+  },
+
+  "info-modal": {
+    "areas": "Asosiy hududlar"
   }
 }

@@ -1,7 +1,6 @@
 <template>
   <footer class="footer">
-    <MyPicture src="footer-banner.jpg" alt="footer banner" class="footer__banner" />
-
+    <UiPicture src="footer-banner.jpg" alt="footer banner" class="footer__banner" />
     <div class="footer__top">
       <div class="footer__content">
         <h2 class="footer__title heading-lg">
@@ -47,7 +46,7 @@
   color: #fff;
   padding-top: max(6rem, 30px);
   padding-bottom: max(3rem, 16px);
-  padding-inline: vars.$spacing-inline;
+  padding-inline: var(--spacing-inline);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -59,6 +58,12 @@
     translate: 0 -40%;
     left: 0;
     opacity: 0.32;
+    min-width: 1440px;
+    @media screen and (max-width: vars.$bp-lg) {
+      top: 50%;
+      left: 50%;
+      translate: -54% -39%;
+    }
   }
 
   &__top {
@@ -68,6 +73,10 @@
     border-bottom: 1px solid #ffffff4d;
     gap: 16.2rem;
     padding-bottom: max(6rem, 30px);
+    @media screen and (max-width: vars.$bp-lg) {
+      grid-template-columns: 1fr;
+      gap: 139px;
+    }
   }
 
   &__title {

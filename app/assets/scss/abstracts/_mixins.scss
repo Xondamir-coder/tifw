@@ -1,13 +1,16 @@
 @use './variables' as vars;
 
-// Typography related
-
 // Heading
 @mixin heading-base() {
   font-family: vars.$font-prosto;
   line-height: 1.25;
   letter-spacing: -0.013em;
   color: vars.$clr-a;
+}
+
+@mixin heading-xl($min-size: 40px) {
+  @include heading-base;
+  font-size: max(4.8rem, $min-size);
 }
 
 @mixin heading-lg($min-size: 32px) {
@@ -44,7 +47,6 @@
 }
 
 // Layout related
-
 @mixin grid-center {
   display: grid;
   place-items: center;

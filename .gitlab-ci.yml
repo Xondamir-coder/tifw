@@ -3,6 +3,7 @@ pages:
   stage: deploy
   before_script:
     - npm -v
+    - node -v
     - rm -rf /var/www/tifw.uz/*
     - rm -rf /var/www/tifw.uz/.nuxt
     - rm -rf /var/www/tifw.uz/.output

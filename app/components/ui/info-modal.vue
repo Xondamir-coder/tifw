@@ -1,9 +1,9 @@
 <template>
   <Teleport to="body">
     <Transition name="fade">
-      <div v-if="model" class="overlay" @click.self="$emit('close')">
+      <div v-if="model" class="overlay" @click.self="model = false">
         <div class="info-modal">
-          <button class="info-modal__close" @click="$emit('close')">
+          <button class="info-modal__close" @click="model = false">
             <IconsX class="info-modal__close-icon" />
           </button>
           <UiPicture :src="data.image" :alt="data.text" class="info-modal__picture" />
@@ -48,7 +48,6 @@ defineProps({
     type: Object
   }
 });
-defineEmits(['close']);
 </script>
 
 <style lang="scss" scoped>
@@ -99,7 +98,7 @@ defineEmits(['close']);
     border: 1px solid #eaebed;
     padding: 8px;
     border-radius: 12px;
-    color: vars.$clr-a;
+    color: vars.$clr-text-primary;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -113,7 +112,7 @@ defineEmits(['close']);
         width: max(4.2rem, 30px);
         height: max(4.2rem, 30px);
         border-radius: 8px;
-        background-color: vars.$clr-o;
+        background-color: vars.$clr-success;
       }
     }
   }

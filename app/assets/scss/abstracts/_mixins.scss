@@ -5,7 +5,7 @@
   font-family: vars.$font-prosto;
   line-height: 1.25;
   letter-spacing: -0.013em;
-  color: vars.$clr-a;
+  color: vars.$clr-text-primary;
 }
 
 @mixin heading-xl($min-size: 40px) {

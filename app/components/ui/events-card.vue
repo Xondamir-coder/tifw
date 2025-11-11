@@ -82,7 +82,7 @@ defineProps({
     flex-direction: column;
     gap: 1.6rem;
     &-title {
-      color: vars.$clr-a;
+      color: vars.$clr-text-primary;
       font-family: vars.$font-prosto;
       line-height: 1.25;
       font-size: max(3.6rem, 26px);
@@ -92,7 +92,7 @@ defineProps({
   }
   &__bottom {
     padding-top: max(2rem, 16px);
-    border-top: 1px solid rgba(vars.$clr-n, 0.2);
+    border-top: 1px solid rgba(vars.$clr-placeholder, 0.2);
     display: flex;
     justify-content: space-between;
     @media screen and (max-width: vars.$bp-sm) {
@@ -104,10 +104,10 @@ defineProps({
     display: flex;
     align-items: center;
     gap: 8px;
-    color: rgba(vars.$clr-a, 0.78);
+    color: rgba(vars.$clr-text-primary, 0.78);
     &-icon {
       width: 24px;
-      fill: vars.$clr-l;
+      fill: vars.$clr-blue-light;
     }
   }
 }

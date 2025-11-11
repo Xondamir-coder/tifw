@@ -1,6 +1,8 @@
 {
   "become-sponsor": "Homiy bo'ling",
+  "become-partner": "Hamkor bo'ling",
   "see-all": "Barchasini ko'rish",
+  "submit-application": "Ariza yuborish",
 
   "nav": {
     "about": "Biz haqimizda",
@@ -200,6 +202,12 @@
       "title": "Ilhomlanish boshlanish",
       "text": "«Bu sahnada faqat spikerlar emas, kelajakni shakllantiruvchi odamlar. Ularning tajribalari, g'oyalari va strategiyalari boshqa qilishadi. Bizning maqsadi — har bir ishtirokchiga ilhomlanishni o'tkazish va barcha qilishishini aniqishdir.»"
     }
+  },
+
+  "partners": {
+    "title": "Hamkorlar",
+    "text": "Toshkent Xalqaro Moliya haftaligi yetakchi tashkilotlar tomonidan qo'llab-quvvatlanadi. Ularning maqsadi — innovatsiyalarni rivojlantirish va Markaziy Osiyoda moliya kelajagini shakllantirishdir. Birgalikda biz g'oyalar amaliy natijalarga aylanuvchi barqaror ekotizimni yaratmoqdamiz.",
+    "form-desc": "Ko'rishma ko'rinishning strategik hamkorlariga qo'shiling va sanoatdagi yetakchi vakillarga o'ziningizni taqdim eting"
   },
 
   "info-modal": {

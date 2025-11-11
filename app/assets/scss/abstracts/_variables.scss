@@ -1,18 +1,27 @@
-$clr-a: #0c141e;
-$clr-b: #555f70;
-$clr-c: #eceff5;
-$clr-d: #e8b45a;
-$clr-e: #e6ae4c;
-$clr-f: #d89b31;
-$clr-g: #718096;
-$clr-h: #001a0d;
-$clr-i: #e8b45b;
-$clr-j: #023664;
-$clr-k: #035196;
-$clr-l: #073d77;
-$clr-m: #d9d9d9;
-$clr-n: #767f8d;
-$clr-o: #008b5e;
+// Base Neutrals
+$clr-text-primary: #0c141e;
+$clr-text-secondary: #555f70;
+$clr-border: #eceff5;
+$clr-placeholder: #767f8d;
+
+// Accent / Brand (Golden)
+$clr-accent: #e8b45a;
+$clr-accent-hover: #e6ae4c;
+$clr-accent-strong: #d89b31;
+$clr-yellow: #e8b45b;
+
+// Blue Range (Corporate / Trust theme)
+$clr-blue-dark: #023664;
+$clr-blue: #035196;
+$clr-blue-light: #073d77;
+
+// Greens (Success / Finance)
+$clr-success: #008b5e;
+$clr-green-dark: #001a0d;
+
+// Misc
+$clr-bg-light: #d9d9d9;
+$clr-text-muted: #718096;
 
 $bp-xs: 425px;
 $bp-sm: 576px;

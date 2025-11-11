@@ -25,7 +25,7 @@ defineProps({
 .curved-container {
   padding-inline: var(--spacing-inline);
   padding-block: vars.$spacing-block;
-  background-color: vars.$clr-c;
+  background-color: vars.$clr-border;
   border-top-left-radius: max(3.2rem, 16px);
   border-top-right-radius: max(3.2rem, 16px);
   display: flex;

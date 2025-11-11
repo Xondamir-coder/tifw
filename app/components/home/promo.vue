@@ -60,14 +60,14 @@
       width: 4px;
       height: 36%;
       translate: -40%;
-      background-color: vars.$clr-i;
+      background-color: vars.$clr-accent;
     }
     &:first-child {
       padding-inline: max(15rem, 40px);
-      background-color: vars.$clr-j;
+      background-color: vars.$clr-blue-dark;
     }
     &:last-child {
-      background-color: vars.$clr-k;
+      background-color: vars.$clr-blue;
       padding-inline: max(10rem, 40px);
 
       &::before,
@@ -102,7 +102,7 @@
     font-weight: 600;
     font-size: 16px;
     gap: 8px;
-    background: vars.$clr-i;
+    background: vars.$clr-yellow;
     color: #fff;
     border-radius: max(0.8rem, 8px);
     transition: all 0.4s;

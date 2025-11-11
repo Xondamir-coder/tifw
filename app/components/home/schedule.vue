@@ -34,7 +34,7 @@
 
 <style lang="scss" scoped>
 .schedule {
-  background: vars.$clr-c;
+  background: vars.$clr-border;
   padding-top: vars.$spacing-block;
   padding-bottom: max(9rem, 56px);
   padding-inline: var(--spacing-inline);
@@ -71,7 +71,7 @@
   &__icon {
     width: 24px;
     height: 24px;
-    fill: vars.$clr-g;
+    fill: vars.$clr-text-muted;
     flex-shrink: 0;
   }
 
@@ -96,14 +96,14 @@
   }
 
   &__date {
-    color: vars.$clr-g;
+    color: vars.$clr-text-muted;
   }
 
   &__info {
     font-weight: bold;
     font-size: max(2.4rem, 18px);
     line-height: 1.4;
-    color: vars.$clr-a;
+    color: vars.$clr-text-primary;
   }
 }
 </style>

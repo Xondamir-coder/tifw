@@ -217,7 +217,7 @@ const items = computed(() => [
   }
 
   &__stat-label {
-    color: vars.$clr-g;
+    color: vars.$clr-text-muted;
   }
 }
 .fade-enter-from,

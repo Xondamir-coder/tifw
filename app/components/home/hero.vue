@@ -199,7 +199,7 @@
     height: max(4rem, 28px);
     width: 43%;
     min-width: 252px;
-    background-color: vars.$clr-e;
+    background-color: vars.$clr-accent-hover;
     clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
   }
   &__container {
@@ -235,7 +235,7 @@
 
   &__highlight {
     display: block;
-    color: vars.$clr-e;
+    color: vars.$clr-accent-hover;
   }
 
   &__button {
@@ -243,7 +243,7 @@
     gap: 8px;
     justify-content: center;
     align-items: center;
-    background-color: vars.$clr-f;
+    background-color: vars.$clr-accent-strong;
     border-radius: max(0.8rem, 8px);
     font-weight: 600;
     transition: background 0.25s ease;

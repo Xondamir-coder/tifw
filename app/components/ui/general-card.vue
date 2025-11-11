@@ -8,7 +8,7 @@
     >
       <path
         d="M235.462 0C243.317 0 250.675 3.84394 255.162 10.2916L265.194 24.7085C269.681 31.1561 277.039 35 284.894 35H394C407.255 35 418 45.7452 418 59V296C418 309.255 407.255 320 394 320H24C10.7452 320 0 309.255 0 296V24C0 10.7452 10.7452 0 24 0H235.462Z"
-        fill="white"
+        fill="inherit"
       />
     </svg>
     <component :is="data.logo" class="general-card__logo" />
@@ -37,6 +37,11 @@ defineProps({
   flex-direction: column;
   gap: 2.5rem;
   padding: max(2rem, 12px);
+  fill: #fff;
+  transition: fill 0.4s;
+  &:hover {
+    fill: vars.$clr-bg-light;
+  }
   & > *:not(.general-card__bg) {
     z-index: 1;
   }

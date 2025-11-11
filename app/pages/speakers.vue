@@ -132,7 +132,7 @@ const speakers = [
   &-container {
     padding-inline: var(--spacing-inline);
     padding-top: max(9rem, 32px);
-    background-color: vars.$clr-c;
+    background-color: vars.$clr-border;
     padding-bottom: max(6rem, 20px);
     @media screen and (max-width: vars.$bp-md) {
       padding-top: max(4rem, 32px);
@@ -174,7 +174,7 @@ const speakers = [
     font-family: vars.$font-prosto;
     font-size: max(3.6rem, 24px);
     letter-spacing: -1.3px;
-    color: vars.$clr-a;
+    color: vars.$clr-text-primary;
     line-height: 1.25;
   }
   &__info {
@@ -185,7 +185,7 @@ const speakers = [
       font-family: vars.$font-prosto;
       font-size: max(2.4rem, 18px);
       letter-spacing: -1.3px;
-      color: vars.$clr-a;
+      color: vars.$clr-text-primary;
     }
   }
 }
@@ -195,7 +195,7 @@ const speakers = [
   column-gap: max(2.4rem, 16px);
   row-gap: max(3.2rem, 20px);
   &__card {
-    color: vars.$clr-a;
+    color: vars.$clr-text-primary;
   }
 }
 </style>

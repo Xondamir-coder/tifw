@@ -1,6 +1,8 @@
 {
   "become-sponsor": "Become a sponsor",
+  "become-partner": "Become a partner",
   "see-all": "See all",
+  "submit-application": "Submit an application",
 
   "nav": {
     "about": "About",
@@ -207,5 +209,11 @@
       "title": "Inspiration is the start of every success",
       "text": "At this stage, speakers are not just speakers — they are people who shape the future. Their experience and ideas inspire others to move forward. Our goal is to pass on this inspiration to every participant."
     }
+  },
+
+  "partners": {
+    "title": "Partners",
+    "text": "The TIFW Innovation week brings together a series of specialized exhibitions and forums, focusing on key areas of modern economy and technology. Here, leaders from various industries, investors, and startups gather to discuss trends, share experiences, and find new growth points.",
+    "form-desc": "Join the strategic partners of the exhibition exhibition and get a chance to present your brand to leading industry representatives"
   }
 }

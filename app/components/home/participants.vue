@@ -87,7 +87,7 @@ const rows = [
     background: #fff;
     border-radius: max(1.6rem, 16px);
     padding-inline: 22px;
-    fill: vars.$clr-h;
+    fill: vars.$clr-green-dark;
   }
 
   &__button {

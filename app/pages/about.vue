@@ -337,7 +337,7 @@ onMounted(() => {
       font-size: max(5.4rem, 35px);
       line-height: 1.25;
       letter-spacing: -1.3px;
-      color: rgba(vars.$clr-a, 0.76);
+      color: rgba(vars.$clr-text-primary, 0.76);
       &-box {
         position: absolute;
         top: 50%;
@@ -422,7 +422,7 @@ onMounted(() => {
 
   .venue {
     padding-inline: var(--spacing-inline);
-    background-color: vars.$clr-c;
+    background-color: vars.$clr-border;
     padding-block: max(9rem, 16px);
     display: flex;
     flex-direction: column;
@@ -457,12 +457,12 @@ onMounted(() => {
       }
       &-icon {
         width: max(4.2rem, 30px);
-        fill: vars.$clr-d;
+        fill: vars.$clr-accent;
       }
       &-title {
         font-size: max(2.4rem, 20px);
         font-weight: 700;
-        color: vars.$clr-a;
+        color: vars.$clr-text-primary;
         line-height: 1.4;
       }
     }

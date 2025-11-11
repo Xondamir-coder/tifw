@@ -4,8 +4,6 @@ pages:
   before_script:
     - npm -v
   script:
-    - cd /var/www/tifw.uz
-    - ls -la
     - rm -rf /var/www/tifw.uz/*
     - rm -rf /var/www/tifw.uz/.nuxt
     - rm -rf /var/www/tifw.uz/.output

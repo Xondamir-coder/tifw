@@ -4,9 +4,16 @@ pages:
   before_script:
     - npm -v
   script:
+    - cd /var/www/tifw.uz
+    - ls -la
+    - rm -rf *
+    - rm -rf .nuxt
+    - rm -rf .output
     - cp -r -u * /var/www/tifw.uz
     - cd /var/www/tifw.uz
     - ls -la
+    - npm i
+    - npm run build
   # - export PM2_HOME=/ubuntu/.pm2
   #   - pm2 status
   # - pm2 delete tifw

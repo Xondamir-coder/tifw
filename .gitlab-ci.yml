@@ -8,6 +8,8 @@ pages:
     - rm -f /var/www/tifw.uz/.gitignore /var/www/tifw.uz/.gitlab-ci.yml /var/www/tifw.uz/README.md /var/www/tifw.uz/eslint.config.mjs /var/www/tifw.uz/nuxt.config.ts /var/www/tifw.uz/package-lock.json /var/www/tifw.uz/package.json /var/www/tifw.uz/transform-images.sh /var/www/tifw.uz/tsconfig.json
     - rm -rf /var/www/tifw.uz/.nuxt
     - rm -rf /var/www/tifw.uz/.output
+  variables:
+    NODE_OPTIONS: "--max-old-space-size=4096"  
   script:
     
     - cp -r -u * /var/www/tifw.uz

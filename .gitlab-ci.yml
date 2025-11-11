@@ -6,9 +6,9 @@ pages:
   script:
     - cd /var/www/tifw.uz
     - ls -la
-    - rm -rf *
-    - rm -rf .nuxt
-    - rm -rf .output
+    - rm -rf /var/www/tifw.uz/*
+    - rm -rf /var/www/tifw.uz/.nuxt
+    - rm -rf /var/www/tifw.uz/.output
     - cp -r -u * /var/www/tifw.uz
     - cd /var/www/tifw.uz
     - ls -la

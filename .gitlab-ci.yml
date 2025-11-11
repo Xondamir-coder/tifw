@@ -3,10 +3,11 @@ pages:
   stage: deploy
   before_script:
     - npm -v
-  script:
     - rm -rf /var/www/tifw.uz/*
     - rm -rf /var/www/tifw.uz/.nuxt
     - rm -rf /var/www/tifw.uz/.output
+  script:
+    
     - cp -r -u * /var/www/tifw.uz
     - cd /var/www/tifw.uz
     - ls -la

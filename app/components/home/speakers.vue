@@ -1,14 +1,13 @@
 <template>
   <section class="speakers">
     <div class="section-header">
-      <h2 class="speakers__title heading-lg">{{ $t('home.speakers.title') }}</h2>
+      <h2 class="heading-lg clr-white">{{ $t('home.speakers.title') }}</h2>
       <p class="speakers__description section-subtitle">{{ $t('home.speakers.description') }}</p>
     </div>
     <ClientOnly>
       <swiper-container
         ref="swiperRef"
         class="speakers__grid"
-        :grab-cursor="true"
         :breakpoints="{
           0: {
             spaceBetween: 12,
@@ -24,16 +23,8 @@
           }
         }"
       >
-        <swiper-slide
-          v-for="(speaker, i) in [...$tm('home.speakers.list'), ...$tm('home.speakers.list')]"
-          :key="i"
-          class="speakers__slide"
-        >
-          <UiSpeakerCard
-            :image="`speaker-${i > 3 ? 1 : i + 1}.jpg`"
-            :name="$rt(speaker.name)"
-            :role="$rt(speaker.role)"
-          />
+        <swiper-slide v-for="(speaker, i) in speakers" :key="i" class="speakers__slide">
+          <UiSpeakerCard :speaker />
         </swiper-slide>
       </swiper-container>
 
@@ -44,6 +35,7 @@
 
 <script setup>
 const swiperRef = ref();
+const { speakers } = useApiStore();
 </script>
 
 <style lang="scss" scoped>
@@ -99,10 +91,6 @@ const swiperRef = ref();
 
   &__slide {
     display: flex;
-  }
-
-  &__title {
-    color: #fff;
   }
   &__description {
     opacity: 0.78;

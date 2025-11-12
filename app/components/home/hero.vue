@@ -180,7 +180,7 @@
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  min-height: calc(100dvh - max(7.2rem, 72px));
+  min-height: calc(100vh - max(7.2rem, 72px));
   padding: 10rem;
   color: #fff;
   @media screen and (max-width: vars.$bp-md) {

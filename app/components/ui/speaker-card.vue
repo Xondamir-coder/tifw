@@ -1,21 +1,21 @@
 <template>
-  <div class="speaker-card">
+  <NuxtLink :to="$localePath(`/speakers/${speaker.id}`)" class="speaker-card">
     <div class="speaker-card__image">
-      <UiPicture :src="image" :alt="name" />
+      <UiPicture :src="speaker.image" :alt="speaker.name" />
     </div>
-
     <div class="speaker-card__info">
-      <h6 class="speaker-card__name heading-sm">{{ name }}</h6>
-      <p class="speaker-card__position text-sm">{{ role }}</p>
+      <h6 class="speaker-card__name heading-sm">{{ speaker.name }}</h6>
+      <p class="speaker-card__position text-sm">{{ speaker.role }}</p>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>
 defineProps({
-  image: { type: String, required: true },
-  name: { type: String, required: true },
-  role: { type: String, required: true }
+  speaker: {
+    required: true,
+    type: Object
+  }
 });
 </script>
 

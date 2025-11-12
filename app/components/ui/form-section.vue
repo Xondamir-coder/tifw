@@ -11,9 +11,9 @@
         fill="white"
       />
     </svg>
-    <UiPicture src="briefcase.png" class="form-section__picture" />
+    <UiPicture src="briefcase.png" alt="briefcase" class="form-section__picture" />
     <div class="form-section__content">
-      <h3 class="form-section__content-title">{{ title }}</h3>
+      <h3 class="heading-ml">{{ title }}</h3>
       <p class="form-section__content-text text-lg">{{ text }}</p>
       <UiButton :label="$t('submit-application')" />
     </div>
@@ -78,13 +78,6 @@ defineProps({
     }
     &-text {
       max-width: 50ch;
-    }
-    &-title {
-      color: vars.$clr-text-primary;
-      font-family: vars.$font-prosto;
-      font-size: max(3.6rem, 24px);
-      letter-spacing: -1.3px;
-      line-height: 1.25;
     }
   }
 }

@@ -5,7 +5,7 @@
       <div class="hero__container">
         <UiPicture src="about-hero.jpg" alt="Conference meeting" class="hero__picture" />
         <div class="hero__overlay">
-          <h1 class="hero__title">{{ $t('about.hero.title') }}</h1>
+          <h1 class="heading-lg clr-white">{{ $t('about.hero.title') }}</h1>
           <p class="section-subtitle hero__subtitle">{{ $t('about.hero.subtitle') }}</p>
         </div>
       </div>
@@ -86,7 +86,7 @@
           </div>
         </div>
         <div class="cards__scroll">
-          <h6 class="cards__scroll-text heading-sm">Scroll down</h6>
+          <h6 class="heading-sm clr-white">Scroll down</h6>
           <div class="cards__scroll-bar">
             <div class="cards__scroll-bar--inside"></div>
           </div>
@@ -251,10 +251,6 @@ onMounted(() => {
       color: #fff;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
     }
-    &__title {
-      @include mix.heading-lg();
-      color: #fff;
-    }
     &__subtitle {
       color: rgba(#ffffff, 0.78);
     }
@@ -314,9 +310,6 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       gap: max(2rem, 16px);
-      &-text {
-        color: #fff;
-      }
       &-bar {
         width: 36rem;
         height: 8px;
@@ -333,7 +326,6 @@ onMounted(() => {
       }
     }
     &__title {
-      font-family: vars.$font-prosto;
       font-size: max(5.4rem, 35px);
       line-height: 1.25;
       letter-spacing: -1.3px;

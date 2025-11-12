@@ -12,6 +12,7 @@
             :to="$localePath(item.path)"
             class="header__nav-link"
             active-class="header__nav-link--active"
+            :class="{ 'header__nav-link--active': $route.name.includes(item.key) }"
           >
             {{ item.label }}
           </NuxtLink>

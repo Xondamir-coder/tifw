@@ -1,0 +1,216 @@
+[
+  {
+    "id": 1,
+    "name": "Timur Rakhimov",
+    "role": "Lead AI Engineer",
+    "image": "speaker-1.jpg",
+    "partnersCount": "260+",
+    "experience": 12,
+    "quote": "Innovation begins with understanding people.",
+    "description": "Timur is a leading AI engineer specializing in natural language processing and intelligent automation for financial systems.",
+    "events": [
+      {
+        "date": "2025-03-15T10:00:00Z",
+        "title": "AI and Finance Integration",
+        "description": "A session exploring the role of artificial intelligence in transforming the financial sector."
+      },
+      {
+        "date": "2025-04-10T09:00:00Z",
+        "title": "Ethical AI Development",
+        "description": "Panel discussion on creating fair, transparent, and accountable AI systems."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Isabella Grigorieva",
+    "role": "Chief Data Scientist, Agrobank",
+    "image": "speaker-2.jpg",
+    "partnersCount": "180+",
+    "experience": 9,
+    "quote": "Data tells the story of progress.",
+    "description": "Isabella leads Agrobank’s data science division, focusing on predictive modeling for agricultural finance and risk management.",
+    "events": [
+      {
+        "date": "2025-02-12T11:00:00Z",
+        "title": "Big Data in AgriTech",
+        "description": "How data-driven solutions are improving crop yields and financial inclusion in rural areas."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Asal Shodmonova",
+    "role": "Fintech Innovator",
+    "image": "speaker-3.jpg",
+    "partnersCount": "320+",
+    "experience": 15,
+    "quote": "The future of finance is inclusive.",
+    "description": "Asal is an award-winning fintech entrepreneur developing mobile payment platforms that empower small businesses.",
+    "events": [
+      {
+        "date": "2025-03-22T13:00:00Z",
+        "title": "Women in Fintech",
+        "description": "An inspiring session on leadership and innovation in the fintech space."
+      },
+      {
+        "date": "2025-05-05T09:00:00Z",
+        "title": "Scaling Startups",
+        "description": "Practical insights on how to grow fintech startups in emerging markets."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Murat Karimov",
+    "role": "CTO, FinLabs",
+    "image": "speaker-4.jpg",
+    "partnersCount": "210+",
+    "experience": 11,
+    "quote": "Technology is the bridge between vision and reality.",
+    "description": "Murat oversees technological strategy at FinLabs, focusing on cloud-based solutions for banking and digital wallets.",
+    "events": [
+      {
+        "date": "2025-04-03T08:30:00Z",
+        "title": "Cloud Finance Revolution",
+        "description": "Exploring the advantages and challenges of cloud adoption in financial institutions."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sardor Akhmedov",
+    "role": "VP of Strategy, PayWay",
+    "image": "speaker-1.jpg",
+    "partnersCount": "270+",
+    "experience": 13,
+    "quote": "Strategy is innovation with direction.",
+    "description": "Sardor specializes in strategic planning for digital payment ecosystems and cross-border remittance networks.",
+    "events": [
+      {
+        "date": "2025-02-28T14:00:00Z",
+        "title": "Digital Payments in Central Asia",
+        "description": "Understanding payment infrastructure and regional interoperability challenges."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Olga Petrova",
+    "role": "Head of Blockchain Research",
+    "image": "speaker-2.jpg",
+    "partnersCount": "190+",
+    "experience": 8,
+    "quote": "Trust is the currency of technology.",
+    "description": "Olga leads blockchain-based research projects exploring decentralized finance and digital identity management.",
+    "events": [
+      {
+        "date": "2025-05-18T15:30:00Z",
+        "title": "Blockchain and Trust",
+        "description": "Panel on how blockchain redefines transparency and accountability in finance."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Jamila Umarova",
+    "role": "Senior Financial Analyst",
+    "image": "speaker-3.jpg",
+    "partnersCount": "240+",
+    "experience": 10,
+    "quote": "Numbers reveal the path forward.",
+    "description": "Jamila provides data-driven insights to guide investment strategies for major banking institutions in Uzbekistan.",
+    "events": [
+      {
+        "date": "2025-03-10T10:00:00Z",
+        "title": "Risk Analysis Workshop",
+        "description": "Comprehensive look at quantitative models used in modern financial risk assessment."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Rashidov Aziz",
+    "role": "Economist, World Finance Forum",
+    "image": "speaker-4.jpg",
+    "partnersCount": "300+",
+    "experience": 18,
+    "quote": "Sustainable growth begins with informed policy.",
+    "description": "Aziz is an international economist focusing on emerging markets, fiscal policy, and sustainable finance.",
+    "events": [
+      {
+        "date": "2025-06-21T12:00:00Z",
+        "title": "Global Market Forecasts",
+        "description": "Economic outlook for 2025–2026 with focus on Central Asian markets."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Nargiza Usmanova",
+    "role": "Founder, DigitalPay",
+    "image": "speaker-1.jpg",
+    "partnersCount": "310+",
+    "experience": 14,
+    "quote": "The best innovations simplify life.",
+    "description": "Nargiza founded DigitalPay to deliver accessible digital payment solutions for micro and small enterprises.",
+    "events": [
+      {
+        "date": "2025-04-17T09:30:00Z",
+        "title": "Entrepreneurship in Fintech",
+        "description": "Fireside chat about launching and scaling financial startups."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Timur Valiev",
+    "role": "Machine Learning Architect",
+    "image": "speaker-2.jpg",
+    "partnersCount": "230+",
+    "experience": 9,
+    "quote": "Complexity simplified is intelligence realized.",
+    "description": "Timur designs machine learning systems for fraud detection and credit risk evaluation in digital banks.",
+    "events": [
+      {
+        "date": "2025-03-30T11:00:00Z",
+        "title": "AI in Credit Risk",
+        "description": "Technical deep-dive into neural models for automated credit scoring."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Dilshod Yuldashev",
+    "role": "CFO, FinAsia Group",
+    "image": "speaker-3.jpg",
+    "partnersCount": "200+",
+    "experience": 16,
+    "quote": "Every number hides a decision.",
+    "description": "Dilshod has two decades of experience managing corporate finance, mergers, and investments across Asia.",
+    "events": [
+      {
+        "date": "2025-05-12T10:00:00Z",
+        "title": "Financial Leadership",
+        "description": "Discussion on modern CFO responsibilities in fast-evolving fintech companies."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Kamola Rakhimova",
+    "role": "Director of Innovation, UzFinTech",
+    "image": "speaker-4.jpg",
+    "partnersCount": "280+",
+    "experience": 17,
+    "quote": "Innovation thrives where curiosity meets courage.",
+    "description": "Kamola directs innovation strategy at UzFinTech, fostering new digital banking technologies for emerging markets.",
+    "events": [
+      {
+        "date": "2025-02-22T14:00:00Z",
+        "title": "Innovating for Inclusion",
+        "description": "Session exploring how innovation can drive inclusive finance ecosystems."
+      }
+    ]
+  }
+]

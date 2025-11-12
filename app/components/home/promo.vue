@@ -91,8 +91,6 @@
 
   &__title {
     font-size: max(5rem, 32px);
-    font-family: vars.$font-prosto;
-    line-height: 1;
     color: #fff;
   }
 
@@ -110,7 +108,7 @@
     padding-inline: 24px;
 
     &:hover {
-      background: #fff;
+      background: vars.$clr-accent-strong;
     }
   }
 

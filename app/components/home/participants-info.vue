@@ -15,7 +15,7 @@
         <button
           v-for="(sector, i) in $tm('home.participants-info.sectors')"
           :key="i"
-          class="participants-info__sector heading-md"
+          class="participants-info__sector heading-md clr-text-primary"
           :class="{ 'participants-info__sector--active': i === activeIndex }"
           @click="activeIndex = i"
         >
@@ -159,6 +159,7 @@ const items = computed(() => [
     }
   }
   &__sector {
+    font-family: vars.$font-prosto;
     transition: all 0.4s;
     opacity: 0.2;
     &--active {

@@ -27,18 +27,17 @@ defineEmits(['click']);
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 16px;
   gap: 8px;
   background: vars.$clr-yellow;
   color: #fff;
   border-radius: max(0.8rem, 8px);
   transition: all 0.4s;
-  padding-block: 14px;
-  padding-inline: 24px;
+  padding-block: max(1.4rem, 12px);
+  padding-inline: max(2.4rem, 16px);
   fill: none;
   stroke: #fff;
   &__icon {
-    width: 24px;
+    width: max(2.4rem, 20px);
   }
   &:hover {
     background: vars.$clr-accent-strong;

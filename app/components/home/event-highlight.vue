@@ -1,7 +1,7 @@
 <template>
   <section class="event-highlight">
     <div class="event-highlight__header">
-      <h2 class="event-highlight__title heading-lg">
+      <h2 class="heading-lg clr-white">
         {{ $t('home.event.title') }}
       </h2>
       <p class="event-highlight__description text-md">
@@ -85,9 +85,6 @@ const swiperRef = ref();
     flex-direction: column;
     gap: 16px;
     padding-inline: var(--spacing-inline);
-  }
-  &__title {
-    color: #fff;
   }
   &__description {
     opacity: 0.78;

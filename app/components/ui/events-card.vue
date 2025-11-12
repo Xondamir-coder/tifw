@@ -11,10 +11,10 @@
         fill="white"
       />
     </svg>
-    <UiPicture :src="event.image" class="events-card__picture" />
+    <UiPicture :src="event.image" alt="card picture" class="events-card__picture" />
     <div class="events-card__container">
       <div class="events-card__content">
-        <h3 class="events-card__content-title">{{ event.title }}</h3>
+        <h3 class="heading-ml">{{ event.title }}</h3>
         <p class="text-md">{{ event.description }}</p>
       </div>
       <div class="events-card__bottom">
@@ -81,12 +81,6 @@ defineProps({
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-    &-title {
-      color: vars.$clr-text-primary;
-      font-family: vars.$font-prosto;
-      line-height: 1.25;
-      font-size: max(3.6rem, 26px);
-    }
   }
   &__picture {
   }

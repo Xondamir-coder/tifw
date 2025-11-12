@@ -3,6 +3,11 @@
   "become-partner": "Become a partner",
   "see-all": "See all",
   "submit-application": "Submit an application",
+  "quote": "Quote",
+  "years": "years",
+  "back": "Back",
+  "exhibition-focus": "Exhibition Focus",
+  "highlights": "Highlights",
 
   "nav": {
     "about": "About",
@@ -116,13 +121,7 @@
     },
     "speakers": {
       "title": "Speakers",
-      "description": "Tashkent International Finance Week brings together leading voices — visionaries shaping the future of finance, insurance, and technology. Each speaker shares practical insights, inspiring ideas, and strategies that drive real progress across the region.",
-      "list": [
-        { "name": "Timur Rakhimov", "role": "Lead AI Engineer" },
-        { "name": "Isobella Gabriellova", "role": "Lead AI Engineer, Agrobank" },
-        { "name": "Asal Shodmonova", "role": "Lead AI Engineer" },
-        { "name": "Timur Rakhimov", "role": "Lead AI Engineer, Agrobank" }
-      ]
+      "description": "Tashkent International Finance Week brings together leading voices — visionaries shaping the future of finance, insurance, and technology. Each speaker shares practical insights, inspiring ideas, and strategies that drive real progress across the region."
     },
     "participants-info": {
       "title": "Our Participants",
@@ -138,27 +137,23 @@
       "location": "Location: Tashkent, Central House of Entrepreneurs",
       "events": [
         {
-          "day": "24",
-          "month": "oct.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Opening Ceremony",
           "subtitle": "Kick off the National Insurance week!",
           "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
         },
         {
-          "day": "25",
-          "month": "oct.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Development & Mentorship Day",
           "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
         },
         {
-          "day": "26",
-          "month": "oct.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Development & Mentorship Day",
           "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
         },
         {
-          "day": "27",
-          "month": "oct.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Development & Mentorship Day",
           "description": "Participants brainstorm and shape their AI project ideas under mentor guidance. The best initial concepts move forward to the development phase."
         }
@@ -215,5 +210,13 @@
     "title": "Partners",
     "text": "The TIFW Innovation week brings together a series of specialized exhibitions and forums, focusing on key areas of modern economy and technology. Here, leaders from various industries, investors, and startups gather to discuss trends, share experiences, and find new growth points.",
     "form-desc": "Join the strategic partners of the exhibition exhibition and get a chance to present your brand to leading industry representatives"
+  },
+
+  "speaker": {
+    "hero": {
+      "text-1": "Corporate partner organizations",
+      "text-2": "Market experience and track record of trust"
+    },
+    "schedule": "Where can I hear the speaker"
   }
 }

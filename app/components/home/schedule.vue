@@ -12,24 +12,14 @@
     </div>
 
     <div class="schedule__list">
-      <div v-for="(event, i) in $tm('home.schedule.events')" :key="i" class="schedule__item">
-        <h3 class="heading-lg schedule__date">{{ $rt(event.day) }} {{ $rt(event.month) }}</h3>
-        <div class="schedule__info">
-          <span>{{ $rt(event.title) }}</span>
-          <p v-if="event.subtitle">
-            {{ $rt(event.subtitle) }}
-          </p>
-        </div>
-        <p class="schedule__text section-subtitle">
-          {{ $rt(event.description) }}
-        </p>
-      </div>
+      <UiScheduleCard v-for="(event, i) in events" :key="i" :data="event" />
     </div>
   </section>
 </template>
 
 <script setup>
-// purely static layout for now
+const { tm } = useI18n();
+const events = computed(() => tm('home.schedule.events').map(useMapRt));
 </script>
 
 <style lang="scss" scoped>
@@ -62,12 +52,6 @@
       max-width: 25ch;
     }
   }
-  &__text {
-    padding-bottom: 22px;
-    @media screen and (max-width: vars.$bp-lg) {
-      padding-bottom: 0;
-    }
-  }
   &__icon {
     width: 24px;
     height: 24px;
@@ -79,31 +63,6 @@
     display: flex;
     flex-direction: column;
     gap: max(1.6rem, 12px);
-  }
-
-  &__item {
-    background: #fff;
-    display: grid;
-    grid-template-columns: 1fr 2.05fr 2.05fr;
-    align-items: flex-start;
-    border-radius: max(2.4rem, 16px);
-    padding: 20px;
-
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-  }
-
-  &__date {
-    color: vars.$clr-text-muted;
-  }
-
-  &__info {
-    font-weight: bold;
-    font-size: max(2.4rem, 18px);
-    line-height: 1.4;
-    color: vars.$clr-text-primary;
   }
 }
 </style>

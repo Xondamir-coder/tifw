@@ -3,6 +3,11 @@
   "become-partner": "Hamkor bo'ling",
   "see-all": "Barchasini ko'rish",
   "submit-application": "Ariza yuborish",
+  "quote": "Qutuva",
+  "years": "yillar",
+  "back": "Orqaga",
+  "exhibition-focus": "Ko'rgazma fokus",
+  "highlights": "Diqqatga sazovor joylar",
 
   "nav": {
     "about": "Biz haqimizda",
@@ -113,13 +118,7 @@
     },
     "speakers": {
       "title": "Spikerlar",
-      "description": "Toshkent Xalqaro Moliya Haftaligi moliya, sug‘urta va texnologiyalar kelajagini belgilovchi yetakchi shaxslarni birlashtiradi. Har bir spiker o‘zining tajribasi, ilhomlantiruvchi g‘oyalari va strategiyalari bilan bo‘lishadi.",
-      "list": [
-        { "name": "Timur Rahimov", "role": "Bosh AI muhandis" },
-        { "name": "Izobella Gabriellova", "role": "Bosh AI muhandis, Agrobank" },
-        { "name": "Asal Shodmonova", "role": "Bosh AI muhandis" },
-        { "name": "Timur Rahimov", "role": "Bosh AI muhandis, Agrobank" }
-      ]
+      "description": "Toshkent Xalqaro Moliya Haftaligi moliya, sug‘urta va texnologiyalar kelajagini belgilovchi yetakchi shaxslarni birlashtiradi. Har bir spiker o‘zining tajribasi, ilhomlantiruvchi g‘oyalari va strategiyalari bilan bo‘lishadi."
     },
     "participants-info": {
       "title": "Ishtirokchilarimiz",
@@ -135,27 +134,23 @@
       "location": "Joy: Toshkent, Tadbirkorlar uyi",
       "events": [
         {
-          "day": "24",
-          "month": "okt.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Ochilish marosimi",
           "subtitle": "Milliy sug‘urta haftaligi boshlanmoqda!",
           "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
         },
         {
-          "day": "25",
-          "month": "okt.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Rivojlanish va murabbiylik kuni",
           "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
         },
         {
-          "day": "26",
-          "month": "okt.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Rivojlanish va murabbiylik kuni",
           "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
         },
         {
-          "day": "27",
-          "month": "okt.",
+          "date": "2025-11-11T18:24:29.534Z",
           "title": "Rivojlanish va murabbiylik kuni",
           "description": "Ishtirokchilar murabbiylar rahbarligida AI loyihalarini shakllantiradilar. Eng yaxshi konsepsiyalar keyingi bosqichga o‘tadi."
         }
@@ -212,5 +207,13 @@
 
   "info-modal": {
     "areas": "Asosiy hududlar"
+  },
+
+  "speaker": {
+    "hero": {
+      "text-1": "Korporativ hamkorlar tashkilotlari",
+      "text-2": "Bozorlik tajribalari va ishoniy sifatiga ishoniy rekordi"
+    },
+    "schedule": "Spiker qayerda eshitish mumkin?"
   }
 }

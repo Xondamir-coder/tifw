@@ -14,11 +14,15 @@
 }
 
 // Headings
-.heading-md {
-  @include mix.heading-md;
-}
+
 .heading-xl {
   @include mix.heading-xl;
+}
+.heading-ml {
+  @include mix.heading-ml;
+}
+.heading-md {
+  @include mix.heading-md;
 }
 .heading-lg {
   @include mix.heading-lg;

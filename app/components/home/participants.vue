@@ -1,22 +1,16 @@
 <template>
   <section class="participants">
     <div class="section-header">
-      <h2 class="participants__title heading-lg">
+      <h2 class="heading-lg clr-white">
         {{ $t('home.participants.title') }}
       </h2>
-      <p class="section-subtitle">
+      <p class="section-subtitle clr-white">
         {{ $t('home.participants.description') }}
       </p>
     </div>
-
     <div class="participants__list">
-      <div v-for="(row, i) in rows" :key="i" class="participants__grid">
-        <div v-for="(logo, y) in row" :key="y" class="participants__logo-card">
-          <component :is="logo" class="participants__logo" />
-        </div>
-      </div>
+      <UiLogoSlider v-for="(rowLogos, i) in rows" :key="i" :logos="rowLogos" />
     </div>
-
     <button class="participants__button">
       {{ $t('see-all') }}
     </button>
@@ -57,12 +51,6 @@ const rows = [
     clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
   }
 
-  &__title {
-    color: #fff;
-    & + * {
-      color: #fff;
-    }
-  }
   &__list {
     display: flex;
     flex-direction: column;

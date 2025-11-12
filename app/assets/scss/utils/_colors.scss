@@ -1,3 +1,11 @@
+@use '../abstracts/variables' as vars;
+
 .clr-white {
   color: #fff;
+}
+.clr-text-primary {
+  color: vars.$clr-text-primary;
+}
+.clr-inherit {
+  color: inherit;
 }

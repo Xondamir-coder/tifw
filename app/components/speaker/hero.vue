@@ -58,6 +58,10 @@ defineProps({
   padding-inline: var(--spacing-inline);
   padding-top: max(3rem, 16px);
   padding-bottom: max(7.2rem, 36px);
+  @media screen and (max-width: vars.$bp-md) {
+    gap: 392px;
+    background: vars.$clr-dark-primary;
+  }
   &__top {
     display: flex;
     flex-direction: column;
@@ -73,7 +77,7 @@ defineProps({
     z-index: 3;
     @media screen and (max-width: vars.$bp-md) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: stretch;
     }
   }
   &::after {
@@ -86,11 +90,18 @@ defineProps({
     width: 100%;
     background: linear-gradient(180deg, rgba(2, 15, 30, 0) 0%, #020f1e 100%);
     z-index: 2;
+    @media screen and (max-width: vars.$bp-md) {
+      bottom: 20%;
+      background: linear-gradient(180deg, rgba(2, 15, 30, 0) 0%, #020f1e 66.11%, #020f1e 100%);
+    }
   }
   &__banner {
     position: absolute;
     inset: 0;
     filter: blur(10px);
+    @media screen and (max-width: vars.$bp-md) {
+      max-height: 74%;
+    }
     &::after {
       content: '';
       position: absolute;
@@ -108,7 +119,7 @@ defineProps({
     z-index: 2;
   }
   &__title {
-    font-size: max(8rem, 40px);
+    font-size: max(8rem, 42px);
     line-height: 1.1;
     span {
       display: block;
@@ -123,7 +134,7 @@ defineProps({
     &-label {
       background: rgba(255, 255, 255, 0.12);
       border-radius: 38px;
-      padding-block: 7px;
+      padding-block: max(0.7rem, 3px);
       padding-inline: 15px;
       font-size: 14px;
       font-weight: 600;
@@ -131,7 +142,7 @@ defineProps({
     }
 
     &-text {
-      font-size: max(2.4rem, 18px);
+      font-size: max(2.4rem, 14px);
       line-height: 1.35;
       max-width: 32ch;
     }
@@ -161,6 +172,11 @@ defineProps({
     bottom: 0;
     translate: -50%;
     z-index: 2;
+    @media screen and (max-width: vars.$bp-md) {
+      top: 50%;
+      translate: -50% -70%;
+      width: 100%;
+    }
   }
 }
 </style>

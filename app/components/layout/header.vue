@@ -74,7 +74,7 @@ onMounted(() => {
   &__logo {
     display: flex;
     align-items: center;
-    width: max(16.1rem, 100px);
+    width: max(16.1rem, 162px);
   }
   &__nav {
     justify-self: center;

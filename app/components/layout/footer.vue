@@ -51,7 +51,12 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-
+  &__copyright {
+    font-size: 14px;
+    @media screen and (max-width: vars.$bp-md) {
+      text-align: left;
+    }
+  }
   &__banner {
     position: absolute;
     top: 50%;
@@ -103,8 +108,8 @@
   }
 
   &__icon {
-    width: max(2.4rem, 24px);
-    height: max(2.4rem, 24px);
+    width: 32px;
+    height: 32px;
     stroke: #ffffff;
     transition: opacity 0.2s ease;
 

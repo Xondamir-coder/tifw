@@ -17,7 +17,18 @@
     <div class="banner-container">
       <div class="banner">
         <svg
-          class="banner__bg"
+          class="banner__bg banner__bg--small"
+          viewBox="0 0 343 550"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M343 39C343 30.1634 335.837 23 327 23L191.686 23C187.719 23 183.892 21.5257 180.95 18.8635L164.676 4.13646C161.734 1.47423 157.908 -1.38048e-05 153.941 -1.34579e-05L15.9999 -1.39876e-06C7.16339 -6.26248e-07 -4.74563e-05 7.16345 -4.66838e-05 16L-1.39876e-06 534C-6.26247e-07 542.837 7.16344 550 16 550L327 550C335.837 550 343 542.837 343 534L343 39Z"
+            fill="white"
+          />
+        </svg>
+        <svg
+          class="banner__bg banner__bg--big"
           viewBox="0 0 1300 320"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -28,14 +39,16 @@
           />
         </svg>
 
-        <div class="banner__info">
-          <h5 class="banner__info-name">{{ $t('speakers.banner.name') }}</h5>
-          <p class="text-sm">{{ $t('speakers.banner.role') }}</p>
+        <div class="banner__box">
+          <div class="banner__info">
+            <h5 class="banner__info-name">{{ $t('speakers.banner.name') }}</h5>
+            <p class="text-sm">{{ $t('speakers.banner.role') }}</p>
+          </div>
+          <UiPicture src="aleksei.jpg" alt="aleksei" class="banner__picture" />
         </div>
-        <UiPicture src="aleksei.jpg" alt="aleksei" class="banner__picture" />
         <div class="banner__content">
-          <h3 class="heading-ml banner__title">{{ $t('speakers.banner.title') }}</h3>
-          <p class="text-lg">
+          <h3 class="banner__title">{{ $t('speakers.banner.title') }}</h3>
+          <p class="banner__text">
             {{ $t('speakers.banner.text') }}
           </p>
         </div>
@@ -58,13 +71,15 @@ const { speakers } = useApiStore();
   position: relative;
   overflow: hidden;
   border-radius: max(2.4rem, 16px);
-  padding: max(3.6rem, 20px);
+  padding: max(3.6rem, 16px);
   display: grid;
-  grid-template-columns: 1fr 1.5fr 4.1fr;
-  @media screen and (max-width: vars.$bp-lg) {
+  grid-template-columns: 2.5fr 4.1fr;
+  @media screen and (max-width: vars.$bp-md) {
     grid-template-columns: 1fr;
-    background-color: #fff;
-    gap: 16px;
+    gap: 36px;
+    padding-top: 47px;
+    padding-bottom: 0;
+    padding-inline: 0;
   }
   &-container {
     padding-inline: var(--spacing-inline);
@@ -75,12 +90,23 @@ const { speakers } = useApiStore();
       padding-top: max(4rem, 32px);
     }
   }
-  &__picture {
-    @media screen and (min-width: vars.$bp-lg) {
-      transform: scale(1.35) translateX(-20%);
+  &__box {
+    position: relative;
+    @media screen and (max-width: vars.$bp-md) {
+      display: grid;
+      & > * {
+        grid-area: 1/1/2/2;
+      }
     }
-    @media screen and (max-width: vars.$bp-lg) {
-      order: -1;
+  }
+  &__picture {
+    width: 100%;
+    pointer-events: none;
+    @media screen and (min-width: vars.$bp-md) {
+      translate: 0 20%;
+      position: absolute;
+      right: 0;
+      bottom: 0;
     }
   }
   & > *:not(.banner__bg) {
@@ -89,8 +115,16 @@ const { speakers } = useApiStore();
   &__bg {
     position: absolute;
     inset: 0;
-    @media screen and (max-width: vars.$bp-lg) {
-      display: none;
+    pointer-events: none;
+    &--big {
+      @media screen and (max-width: vars.$bp-md) {
+        display: none;
+      }
+    }
+    &--small {
+      @media screen and (min-width: vars.$bp-md) {
+        display: none;
+      }
     }
   }
   &__content {
@@ -99,21 +133,31 @@ const { speakers } = useApiStore();
     gap: max(1.6rem, 10px);
     padding-top: 3.6rem;
     padding-right: 1.9rem;
-    @media screen and (max-width: vars.$bp-lg) {
+    @media screen and (max-width: vars.$bp-md) {
       padding-top: 0;
       padding-right: 0;
+      order: -1;
+      padding-inline: 16px;
     }
     p {
       line-height: 1.35;
     }
   }
+  &__text {
+    @include mix.text-lg(14px);
+  }
   &__title {
+    @include mix.heading-ml(20px);
     color: vars.$clr-text-primary;
   }
   &__info {
+    max-width: max(17rem, 170px);
     display: flex;
     flex-direction: column;
     gap: max(0.8rem, 4px);
+    @media screen and (max-width: vars.$bp-md) {
+      padding-inline: 16px;
+    }
     &-name {
       font-size: max(2.4rem, 18px);
       letter-spacing: -1.3px;
@@ -127,7 +171,7 @@ const { speakers } = useApiStore();
   column-gap: max(2.4rem, 16px);
   row-gap: max(3.2rem, 20px);
   &__card {
-    color: vars.$clr-text-primary;
+    --heading-color: #{vars.$clr-text-primary};
   }
 }
 </style>

@@ -24,7 +24,7 @@
         }"
       >
         <swiper-slide v-for="(speaker, i) in speakers" :key="i" class="speakers__slide">
-          <UiSpeakerCard :speaker />
+          <UiSpeakerCard :speaker class="speakers__slide-item" />
         </swiper-slide>
       </swiper-container>
 
@@ -91,6 +91,9 @@ const { speakers } = useApiStore();
 
   &__slide {
     display: flex;
+    &-item {
+      --heading-color: #fff;
+    }
   }
   &__description {
     opacity: 0.78;

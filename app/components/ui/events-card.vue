@@ -1,7 +1,19 @@
 <template>
   <div class="events-card">
     <svg
-      class="events-card__bg"
+      class="events-card__bg events-card__bg--mobile"
+      viewBox="0 0 343 550"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M343 511C343 519.837 335.837 527 327 527H191.686C187.719 527 183.892 528.474 180.95 531.136L164.676 545.864C161.735 548.526 157.908 550 153.941 550H16C7.16344 550 0 542.837 0 534V16C0 7.16343 7.16344 0 16 0H327C335.837 0 343 7.16344 343 16V511Z"
+        fill="white"
+      />
+    </svg>
+
+    <svg
+      class="events-card__bg events-card__bg--desktop"
       viewBox="0 0 1300 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +26,7 @@
     <UiPicture :src="event.image" alt="card picture" class="events-card__picture" />
     <div class="events-card__container">
       <div class="events-card__content">
-        <h3 class="heading-ml">{{ event.title }}</h3>
+        <h3 class="events-card__content-title">{{ event.title }}</h3>
         <p class="text-md">{{ event.description }}</p>
       </div>
       <div class="events-card__bottom">
@@ -52,7 +64,6 @@ defineProps({
   position: relative;
   @media screen and (max-width: vars.$bp-md) {
     grid-template-columns: 1fr;
-    background-color: #fff;
   }
   & > *:not(.events-card__bg) {
     z-index: 1;
@@ -60,8 +71,16 @@ defineProps({
   &__bg {
     position: absolute;
     inset: 0;
-    @media screen and (max-width: vars.$bp-md) {
-      display: none;
+    &--desktop {
+      @media screen and (max-width: vars.$bp-md) {
+        display: none;
+      }
+    }
+    &--mobile {
+      height: 100%;
+      @media screen and (min-width: vars.$bp-md) {
+        display: none;
+      }
     }
   }
   &__container {
@@ -70,19 +89,26 @@ defineProps({
     justify-content: space-between;
     padding-top: 6rem;
     padding-bottom: max(2rem, 16px);
-    padding-right: 3.2rem;
+    padding-right: max(3.2rem, 16px);
     @media screen and (max-width: vars.$bp-md) {
-      padding-left: 3.2rem;
+      padding-left: max(3.2rem, 16px);
       padding-top: 0;
+      padding-bottom: 47px;
       gap: max(2rem, 16px);
     }
   }
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: max(1.6rem, 10px);
+    &-title {
+      @include mix.heading-ml(20px);
+    }
   }
   &__picture {
+    @media screen and (max-width: vars.$bp-md) {
+      aspect-ratio: 343/240;
+    }
   }
   &__bottom {
     padding-top: max(2rem, 16px);
@@ -91,7 +117,7 @@ defineProps({
     justify-content: space-between;
     @media screen and (max-width: vars.$bp-sm) {
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
     }
   }
   &__col {

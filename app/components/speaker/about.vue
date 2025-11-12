@@ -43,7 +43,7 @@ defineProps({
 .about {
   display: flex;
   flex-direction: column;
-  gap: max(6rem, 30px);
+  gap: max(6rem, 36px);
   .section-header {
     padding-inline: var(--spacing-inline);
   }

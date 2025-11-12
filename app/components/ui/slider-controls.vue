@@ -62,6 +62,7 @@ onMounted(async () => {
 <style lang="scss" scoped>
 .slider-controls {
   z-index: 2;
+  max-width: 100%;
   display: flex;
   align-items: center;
   align-self: center;
@@ -98,6 +99,7 @@ onMounted(async () => {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: max(3.2rem, 16px);
   }
 

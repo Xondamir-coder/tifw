@@ -110,17 +110,10 @@ const items = computed(() => [
   }
   &__list {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 80%;
+    @include mix.grid-scroll($grid-width: 80%, $snap-align: center);
     gap: 12px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: 0;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    padding-inline: 12px;
     & > * {
-      scroll-snap-align: center;
       display: flex;
     }
     @media screen and (min-width: vars.$bp-lg) {

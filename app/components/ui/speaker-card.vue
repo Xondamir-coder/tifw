@@ -23,10 +23,12 @@ defineProps({
 .speaker-card {
   display: flex;
   flex-direction: column;
-  color: #fff;
   gap: max(2rem, 16px);
+  --text-color: #{vars.$clr-text-secondary};
+  --heading-color: #{vars.$clr-text-primary};
+
   &__name {
-    color: inherit;
+    color: var(--heading-color);
   }
   &__image {
     border-radius: max(1.2rem, 12px);

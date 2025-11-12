@@ -94,10 +94,17 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
   &__highlight {
     display: flex;
     flex-direction: column;
-    gap: max(6rem, 20px);
+    gap: max(6rem, 24px);
     &-item {
       border-radius: max(1.6rem, 10px);
       overflow: hidden;
+      display: flex;
+      &:first-child {
+        margin-left: 10px;
+      }
+      @media screen and (max-width: vars.$bp-md) {
+        aspect-ratio: 343/380;
+      }
     }
     h2 {
       padding-inline: var(--spacing-inline);
@@ -107,7 +114,7 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
     padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
-    gap: max(6rem, 20px);
+    gap: max(6rem, 24px);
     &-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(max(31rem, 210px), 1fr));
@@ -124,7 +131,11 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
       position: relative;
       padding: max(2.4rem, 20px);
       @media screen and (max-width: vars.$bp-md) {
-        gap: 10px;
+        gap: 20px;
+        aspect-ratio: initial;
+        p {
+          font-size: 10px;
+        }
       }
       &-bg {
         position: absolute;
@@ -152,7 +163,7 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
     flex-direction: column;
     gap: max(9rem, 20px);
     @media screen and (max-width: vars.$bp-md) {
-      gap: max(4rem, 20px);
+      gap: max(4rem, 36px);
       padding-block: max(4rem, 20px);
     }
     h2 {
@@ -163,7 +174,7 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
     padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
-    gap: max(3rem, 20px);
+    gap: max(3rem, 24px);
     &-item {
       background-color: vars.$clr-accent-primary;
       color: #fff;

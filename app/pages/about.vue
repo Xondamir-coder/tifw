@@ -6,7 +6,7 @@
         <UiPicture src="about-hero.jpg" alt="Conference meeting" class="hero__picture" />
         <div class="hero__overlay">
           <h1 class="heading-lg clr-white">{{ $t('about.hero.title') }}</h1>
-          <p class="section-subtitle hero__subtitle">{{ $t('about.hero.subtitle') }}</p>
+          <p class="section-subtitle">{{ $t('about.hero.subtitle') }}</p>
         </div>
       </div>
     </section>
@@ -71,27 +71,7 @@
       </section>
 
       <!-- Cards -->
-      <section class="cards">
-        <div class="cards__title-box">
-          <h2 v-for="i in 4" :key="i" class="cards__title">{{ $t('about.cards.title') }}</h2>
-        </div>
-        <div v-for="(item, index) in $tm('about.cards.texts')" :key="index" class="cards__item">
-          <UiPicture
-            :src="`about-card-${index + 1}.jpg`"
-            alt="text banner"
-            class="cards__item-image"
-          />
-          <div class="cards__item-box">
-            <h2 class="heading-lg">{{ $rt(item) }}</h2>
-          </div>
-        </div>
-        <div class="cards__scroll">
-          <h6 class="heading-sm clr-white">Scroll down</h6>
-          <div class="cards__scroll-bar">
-            <div class="cards__scroll-bar--inside"></div>
-          </div>
-        </div>
-      </section>
+      <AboutCards />
     </div>
 
     <!-- Venue Section -->
@@ -118,110 +98,21 @@
 
 <script setup>
 import { IconsCar, IconsLocation, IconsPhone, IconsTime } from '#components';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SplitText } from 'gsap/SplitText';
 
 const icons = [IconsLocation, IconsCar, IconsTime, IconsPhone];
-
-onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
-
-  // Split all h2s and set initial positions
-  const textSplits = gsap.utils.toArray('.cards__item h2').map(el => {
-    const split = SplitText.create(el, { type: 'chars', mask: 'chars', smartWrap: true });
-    gsap.set(split.chars, { xPercent: -150 });
-    return split;
-  });
-
-  // Fade out main title
-  gsap.to('.cards__title-box', {
-    opacity: 0,
-    scrollTrigger: {
-      trigger: '.cards',
-      start: 'center center',
-      end: '+=100%',
-      scrub: 1
-    }
-  });
-
-  // Main pinned scroll section
-  const masterTrigger = {
-    trigger: '.cards',
-    start: 'center center',
-    end: '+=600%',
-    scrub: 1
-  };
-  const master = gsap.timeline({
-    scrollTrigger: {
-      ...masterTrigger,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1
-    }
-  });
-
-  // Animate the scroll bar filling as the master timeline progresses
-  gsap.to('.cards__scroll-bar--inside', {
-    scaleX: 1,
-    ease: 'none',
-    scrollTrigger: masterTrigger
-  });
-
-  // --- CARD MOVEMENT ANIMATIONS ---
-  const cards = gsap.utils.toArray('.cards__item');
-  cards.forEach((card, i) => {
-    const image = card.firstElementChild;
-    const animProps = i === 0 ? { scale: 0.53, borderRadius: 236 } : { yPercent: 100 };
-
-    const cardTl = gsap.timeline();
-
-    // Animate current card in
-    cardTl.from(card, animProps);
-
-    // Animate text in
-    cardTl.to(textSplits[i].chars, { xPercent: 0 });
-
-    // Animate image zoom
-    cardTl.to(image, { scale: 1 }, 0);
-
-    // --- When a new card enters, shrink the previous one ---
-    if (i > 0) {
-      cardTl.to(
-        cards[i - 1],
-        {
-          scale: 0.9,
-          opacity: 0,
-          ease: 'power2.inOut'
-        },
-        0 // same time new card starts
-      );
-    }
-
-    master.add(cardTl, i === 0 ? 0 : '+=0.5');
-  });
-});
 </script>
 
 <style lang="scss" scoped>
-@keyframes travel {
-  from {
-    transform: translateX(-80%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
 .about {
   &__container {
-    padding-top: max(9rem, 16px);
+    padding-top: max(9rem, 32px);
     display: flex;
     flex-direction: column;
-    gap: max(9rem, 16px);
+    gap: max(9rem, 36px);
     background-color: #fff;
     @media screen and (max-width: vars.$bp-md) {
-      gap: max(4rem, 16px);
-      padding-top: max(4rem, 16px);
+      gap: max(4rem, 36px);
+      padding-top: max(4rem, 32px);
     }
   }
   .hero {
@@ -231,12 +122,21 @@ onMounted(() => {
     overflow: hidden;
     &__container {
       position: relative;
-      aspect-ratio: 1440/700;
+      min-height: calc(100vh - max(7.2rem, 72px));
       clip-path: polygon(0 100%, 0 0, 100% 0%, 100% 94%, 62.5% 94%, 60% 100%);
+      @media screen and (max-width: vars.$bp-md) {
+        clip-path: polygon(0 100%, 0 0, 100% 0%, 100% 95.5%, 48% 95.5%, 43% 100%);
+      }
     }
     &__picture {
       position: absolute;
       inset: 0;
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
     }
     &__overlay {
       position: absolute;
@@ -250,9 +150,9 @@ onMounted(() => {
       padding-bottom: max(4.5rem, 24px);
       color: #fff;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
-    }
-    &__subtitle {
-      color: rgba(#ffffff, 0.78);
+      @media screen and (max-width: vars.$bp-md) {
+        padding-bottom: 68px;
+      }
     }
   }
 
@@ -260,7 +160,7 @@ onMounted(() => {
     padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
-    gap: max(6.9rem, 40px);
+    gap: max(6.9rem, 24px);
 
     &__title {
       @include mix.heading-lg;
@@ -272,8 +172,17 @@ onMounted(() => {
 
     &__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(max(200px, 31rem), 1fr));
-      gap: max(2rem, 16px);
+      grid-template-columns: repeat(auto-fit, minmax(max(31rem, 210px), 1fr));
+      gap: max(2rem, 14px);
+      @media screen and (max-width: vars.$bp-md) {
+        @include mix.grid-scroll(180px);
+        h3 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 10px;
+        }
+      }
     }
 
     &__item {
@@ -297,93 +206,19 @@ onMounted(() => {
     }
   }
 
-  .cards {
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: 1440/800;
-
-    &__scroll {
-      position: absolute;
-      right: max(7rem, 16px);
-      bottom: max(7rem, 16px);
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      gap: max(2rem, 16px);
-      &-bar {
-        width: 36rem;
-        height: 8px;
-        background: #ffffff80;
-        backdrop-filter: blur(5px);
-        position: relative;
-        &--inside {
-          position: absolute;
-          inset: 0;
-          transform: scaleX(0);
-          transform-origin: left;
-          background-color: #fff;
-        }
-      }
-    }
-    &__title {
-      font-size: max(5.4rem, 35px);
-      line-height: 1.25;
-      letter-spacing: -1.3px;
-      color: rgba(vars.$clr-text-primary, 0.76);
-      &-box {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        translate: 0 -50%;
-        text-wrap: nowrap;
-        animation: travel 80s linear infinite;
-        display: flex;
-        gap: 10px;
-      }
-    }
-    &__item {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      overflow: hidden;
-      &:nth-child(2) {
-        border-radius: 47px;
-      }
-      &-box {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-        padding: max(7rem, 16px);
-      }
-      &-image {
-        transform: scale(1.3);
-      }
-      &:not(:nth-child(2)) {
-        border-radius: max(3.2rem, 20px);
-        .cards__item-image {
-          transform: scale(1.4);
-        }
-      }
-      & > * {
-        grid-area: 1/1/2/2;
-      }
-      h2 {
-        color: #fff;
-        max-width: 20ch;
-      }
-    }
-  }
   .team {
     padding-inline: var(--spacing-inline);
     display: flex;
     flex-direction: column;
-    gap: max(6rem, 40px);
+    gap: max(6rem, 24px);
 
     &__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(max(300px, 42rem), 1fr));
       gap: max(2rem, 16px);
+      @media screen and (max-width: vars.$bp-md) {
+        @include mix.grid-scroll(300px);
+      }
     }
 
     &__member {
@@ -402,7 +237,7 @@ onMounted(() => {
     &__image {
       z-index: 1;
       margin-top: auto;
-      flex-basis: 60%;
+      flex-basis: 70%;
     }
     &__content {
       z-index: 1;
@@ -415,18 +250,19 @@ onMounted(() => {
   .venue {
     padding-inline: var(--spacing-inline);
     background-color: vars.$clr-border;
-    padding-block: max(9rem, 16px);
+    padding-block: max(9rem, 36px);
     display: flex;
     flex-direction: column;
-    gap: max(6rem, 16px);
+    gap: max(6rem, 24px);
     @media screen and (max-width: vars.$bp-md) {
-      padding-block: max(4rem, 16px);
+      padding-block: max(4rem, 36px);
     }
     &__list {
       display: flex;
       flex-direction: column;
       gap: max(1.2rem, 10px);
       &:has(> *:nth-child(2)) {
+        padding-left: 16px;
         list-style-type: disc;
       }
     }
@@ -442,17 +278,18 @@ onMounted(() => {
       border-radius: max(2.4rem, 16px);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
       &-left {
         display: flex;
         flex-direction: column;
-        gap: max(3.2rem, 20px);
+        gap: max(3.2rem, 16px);
       }
       &-icon {
         width: max(4.2rem, 30px);
         fill: vars.$clr-accent;
       }
       &-title {
-        font-size: max(2.4rem, 20px);
+        font-size: max(2.4rem, 18px);
         font-weight: 700;
         color: vars.$clr-text-primary;
         line-height: 1.4;

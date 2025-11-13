@@ -56,7 +56,7 @@ defineProps({
   max-width: 47.3%;
   display: flex;
   flex-direction: column;
-  gap: max(2rem, 12px);
+  gap: max(2rem, 16px);
   background-color: #fff;
   position: relative;
   transition: all 1s;
@@ -65,6 +65,15 @@ defineProps({
   }
   @media screen and (max-width: vars.$bp-sm) {
     max-width: initial;
+    max-height: 93.3%;
+    align-self: flex-end;
+    overflow-y: auto;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    scrollbar-width: 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &__close {
     position: absolute;
@@ -88,6 +97,12 @@ defineProps({
   }
   &__picture {
     aspect-ratio: 680/320;
+    @media screen and (max-width: vars.$bp-sm) {
+      aspect-ratio: 375/240;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      flex-shrink: 0;
+    }
   }
   &__areas {
     display: flex;
@@ -126,9 +141,9 @@ defineProps({
     &-container {
       @include mix.flex-center;
       flex-shrink: 0;
-      width: max(8rem, 50px);
-      height: max(8rem, 50px);
-      border-radius: 12px;
+      width: max(8rem, 60px);
+      height: max(8rem, 60px);
+      border-radius: max(1.2rem, 9px);
       border: 0.8px solid #0000001f;
     }
   }
@@ -139,13 +154,13 @@ defineProps({
     &-container {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: max(0.8rem, 4px);
     }
   }
   &__container {
     display: flex;
     flex-direction: column;
-    gap: max(2rem, 12px);
+    gap: max(2rem, 16px);
     padding-inline: max(3rem, 16px);
     padding-bottom: max(2rem, 10px);
   }
@@ -168,6 +183,9 @@ defineProps({
   background-color: transparent;
   & > * {
     transform: translateX(100%);
+    @media screen and (max-width: vars.$bp-sm) {
+      transform: translateY(100%);
+    }
   }
 }
 </style>

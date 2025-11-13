@@ -35,7 +35,7 @@ defineProps({
   border-radius: max(2.4rem, 16px);
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: max(2.5rem, 22px);
   padding: max(2rem, 12px);
   fill: #fff;
   transition: fill 0.4s;
@@ -47,6 +47,9 @@ defineProps({
   }
   &__logo {
     width: 43%;
+    @media screen and (max-width: vars.$bp-md) {
+      width: 31%;
+    }
   }
   &__bg {
     position: absolute;

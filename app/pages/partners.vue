@@ -448,9 +448,10 @@ const participants = [
 
 <style lang="scss" scoped>
 .partners {
+  margin-top: -12px;
   display: flex;
   flex-direction: column;
-  gap: max(3rem, 20px);
+  gap: max(3rem, 24px);
 }
 .list {
   display: grid;

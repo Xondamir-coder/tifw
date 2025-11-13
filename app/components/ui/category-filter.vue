@@ -28,7 +28,7 @@ defineProps({
 .category-filter {
   align-self: flex-start;
   display: grid;
-  grid-template-columns: repeat(4, max(12rem, 100px));
+  grid-template-columns: repeat(4, max(12rem, 120px));
   border-radius: 12px;
   background-color: #fff;
   padding: 4px;

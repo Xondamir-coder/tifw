@@ -76,6 +76,9 @@ defineProps({
     @media screen and (min-width: vars.$bp-lg) {
       grid-column: 2/3;
     }
+    @media screen and (max-width: vars.$bp-sm) {
+      padding-inline: 16px;
+    }
     &-text {
       max-width: 50ch;
     }

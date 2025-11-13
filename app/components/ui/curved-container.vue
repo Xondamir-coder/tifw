@@ -24,10 +24,10 @@ defineProps({
 <style lang="scss" scoped>
 .curved-container {
   padding-inline: var(--spacing-inline);
-  padding-block: vars.$spacing-block;
+  padding-block: max(6rem, 20px);
   background-color: vars.$clr-border;
-  border-top-left-radius: max(3.2rem, 16px);
-  border-top-right-radius: max(3.2rem, 16px);
+  border-top-left-radius: max(3.2rem, 20px);
+  border-top-right-radius: max(3.2rem, 20px);
   display: flex;
   flex-direction: column;
   gap: max(6rem, 32px);

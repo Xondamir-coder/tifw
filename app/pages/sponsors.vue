@@ -5,7 +5,7 @@
         <UiGeneralCard :data="participant" />
       </button>
     </div>
-    <UiInfoModal v-model="showModal" :data="modalData" @close="showModal = false" />
+    <UiInfoModal v-model="showModal" :data="modalData" />
   </UiCurvedContainer>
 </template>
 

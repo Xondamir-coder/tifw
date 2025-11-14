@@ -151,7 +151,6 @@
         </clipPath>
       </defs>
     </svg>
-
     <div class="hero__container">
       <div class="hero__content">
         <h1 class="heading-xl">
@@ -180,16 +179,16 @@
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  min-height: calc(100vh - max(7.2rem, 72px));
   padding: 10rem;
   color: #fff;
-  @media screen and (max-width: vars.$bp-md) {
-  }
+  aspect-ratio: 1440/696;
 
   @media screen and (max-width: vars.$bp-md) {
     padding: max(4rem, 16px);
     padding-bottom: 88px;
+    aspect-ratio: 375/708;
   }
+
   &::after {
     content: '';
     position: absolute;
@@ -274,15 +273,9 @@
       }
     }
     &:last-of-type {
-      top: 0;
+      top: -20%;
       left: 0;
       width: 100%;
-      @media screen and (max-height: 850px) {
-        top: -20%;
-      }
-      @media screen and (max-height: 700px) {
-        top: -25%;
-      }
       @media screen and (min-width: vars.$bp-md) {
         display: none;
       }

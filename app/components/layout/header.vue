@@ -1,45 +1,70 @@
 <template>
-  <header class="header">
-    <NuxtLink :to="$localePath('/')" class="header__logo">
-      <SvgLogo />
-    </NuxtLink>
+  <header class="header" :class="{ active: showMenu }">
+    <div class="header__container">
+      <NuxtLink :to="$localePath('/')" class="header__logo">
+        <SvgLogo />
+      </NuxtLink>
 
-    <!-- Navigation -->
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li v-for="item in navLinks" :key="item.path" class="header__nav-item">
-          <NuxtLink
-            :to="$localePath(item.path)"
-            class="header__nav-link"
-            active-class="header__nav-link--active"
-            :class="{ 'header__nav-link--active': $route.name.includes(item.key) }"
-          >
-            {{ item.label }}
-          </NuxtLink>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Language Dropdown -->
-    <div class="header__lang">
-      <button class="header__lang-btn" @click="toggleDropdown">
-        <IconsGlobe class="header__lang-icon" />
-        <span>{{ locale }}</span>
-      </button>
-
-      <Transition name="fade">
-        <ul v-if="dropdownOpen" class="header__lang-list">
-          <li
-            v-for="lang in locales"
-            :key="lang.code"
-            class="header__lang-item"
-            @click="changeLang(lang.code)"
-          >
-            {{ lang.name }}
+      <!-- Navigation -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li v-for="item in navLinks" :key="item.path" class="header__nav-item">
+            <NuxtLink
+              :to="$localePath(item.path)"
+              class="header__nav-link"
+              active-class="header__nav-link--active"
+              :class="{ 'header__nav-link--active': $route.name.includes(item.key) }"
+            >
+              {{ item.label }}
+            </NuxtLink>
           </li>
         </ul>
-      </Transition>
+      </nav>
+
+      <!-- Language Dropdown -->
+      <div class="header__lang">
+        <button class="header__lang-btn" @click="toggleDropdown">
+          <IconsGlobe class="header__lang-icon" />
+          <span>{{ locale }}</span>
+        </button>
+
+        <Transition name="fade">
+          <ul v-if="dropdownOpen" class="header__lang-list">
+            <li
+              v-for="lang in locales"
+              :key="lang.code"
+              class="header__lang-item"
+              @click="changeLang(lang.code)"
+            >
+              {{ lang.name }}
+            </li>
+          </ul>
+        </Transition>
+      </div>
+
+      <!-- Ham -->
+      <button class="header__ham" :class="{ active: showMenu }" @click="showMenu = !showMenu">
+        <IconsHam class="header__ham-icon" />
+        <IconsX class="header__ham-icon" />
+      </button>
     </div>
+    <Transition name="menu">
+      <nav v-if="showMenu" class="header__menu">
+        <ul class="header__menu-list">
+          <li v-for="item in navLinks" :key="item.path" class="header__menu-item">
+            <NuxtLink
+              :to="$localePath(item.path)"
+              class="header__menu-link"
+              active-class="active"
+              :class="{ active: $route.name.includes(item.key) }"
+              @click="showMenu = !showMenu"
+            >
+              {{ item.label }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </nav>
+    </Transition>
   </header>
 </template>
 
@@ -48,6 +73,8 @@ const { locales, locale, setLocale } = useI18n();
 const { navLinks } = useNavLinks();
 
 const dropdownOpen = ref(false);
+const showMenu = useState('showMenu', () => false);
+
 const toggleDropdown = () => (dropdownOpen.value = !dropdownOpen.value);
 const changeLang = code => {
   setLocale(code);
@@ -67,17 +94,112 @@ onMounted(() => {
   padding-inline: var(--spacing-inline);
   color: #fff;
   font-size: max(1.2rem, 10px);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
   margin-bottom: max(2rem, 20px);
+  padding-top: 12px;
+  position: relative;
+  z-index: 5;
+
+  @media screen and (max-width: vars.$bp-md) {
+    transition: all 1s;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding-bottom: 16px;
+  }
+
+  &.active {
+    background: #031526;
+    padding-bottom: 310px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    @media screen and (max-width: vars.$bp-md) {
+      grid-template-columns: 1fr repeat(2, auto);
+      gap: 12px;
+    }
+  }
+  &__ham {
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    @media screen and (min-width: vars.$bp-md) {
+      display: none;
+    }
+    &.active .header__ham-icon {
+      &:first-child {
+        scale: 0;
+      }
+      &:last-child {
+        scale: 1;
+      }
+    }
+    &-icon {
+      grid-area: 1/1/2/2;
+      width: 50%;
+      transition: all 0.4s;
+      &:last-child {
+        stroke: #1e1e1e;
+        scale: 0;
+      }
+    }
+  }
   &__logo {
     display: flex;
     align-items: center;
     width: max(16.1rem, 162px);
   }
+  &__menu {
+    position: absolute;
+    width: calc(100% - 16px * 2);
+    left: 16px;
+    top: 64px;
+    @media screen and (min-width: vars.$bp-md) {
+      display: none;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    &-item {
+      display: flex;
+      &:first-child > * {
+        padding-top: 0;
+      }
+      &:last-child > * {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) > * {
+          transition-delay: 0.08s * $i;
+        }
+      }
+    }
+    &-link {
+      flex: 1;
+      padding-block: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 1s;
+    }
+  }
   &__nav {
     justify-self: center;
+    @media screen and (max-width: vars.$bp-md) {
+      display: none;
+    }
     &-list {
       padding-block: max(1.3rem, 10px);
       padding-inline: max(2rem, 14px);
@@ -86,9 +208,6 @@ onMounted(() => {
       gap: max(2.5rem, 14px);
       background: #034c8c8c;
       border-radius: 10px;
-      @media screen and (max-width: vars.$bp-md) {
-        display: none;
-      }
     }
 
     &-item {
@@ -150,10 +269,11 @@ onMounted(() => {
       gap: 8px;
       border: 1px solid #ffffff1f;
       background: #ffffff0a;
-      padding-block: max(1rem, 10px);
-      padding-inline: max(1.2rem, 12px);
-      border-radius: max(1rem, 10px);
+      padding-block: 10px;
+      padding-inline: 12px;
+      border-radius: 10px;
       text-transform: uppercase;
+      font-size: 12px;
     }
 
     &-icon {
@@ -193,5 +313,26 @@ onMounted(() => {
 .fade-leave-to {
   opacity: 0;
   transform: translateY(15px);
+}
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 1s;
+}
+.menu-leave-active {
+  a {
+    transition: all 0.4s !important;
+  }
+}
+.menu-enter-from {
+  a {
+    opacity: 0;
+    translate: -40px;
+  }
+}
+.menu-leave-to {
+  a {
+    opacity: 0;
+    translate: 0 -20px;
+  }
 }
 </style>

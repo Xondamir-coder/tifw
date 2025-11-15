@@ -1,47 +1,41 @@
 <template>
-  <Teleport to="body">
-    <Transition name="fade">
-      <div v-if="model" class="overlay" @click.self="model = false">
-        <div class="info-modal">
-          <button class="info-modal__close" @click="model = false">
-            <IconsX class="info-modal__close-icon" />
-          </button>
-          <UiPicture :src="data.image" :alt="data.text" class="info-modal__picture" />
-          <div class="info-modal__container">
-            <div class="info-modal__top">
-              <div class="info-modal__logo-container">
-                <component :is="data.logo" class="info-modal__logo" />
-              </div>
-              <div class="info-modal__top-container">
-                <h6 class="heading-sm">{{ data.name }}</h6>
-                <p class="text-sm">{{ data.text }}</p>
-              </div>
-            </div>
-            <p class="text-md">{{ data.description }}</p>
-            <div v-if="data?.areas" class="info-modal__areas">
-              <h6 class="heading-sm">{{ $t('info-modal.areas') }}</h6>
-              <ul class="info-modal__list">
-                <li v-for="(area, index) in data?.areas" :key="index" class="info-modal__item">
-                  <div class="info-modal__item-icon-container">
-                    <component :is="area.icon" class="info-modal__item-icon" />
-                  </div>
-                  <p class="info-modal__item-text text-sm">
-                    {{ area.text }}
-                  </p>
-                </li>
-              </ul>
-            </div>
+  <UiModalOverlay v-model="showInfoModal">
+    <div class="info-modal">
+      <button class="info-modal__close" @click="showInfoModal = false">
+        <IconsX class="info-modal__close-icon" />
+      </button>
+      <UiPicture :src="data.image" :alt="data.text" class="info-modal__picture" />
+      <div class="info-modal__container">
+        <div class="info-modal__top">
+          <div class="info-modal__logo-container">
+            <component :is="data.logo" class="info-modal__logo" />
+          </div>
+          <div class="info-modal__top-container">
+            <h6 class="heading-sm">{{ data.name }}</h6>
+            <p class="text-sm">{{ data.text }}</p>
           </div>
         </div>
+        <p class="text-md">{{ data.description }}</p>
+        <div v-if="data?.areas" class="info-modal__areas">
+          <h6 class="heading-sm">{{ $t('info-modal.areas') }}</h6>
+          <ul class="info-modal__list">
+            <li v-for="(area, index) in data?.areas" :key="index" class="info-modal__item">
+              <div class="info-modal__item-icon-container">
+                <component :is="area.icon" class="info-modal__item-icon" />
+              </div>
+              <p class="info-modal__item-text text-sm">
+                {{ area.text }}
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
-    </Transition>
-  </Teleport>
+    </div>
+  </UiModalOverlay>
 </template>
 
 <script setup>
-const model = defineModel({
-  type: Boolean
-});
+const showInfoModal = useState('showInfoModal');
 defineProps({
   data: {
     required: true,
@@ -52,29 +46,9 @@ defineProps({
 
 <style lang="scss" scoped>
 .info-modal {
-  flex: 1;
-  max-width: 47.3%;
   display: flex;
   flex-direction: column;
   gap: max(2rem, 16px);
-  background-color: #fff;
-  position: relative;
-  transition: all 1s;
-  @media screen and (max-width: vars.$bp-lg) {
-    max-width: 70%;
-  }
-  @media screen and (max-width: vars.$bp-sm) {
-    max-width: initial;
-    max-height: 93.3%;
-    align-self: flex-end;
-    overflow-y: auto;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    scrollbar-width: 0;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
   &__close {
     position: absolute;
     right: max(3rem, 16px);
@@ -96,12 +70,12 @@ defineProps({
     }
   }
   &__picture {
+    flex-shrink: 0;
     aspect-ratio: 680/320;
     @media screen and (max-width: vars.$bp-sm) {
       aspect-ratio: 375/240;
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
-      flex-shrink: 0;
     }
   }
   &__areas {
@@ -158,34 +132,12 @@ defineProps({
     }
   }
   &__container {
+    background-color: inherit;
     display: flex;
     flex-direction: column;
     gap: max(2rem, 16px);
     padding-inline: max(3rem, 16px);
     padding-bottom: max(2rem, 10px);
-  }
-}
-.overlay {
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 100;
-  cursor: pointer;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 1s;
-}
-.fade-enter-from,
-.fade-leave-to {
-  background-color: transparent;
-  & > * {
-    transform: translateX(100%);
-    @media screen and (max-width: vars.$bp-sm) {
-      transform: translateY(100%);
-    }
   }
 }
 </style>

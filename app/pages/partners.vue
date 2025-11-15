@@ -9,7 +9,8 @@
       </section>
       <UiFormSection :title="$t('become-partner')" :text="$t('partners.form-desc')" />
     </main>
-    <UiInfoModal v-model="showModal" :data="modalData" />
+    <UiInfoModal :data="modalData" />
+    <UiFormModal />
   </UiCurvedContainer>
 </template>
 
@@ -24,10 +25,10 @@ import {
   SvgZiraat
 } from '#components';
 
-const showModal = ref(false);
 const currentFilterID = ref(0);
+const showInfoModal = useState('showInfoModal', () => false);
 
-let modalData = {};
+const modalData = shallowRef({});
 const categories = [
   {
     label: 'All Partners',
@@ -48,8 +49,8 @@ const categories = [
 ];
 
 const handleModal = data => {
-  modalData = data;
-  showModal.value = true;
+  modalData.value = data;
+  showInfoModal.value = true;
 };
 
 const participants = [

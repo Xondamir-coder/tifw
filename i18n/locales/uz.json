@@ -10,18 +10,19 @@
   "highlights": "Diqqatga sazovor joylar",
 
   "nav": {
-    "about": "Biz haqimizda",
+    "about": "Biz",
     "events": "Tadbirlar",
     "participants": "Ishtirokchilar",
-    "speakers": "Ma'ruzachilar",
+    "speakers": "Spikerlar",
     "partners": "Hamkorlar",
     "sponsors": "Homiylar",
-    "media": "Media"
+    "media": "OAV"
   },
 
   "about": {
     "hero": {
-      "subtitle": "Expo — bu yirik ekspertlar, investorlar va yetakchi kompaniyalarni birlashtiruvchi xalqaro forum. Tajriba almashing, yangi aloqalar o‘rnating va kelajakni birgalikda yarating."
+      "title": "Bitta tajribda global tajriba",
+      "subtitle": "Expo — bu dunyo bo'ylab ekspertlar, investorlar va yetakchi kompaniyalarni birlashgan xalqaro forum. Tajriba almashish, yangi aloqalar va kelajakni shakllantirish uchun birgalik qilish."
     },
     "stats": {
       "title": "TIFW raqamlarda",
@@ -104,7 +105,8 @@
 
   "home": {
     "hero": {
-      "title": "Moliyaviy innovatsiyalar shu yerdan boshlanadi",
+      "title": "Moliyaviy innovatsiyalar",
+      "highlight": "shu yerdan boshlanadi",
       "subtitle": "Toshkentda moliya kelajagini shakllantirayotgan global yetakchilar, investorlar va innovatorlarga qo‘shiling.",
       "button": "Ro‘yxatdan o‘tish"
     },
@@ -124,9 +126,19 @@
       "title": "Ishtirokchilarimiz",
       "text": "Toshkent Xalqaro Moliya Haftaligi Markaziy Osiyoning turli davlatlaridan moliyachilar, siyosatchilar, tadbirkorlar va innovatorlarni birlashtiradi. Ular moliyaning kelajagini birgalikda shakllantiruvchi, hamkorlik va ishonch asosida rivojlanayotgan aqlli ekotizimni yaratadilar.",
       "sectors": ["Fintech", "Bank", "Sug‘urta"],
-      "stats": [
-        { "value": "1k+", "label": "Spikerlar" },
-        { "value": "100", "label": "Ishtirokchilar" }
+      "items": [
+        [
+          { "value": "1 ming", "label": "Spikerlar" },
+          { "value": "100", "label": "Ishtirokchilar" }
+        ],
+        [
+          { "value": "2 ming", "label": "Spikerlar" },
+          { "value": "200", "label": "Ishtirokchilar" }
+        ],
+        [
+          { "value": "3 ming", "label": "Spikerlar" },
+          { "value": "300", "label": "Ishtirokchilar" }
+        ]
       ]
     },
     "schedule": {
@@ -215,5 +227,27 @@
       "text-2": "Bozorlik tajribalari va ishoniy sifatiga ishoniy rekordi"
     },
     "schedule": "Spiker qayerda eshitish mumkin?"
+  },
+
+  "form-section": {
+    "text": "Bir necha daqiqada chiptani oling. Shaklni to'ldiring va Expoda o'z o'rningizni belgilang"
+  },
+
+  "form": {
+    "organization": {
+      "placeholder": "Tashkilot nomingiz",
+      "label": "Tashkilot"
+    },
+    "full-name": {
+      "placeholder": "Ismingizni kiriting",
+      "label": "To‘liq ism"
+    },
+    "mobile-phone": {
+      "placeholder": "Telefon raqamingizni kiriting",
+      "label": "Mobil telefon"
+    },
+    "send-request": "So‘rov yuborish",
+    "approval": "Ro‘yxatdan o‘tish orqali siz o‘qib chiqqan va rozi ekanligingizni tasdiqlaysiz",
+    "policy": "Maxfiylik siyosati"
   }
 }

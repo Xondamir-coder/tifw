@@ -4,7 +4,7 @@
       v-for="(item, index) in items"
       :key="index"
       class="category-filter__item"
-      :class="{ 'category-filter__item--active': model === item.id }"
+      :class="{ active: model === item.id }"
       @click="model = item.id"
     >
       {{ item.label }}
@@ -53,10 +53,32 @@ defineProps({
     padding-block: 8px;
     border-radius: 10px;
     transition: all 0.4s;
-
-    &--active {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      scale: 1 0;
+      transform-origin: bottom;
+      transition: all 0.4s;
+      z-index: -1;
       background-color: vars.$clr-blue-light;
+    }
+    &:not(.active):hover {
+      color: vars.$clr-blue-light;
+    }
+    &.active {
       color: #fff;
+      &::after {
+        scale: 1;
+      }
     }
   }
 }

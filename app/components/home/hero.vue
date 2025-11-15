@@ -161,10 +161,7 @@
           {{ $t('home.hero.subtitle') }}
         </p>
       </div>
-      <button class="hero__button">
-        <span>{{ $t('become-sponsor') }}</span>
-        <IconsArrowRight class="hero__button-icon" />
-      </button>
+      <UiButton :label="$t('become-sponsor')" />
     </div>
   </section>
 </template>
@@ -263,6 +260,7 @@
   &__background {
     position: absolute;
     z-index: 1;
+    pointer-events: none;
     &:first-of-type {
       left: 50%;
       translate: -50%;

@@ -38,7 +38,7 @@ defineProps({
   gap: max(2.5rem, 22px);
   padding: max(2rem, 12px);
   fill: #fff;
-  transition: fill 0.4s;
+  transition: all 0.4s;
   &:hover {
     fill: vars.$clr-bg-light;
   }

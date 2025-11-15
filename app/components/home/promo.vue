@@ -3,10 +3,7 @@
     <div v-for="(item, i) in $tm('home.promo.blocks')" :key="i" class="promo__block">
       <div class="promo__content">
         <h3 class="promo__title">{{ $rt(item.title) }}</h3>
-        <NuxtLink :to="$localePath('/about')" class="promo__button">
-          {{ $t('home.promo.button') }}
-          <IconsArrowRight class="promo__icon" />
-        </NuxtLink>
+        <UiButton :link="$localePath('/about')" :label="$t('home.promo.button')" />
       </div>
       <UiPicture :src="`promo-${i + 1}.png`" :alt="$rt(item.title)" class="promo__image" />
     </div>

@@ -15,12 +15,13 @@
     <div class="form-section__content">
       <h3 class="heading-ml">{{ title }}</h3>
       <p class="form-section__content-text text-lg">{{ text }}</p>
-      <UiButton :label="$t('submit-application')" />
+      <UiButton :label="$t('submit-application')" @click="showFormModal = true" />
     </div>
   </div>
 </template>
 
 <script setup>
+const showFormModal = useState('showFormModal', () => false);
 defineProps({
   title: {
     required: true,

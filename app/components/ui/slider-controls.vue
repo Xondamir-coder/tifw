@@ -78,20 +78,21 @@ onMounted(async () => {
     border: 1px solid #ffffff1f;
     border-radius: 4px;
     transition: all 0.4s;
+    stroke: #fff;
+    fill: none;
     &:not(:disabled):hover {
-      background-color: #fff;
+      border-color: #fff;
+      border-radius: 50%;
       svg {
-        stroke: #000;
+        scale: 0.85;
       }
     }
     &:disabled {
       opacity: 0.25;
     }
     svg {
-      fill: none;
-      stroke: #fff;
       width: 48%;
-      transition: stroke 0.4s;
+      transition: all 0.4s;
     }
   }
 

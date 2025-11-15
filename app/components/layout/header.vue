@@ -29,16 +29,17 @@
         </button>
 
         <Transition name="fade">
-          <ul v-if="dropdownOpen" class="header__lang-list">
-            <li
-              v-for="lang in locales"
-              :key="lang.code"
+          <div v-if="dropdownOpen" class="header__lang-list">
+            <button
+              v-for="code in localeCodes"
+              :key="code"
               class="header__lang-item"
-              @click="changeLang(lang.code)"
+              :class="{ active: code === locale }"
+              @click="changeLang(code)"
             >
-              {{ lang.name }}
-            </li>
-          </ul>
+              {{ code }}
+            </button>
+          </div>
         </Transition>
       </div>
 
@@ -69,8 +70,9 @@
 </template>
 
 <script setup>
-const { locales, locale, setLocale } = useI18n();
+const { localeCodes, locale, setLocale } = useI18n();
 const { navLinks } = useNavLinks();
+const { $lenis } = useNuxtApp();
 
 const dropdownOpen = ref(false);
 const showMenu = useState('showMenu', () => false);
@@ -80,6 +82,13 @@ const changeLang = code => {
   setLocale(code);
   dropdownOpen.value = false;
 };
+
+watchEffect(() => {
+  if (!import.meta.client) return;
+  document.body.classList.toggle('overflow-hidden', showMenu.value);
+  if (showMenu.value) $lenis.stop();
+  else $lenis.start();
+});
 
 onMounted(() => {
   document.addEventListener('click', e => {
@@ -105,8 +114,23 @@ onMounted(() => {
     width: 100%;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 10;
     padding-bottom: 16px;
+    & > * {
+      z-index: 5;
+      position: relative;
+    }
+  }
+
+  &::before {
+    content: '';
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    background-color: #00000080;
+    z-index: 3;
+    transition: all 1s;
   }
 
   &.active {
@@ -114,6 +138,10 @@ onMounted(() => {
     padding-bottom: 310px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    &::before {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 
   &__container {
@@ -211,10 +239,11 @@ onMounted(() => {
     }
 
     &-item {
+      $position: -5px;
       display: flex;
       align-items: center;
       position: relative;
-      &:not(:last-child)::after {
+      &:not(:last-child) > *::before {
         content: '';
         background-color: rgba(#ffffff, 0.1);
         height: 100%;
@@ -222,6 +251,32 @@ onMounted(() => {
         position: absolute;
         right: calc(max(2.5rem, 14px) / -2);
         top: 0;
+      }
+      &:hover {
+        &::before,
+        &::after {
+          scale: 1;
+        }
+      }
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 120%;
+        left: 50%;
+        background-color: vars.$clr-bg-light;
+        translate: -50%;
+        scale: 0 1;
+        transition: all 0.4s;
+      }
+      &::before {
+        top: $position;
+        transform-origin: left;
+      }
+      &::after {
+        bottom: $position;
+        transform-origin: right;
       }
     }
 
@@ -274,33 +329,50 @@ onMounted(() => {
       border-radius: 10px;
       text-transform: uppercase;
       font-size: 12px;
+      fill: #fff;
+      transition: all 0.3s;
+      &:hover {
+        border-color: vars.$clr-accent;
+        color: vars.$clr-accent;
+        fill: vars.$clr-accent;
+      }
     }
 
     &-icon {
       width: 20px;
       transition: transform 0.4s;
-      fill: #fff;
     }
 
     &-list {
       position: absolute;
+      width: 100%;
       right: 0;
-      top: 120%;
-      background: #fff;
-      color: #333;
-      border-radius: max(0.4rem, 4px);
+      top: calc(100% + 8px);
+      color: #fff;
+      background: #ffffff1f;
+      border-radius: 6px;
       box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
-      padding: max(0.4rem, 4px) 0;
+      padding: 4px;
       z-index: 10;
+      display: flex;
+      flex-direction: column;
     }
 
     &-item {
-      padding: max(0.5rem, 8px) max(1rem, 12px);
-      cursor: pointer;
-      transition: background 0.4s;
-
+      font-size: 12px;
+      font-weight: 500;
+      padding-block: 9px;
+      text-transform: uppercase;
+      line-height: 1.25;
+      border-radius: 4px;
+      transition: all 0.3s;
+      @include mix.flex-center;
       &:hover {
-        background: #f2f2f2;
+        translate: 0 -3px;
+      }
+      &.active {
+        background-color: #fff;
+        color: #1f2937;
       }
     }
   }

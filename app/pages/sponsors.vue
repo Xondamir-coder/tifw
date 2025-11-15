@@ -5,7 +5,7 @@
         <UiGeneralCard :data="participant" />
       </button>
     </div>
-    <UiInfoModal v-model="showModal" :data="modalData" />
+    <UiInfoModal :data="modalData" />
   </UiCurvedContainer>
 </template>
 
@@ -20,12 +20,12 @@ import {
   SvgZiraat
 } from '#components';
 
-const showModal = ref(false);
-let modalData = {};
+const showInfoModal = useState('showInfoModal', () => false);
+const modalData = shallowRef({});
 
 const handleModal = data => {
-  modalData = data;
-  showModal.value = true;
+  modalData.value = data;
+  showInfoModal.value = true;
 };
 
 const participants = [

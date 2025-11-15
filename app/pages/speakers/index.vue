@@ -44,7 +44,7 @@
             <h5 class="banner__info-name">{{ $t('speakers.banner.name') }}</h5>
             <p class="text-sm">{{ $t('speakers.banner.role') }}</p>
           </div>
-          <UiPicture src="aleksei.jpg" alt="aleksei" class="banner__picture" />
+          <UiPicture src="aleksei.png" alt="aleksei" class="banner__picture" />
         </div>
         <div class="banner__content">
           <h3 class="banner__title">{{ $t('speakers.banner.title') }}</h3>

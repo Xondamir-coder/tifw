@@ -127,9 +127,19 @@
       "title": "Our Participants",
       "text": "Tashkent International Finance Week brings together visionaries from across Central Asia — financiers, policymakers, entrepreneurs, and innovators. Together, they represent the driving force behind a smarter, more connected financial future built on collaboration, innovation, and trust.",
       "sectors": ["Fintech", "Banking", "Insurance"],
-      "stats": [
-        { "value": "1k+", "label": "Speakers" },
-        { "value": "100", "label": "Participants" }
+      "items": [
+        [
+          { "value": "1k+", "label": "Speakers" },
+          { "value": "100", "label": "Participants" }
+        ],
+        [
+          { "value": "2k+", "label": "Speakers" },
+          { "value": "200", "label": "Participants" }
+        ],
+        [
+          { "value": "3k+", "label": "Speakers" },
+          { "value": "300", "label": "Participants" }
+        ]
       ]
     },
     "schedule": {
@@ -218,5 +228,27 @@
       "text-2": "Market experience and track record of trust"
     },
     "schedule": "Where can I hear the speaker"
+  },
+
+  "form-modal": {
+    "text": "Get your ticket in minutes. Fill out the form and secure your spot at the Expo"
+  },
+
+  "form": {
+    "organization": {
+      "placeholder": "Your organization name",
+      "label": "Organization"
+    },
+    "full-name": {
+      "placeholder": "Enter your name",
+      "label": "Full name"
+    },
+    "mobile-phone": {
+      "placeholder": "Enter your number",
+      "label": "Mobile phone"
+    },
+    "send-request": "Send request",
+    "approval": "By registering, you confirm that you have read and agree with",
+    "policy": "Privacy policy"
   }
 }

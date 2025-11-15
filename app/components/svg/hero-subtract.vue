@@ -6,17 +6,6 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <foreignObject x="-32" y="-32" width="1504" height="864"
-      ><div
-        xmlns="http://www.w3.org/1999/xhtml"
-        style="
-          backdrop-filter: blur(16px);
-          clip-path: url(#bgblur_0_114_812_clip_path);
-          height: 100%;
-          width: 100%;
-        "
-      ></div
-    ></foreignObject>
     <path
       data-figma-bg-blur-radius="32"
       d="M1440 788C1440 794.627 1434.63 800 1428 800H12C5.37257 800 0 794.627 0 788V12C0 5.37257 5.37258 0 12 0H426C432.627 0 438 5.37258 438 12V52C438 58.6274 443.373 64 450 64H991C997.627 64 1003 58.6274 1003 52V12C1003 5.37258 1008.37 0 1015 0H1428C1434.63 0 1440 5.37258 1440 12V788Z"

@@ -23,29 +23,34 @@
         </button>
       </div>
 
-      <!-- Right image + stats -->
+      <!-- Desktop -->
       <div class="participants-info__image-box">
         <Transition name="fade">
-          <UiPicture :key="activeIndex" :src="images[activeIndex]" alt="Payment terminal" />
+          <UiPicture :key="activeIndex" :src="items[activeIndex].image" alt="Payment terminal" />
         </Transition>
 
         <Transition name="slide">
           <div :key="activeIndex" class="participants-info__stats">
-            <div v-for="(item, i) in items[activeIndex]" :key="i" class="participants-info__stat">
-              <h3 class="heading-md">{{ $rt(item.value) }}</h3>
-              <p class="text-md participants-info__stat-label">{{ $rt(item.label) }}</p>
+            <div
+              v-for="(stat, i) in items[activeIndex].stats"
+              :key="i"
+              class="participants-info__stat"
+            >
+              <h3 class="heading-md">{{ stat.value }}</h3>
+              <p class="text-md participants-info__stat-label">{{ stat.label }}</p>
             </div>
           </div>
         </Transition>
       </div>
 
+      <!-- Mobile -->
       <div class="participants-info__list">
         <div v-for="(item, index) in items" :key="index" class="participants-info__image-box">
-          <UiPicture :src="images[index]" alt="Payment terminal" />
+          <UiPicture :src="items[activeIndex].image" alt="Payment terminal" />
           <div class="participants-info__stats">
-            <div v-for="(detail, i) in item" :key="i" class="participants-info__stat">
-              <h3 class="heading-md">{{ $rt(detail.value) }}</h3>
-              <p class="text-md participants-info__stat-label">{{ $rt(detail.label) }}</p>
+            <div v-for="(stat, i) in item.stats" :key="i" class="participants-info__stat">
+              <h3 class="heading-md">{{ stat.value }}</h3>
+              <p class="text-md participants-info__stat-label">{{ stat.label }}</p>
             </div>
           </div>
         </div>
@@ -56,13 +61,16 @@
 
 <script setup>
 const { tm } = useI18n();
+
 const activeIndex = ref(0);
-const images = Array(3).fill('participants-info.jpg');
-const items = computed(() => [
-  tm('home.participants-info.stats'),
-  tm('home.participants-info.stats'),
-  tm('home.participants-info.stats')
-]);
+const images = ['participants-info-1.jpg', 'participants-info-2.jpg', 'participants-info-3.jpg'];
+
+const items = computed(() =>
+  images.map((image, i) => ({
+    image,
+    stats: tm('home.participants-info.items')[i].map(useMapRt)
+  }))
+);
 </script>
 
 <style lang="scss" scoped>

@@ -25,14 +25,11 @@
 </template>
 
 <script setup>
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+const { $gsap } = useNuxtApp();
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger, SplitText);
-
-  const masterTimeline = gsap.timeline({
+  const masterTimeline = $gsap.timeline({
     scrollTrigger: {
       trigger: '.about',
       start: 'center center',
@@ -75,7 +72,7 @@ onMounted(() => {
     smartWrap: true
   });
 
-  const typographyTimeline = gsap.timeline({
+  const typographyTimeline = $gsap.timeline({
     scrollTrigger: {
       trigger: '.about',
       start: 'center center',

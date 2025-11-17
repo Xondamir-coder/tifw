@@ -1,14 +1,21 @@
 <template>
   <div class="curved-container">
     <div class="section-header">
-      <h1 class="heading-lg">{{ title }}</h1>
-      <p class="section-subtitle">{{ text }}</p>
+      <h1 class="heading-lg">
+        {{ title }}
+      </h1>
+      <p class="section-subtitle">
+        {{ text }}
+      </p>
     </div>
     <slot />
   </div>
 </template>
 
 <script setup>
+import { SplitText } from 'gsap/SplitText';
+
+const { $gsap } = useNuxtApp();
 defineProps({
   title: {
     default: '',
@@ -18,6 +25,28 @@ defineProps({
     default: '',
     type: String
   }
+});
+onMounted(() => {
+  const titleSplit = SplitText.create('.section-header h1', {
+    mask: 'chars',
+    type: 'chars'
+  });
+  const textSplit = SplitText.create('.section-header p', {
+    mask: 'lines',
+    type: 'lines'
+  });
+  $gsap.set('.section-header>*', {
+    opacity: 1
+  });
+  $gsap.from(titleSplit.chars, {
+    xPercent: -100,
+    yPercent: 20,
+    stagger: 0.05
+  });
+  $gsap.from(textSplit.lines, {
+    yPercent: 100,
+    stagger: 0.1
+  });
 });
 </script>
 
@@ -31,5 +60,8 @@ defineProps({
   display: flex;
   flex-direction: column;
   gap: max(6rem, 32px);
+  .section-header > * {
+    opacity: 0;
+  }
 }
 </style>

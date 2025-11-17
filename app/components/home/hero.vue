@@ -153,24 +153,67 @@
     </svg>
     <div class="hero__container">
       <div class="hero__content">
-        <h1 class="heading-xl">
+        <h1 ref="titleRef" class="heading-xl">
           <span>{{ $t('home.hero.title') }}</span>
           <span class="hero__highlight">{{ $t('home.hero.highlight') }}</span>
         </h1>
-        <p class="text-lg">
+        <p ref="textRef" class="text-lg">
           {{ $t('home.hero.subtitle') }}
         </p>
       </div>
-      <UiButton :label="$t('become-sponsor')" />
+      <UiButton :label="$t('become-sponsor')" link="/sponsors" />
     </div>
   </section>
 </template>
 
 <script setup>
-// static for now
+import { SplitText } from 'gsap/SplitText';
+const { $gsap } = useNuxtApp();
+
+const titleRef = ref();
+const textRef = ref();
+
+onMounted(() => {
+  const titleSplit = SplitText.create(titleRef.value, {
+    type: 'words',
+    mask: 'words'
+  });
+  const textSplit = SplitText.create(textRef.value, {
+    type: 'lines',
+    mask: 'lines'
+  });
+
+  const tl = $gsap.timeline({
+    defaults: {
+      yPercent: 100,
+      stagger: 0.1,
+      duration: 1,
+      ease: 'power3.out'
+    }
+  });
+  $gsap.set([titleRef.value, textRef.value], {
+    opacity: 1
+  });
+  tl.from(titleSplit.words, {});
+  tl.from(
+    textSplit.lines,
+    {
+      stagger: 0.2
+    },
+    '-=1'
+  );
+});
 </script>
 
 <style lang="scss" scoped>
+@keyframes pattern-appear {
+  from {
+    clip-path: inset(0px 100%);
+  }
+  to {
+    clip-path: inset(0px 0px);
+  }
+}
 .hero {
   position: relative;
   overflow: hidden;
@@ -197,6 +240,7 @@
     min-width: 252px;
     background-color: vars.$clr-accent-hover;
     clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+    animation: appear 1s 0.5s backwards;
   }
   &__container {
     flex: 1;
@@ -215,6 +259,9 @@
     display: flex;
     flex-direction: column;
     gap: max(3.2rem, 16px);
+    & > * {
+      opacity: 0;
+    }
     h1 {
       display: flex;
       flex-direction: column;
@@ -261,6 +308,7 @@
     position: absolute;
     z-index: 1;
     pointer-events: none;
+    animation: pattern-appear 2s;
     &:first-of-type {
       left: 50%;
       translate: -50%;

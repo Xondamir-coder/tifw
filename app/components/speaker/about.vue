@@ -2,9 +2,11 @@
   <section class="about">
     <div class="section-header">
       <h2 class="heading-lg clr-white">
-        {{ $t('nav.about') }}
+        <span class="clr-accent-primary">{{ $t('nav.about') }}</span>
       </h2>
-      <p class="section-subtitle clr-white">{{ description }}</p>
+      <p class="section-subtitle clr-white">
+        <span class="clr-accent-primary">{{ description }}</span>
+      </p>
     </div>
     <UiLogoSlider :logos />
   </section>

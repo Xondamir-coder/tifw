@@ -13,8 +13,14 @@
     </svg>
     <UiPicture src="briefcase.png" alt="briefcase" class="form-section__picture" />
     <div class="form-section__content">
-      <h3 class="heading-ml">{{ title }}</h3>
-      <p class="form-section__content-text text-lg">{{ text }}</p>
+      <h2 class="heading-ml">
+        <span>{{ title }}</span>
+        <span>{{ title }}</span>
+      </h2>
+      <p class="form-section__content-text text-lg">
+        <span>{{ text }}</span>
+        <span>{{ text }}</span>
+      </p>
       <UiButton :label="$t('submit-application')" @click="showFormModal = true" />
     </div>
   </div>
@@ -22,6 +28,8 @@
 
 <script setup>
 const showFormModal = useState('showFormModal', () => false);
+const { $gsap } = useNuxtApp();
+
 defineProps({
   title: {
     required: true,
@@ -31,6 +39,17 @@ defineProps({
     required: true,
     type: String
   }
+});
+
+onMounted(() => {
+  $gsap.utils
+    .toArray('.form-section__content h2>*:last-child, .form-section__content p>*:last-child')
+    .map(el => {
+      $gsap.from(el, {
+        clipPath: 'inset(0 0 100%)',
+        scrollTrigger: getDefaultScrollTrigger(el)
+      });
+    });
 });
 </script>
 
@@ -82,6 +101,22 @@ defineProps({
     }
     &-text {
       max-width: 50ch;
+      color: vars.$clr-text-secondary;
+    }
+    h2,
+    p {
+      position: relative;
+
+      & > * {
+        &:first-child {
+          color: vars.$clr-bg-light;
+        }
+        &:last-child {
+          position: absolute;
+          inset: 0;
+          clip-path: inset(0 0 0%);
+        }
+      }
     }
   }
 }

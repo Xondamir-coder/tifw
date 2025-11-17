@@ -4,18 +4,15 @@
     <div class="speaker__container">
       <SpeakerAbout :description="speaker.description" />
       <section class="speaker__schedule">
-        <h2 class="heading-lg">{{ $t('speaker.schedule') }}</h2>
-        <div class="speaker__schedule-list">
-          <UiScheduleCard
-            v-for="(event, index) in speaker.events"
-            :key="index"
-            :data="event"
-            class="speaker__schedule-item"
-          />
-        </div>
+        <h2 class="heading-lg">
+          <span class="clr-accent-primary">{{ $t('speaker.schedule') }}</span>
+        </h2>
+        <UiScheduleCards :items="speaker.events" class="speaker__schedule-list" />
       </section>
       <section class="speaker__focus">
-        <h2 class="heading-lg">{{ $t('exhibition-focus') }}</h2>
+        <h2 class="heading-lg">
+          <span class="clr-accent-primary">{{ $t('exhibition-focus') }}</span>
+        </h2>
         <ul class="speaker__focus-list">
           <li v-for="(item, index) in focusList" :key="index" class="speaker__focus-item">
             <svg
@@ -38,7 +35,9 @@
         </ul>
       </section>
       <section class="speaker__highlight">
-        <h2 class="heading-lg">{{ $t('highlights') }}</h2>
+        <h2 class="heading-lg">
+          <span class="clr-accent-primary">{{ $t('highlights') }}</span>
+        </h2>
         <ClientOnly>
           <swiper-container
             space-between="16"
@@ -87,9 +86,55 @@ const images = [
 ];
 
 const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
+
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  $gsap.utils.toArray('.logo-slider').forEach((s, i) => {
+    $gsap.from(s, {
+      xPercent: i % 2 === 0 ? -50 : 50,
+      ease: 'none',
+      scrollTrigger: getDefaultScrollTrigger(s, { start: 'top-=300 bottom', end: 'bottom top' })
+    });
+  });
+
+  useAnimateTypography();
+
+  const animateEl = el => {
+    const content = el.textContent;
+    const span = document.createElement('span');
+    span.textContent = content;
+    el.classList.add('animate-typography');
+    el.appendChild(span);
+    $gsap.from(span, {
+      clipPath: 'inset(0 0 100%)',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 90%',
+        end: 'top 60%',
+        scrub: 1
+      }
+    });
+  };
+  $gsap.utils.toArray('section > h2.heading-lg').forEach(animateEl);
+
+  $gsap.from('.speaker__focus-item', {
+    opacity: 0,
+    y: 20,
+    stagger: 0.2,
+    scrollTrigger: getDefaultScrollTrigger('.speaker__focus-list')
+  });
+});
 </script>
 
 <style lang="scss" scoped>
+.animate-typography {
+  position: relative;
+  & > *:last-child {
+    position: absolute;
+    inset: 0;
+  }
+}
 .speaker {
   &__highlight {
     display: flex;
@@ -107,7 +152,7 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
       }
     }
     h2 {
-      padding-inline: var(--spacing-inline);
+      margin-inline: var(--spacing-inline);
     }
   }
   &__focus {
@@ -175,16 +220,11 @@ const speaker = computed(() => speakers.find(el => el.id === +route.params.id));
     display: flex;
     flex-direction: column;
     gap: max(3rem, 24px);
-    &-item {
+    &-list > * {
       background-color: vars.$clr-accent-primary;
       color: #fff;
       --info-color: inherit;
       --date-color: inherit;
-    }
-    &-list {
-      display: flex;
-      flex-direction: column;
-      gap: max(1.6rem, 12px);
     }
   }
 }

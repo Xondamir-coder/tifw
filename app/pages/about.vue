@@ -5,8 +5,8 @@
       <div class="hero__container">
         <UiPicture src="about-hero.jpg" alt="Conference meeting" class="hero__picture" />
         <div class="hero__overlay">
-          <h1 class="heading-lg clr-white">{{ $t('about.hero.title') }}</h1>
-          <p class="section-subtitle">{{ $t('about.hero.subtitle') }}</p>
+          <h1 ref="titleRef" class="heading-lg clr-white">{{ $t('about.hero.title') }}</h1>
+          <p ref="textRef" class="section-subtitle">{{ $t('about.hero.subtitle') }}</p>
         </div>
       </div>
     </section>
@@ -15,8 +15,12 @@
       <!-- Stats Section -->
       <section class="stats">
         <div class="section-header">
-          <h2 class="heading-lg">{{ $t('about.stats.title') }}</h2>
-          <p class="section-subtitle">{{ $t('about.stats.description') }}</p>
+          <h2 class="heading-lg">
+            <span class="clr-border">{{ $t('about.stats.title') }}</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="clr-border">{{ $t('about.stats.description') }}</span>
+          </p>
         </div>
         <div class="stats__grid">
           <div v-for="(item, index) in $tm('about.stats.items')" :key="index" class="stats__item">
@@ -40,8 +44,12 @@
       <!-- Team Section -->
       <section class="team">
         <div class="section-header">
-          <h2 class="heading-lg">{{ $t('about.team.title') }}</h2>
-          <p class="section-subtitle">{{ $t('about.team.description') }}</p>
+          <h2 class="heading-lg">
+            <span class="clr-border">{{ $t('about.team.title') }}</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="clr-border">{{ $t('about.team.description') }}</span>
+          </p>
         </div>
 
         <ul class="team__grid">
@@ -77,8 +85,12 @@
     <!-- Venue Section -->
     <section class="venue">
       <div class="section-header">
-        <h2 class="heading-lg">{{ $t('about.venue.title') }}</h2>
-        <p class="section-subtitle">{{ $t('about.venue.description') }}</p>
+        <h2 class="heading-lg">
+          <span class="clr-bg-light">{{ $t('about.venue.title') }}</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="clr-bg-light">{{ $t('about.venue.description') }}</span>
+        </p>
       </div>
 
       <ul class="venue__details">
@@ -98,11 +110,77 @@
 
 <script setup>
 import { IconsCar, IconsLocation, IconsPhone, IconsTime } from '#components';
+import { SplitText } from 'gsap/SplitText';
 
 const icons = [IconsLocation, IconsCar, IconsTime, IconsPhone];
+const { $gsap } = useNuxtApp();
+
+const titleRef = ref();
+const textRef = ref();
+
+onMounted(() => {
+  useAnimateTypography();
+
+  $gsap.from('.stats__item', {
+    scale: 0.85,
+    stagger: 0.1,
+    opacity: 0,
+    scrollTrigger: getDefaultScrollTrigger('.stats__grid')
+  });
+
+  $gsap.from('.team__member', {
+    yPercent: 10,
+    stagger: 0.1,
+    opacity: 0,
+    scrollTrigger: getDefaultScrollTrigger('.team__grid')
+  });
+
+  $gsap.utils.toArray('.venue__item').forEach(el => {
+    $gsap.from(el, {
+      y: 25,
+      opacity: 0,
+      scrollTrigger: getDefaultScrollTrigger(el)
+    });
+  });
+
+  const titleSplit = SplitText.create(titleRef.value, {
+    type: 'words',
+    mask: 'words'
+  });
+  const textSplit = SplitText.create(textRef.value, {
+    type: 'lines',
+    mask: 'lines'
+  });
+
+  const tl = $gsap.timeline({
+    defaults: {
+      yPercent: 100,
+      stagger: 0.05,
+      duration: 1,
+      ease: 'power3.out'
+    }
+  });
+  $gsap.set([titleRef.value, textRef.value], {
+    opacity: 1
+  });
+  tl.from(titleSplit.words, {});
+  tl.from(
+    textSplit.lines,
+    {
+      stagger: 0.1
+    },
+    '-=1'
+  );
+});
 </script>
 
 <style lang="scss" scoped>
+@keyframes hero-banner-animate {
+  from {
+    scale: 1.1;
+    opacity: 0;
+  }
+}
 .about {
   &__container {
     padding-top: max(9rem, 32px);
@@ -120,6 +198,10 @@ const icons = [IconsLocation, IconsCar, IconsTime, IconsPhone];
     border-top-left-radius: max(3.2rem, 20px);
     border-top-right-radius: max(3.2rem, 20px);
     overflow: hidden;
+    h2,
+    p {
+      opacity: 0;
+    }
     &__container {
       position: relative;
       min-height: calc(100vh - max(7.2rem, 72px));
@@ -131,6 +213,7 @@ const icons = [IconsLocation, IconsCar, IconsTime, IconsPhone];
     &__picture {
       position: absolute;
       inset: 0;
+      animation: hero-banner-animate 1.5s;
       &::after {
         content: '';
         position: absolute;

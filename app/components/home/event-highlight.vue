@@ -1,44 +1,46 @@
 <template>
   <section class="event-highlight">
-    <div class="event-highlight__header">
+    <div class="event-highlight__header section-header">
       <h2 class="heading-lg clr-white">
-        {{ $t('home.event.title') }}
+        <span class="clr-blue-dark">{{ $t('home.event.title') }}</span>
       </h2>
       <p class="event-highlight__description text-md">
-        {{ $t('home.event.description') }}
+        <span class="clr-blue-dark">{{ $t('home.event.description') }}</span>
       </p>
     </div>
-
-    <ClientOnly>
-      <swiper-container
-        ref="swiperRef"
-        class="event-highlight__slider"
-        space-between="16"
-        :grab-cursor="true"
-        :free-mode="true"
-        :breakpoints="{
-          0: {
-            spaceBetween: 10,
-            slidesPerView: 1.1
-          },
-          512: {
-            slidesPerView: 1.5
-          },
-          1024: {
-            slidesPerView: 2.5
-          }
-        }"
-      >
-        <swiper-slide v-for="(image, i) in images" :key="i" class="event-highlight__slide">
-          <UiPicture :src="image" :alt="`Event image ${i + 1}`" />
-        </swiper-slide>
-      </swiper-container>
-      <UiSliderControls :swiper="swiperRef?.swiper ?? {}" />
-    </ClientOnly>
+    <div class="event-highlight__container">
+      <ClientOnly>
+        <swiper-container
+          ref="swiperRef"
+          class="event-highlight__slider"
+          space-between="16"
+          :grab-cursor="true"
+          :free-mode="true"
+          :breakpoints="{
+            0: {
+              spaceBetween: 10,
+              slidesPerView: 1.1
+            },
+            512: {
+              slidesPerView: 1.5
+            },
+            1024: {
+              slidesPerView: 2.5
+            }
+          }"
+        >
+          <swiper-slide v-for="(image, i) in images" :key="i" class="event-highlight__slide">
+            <UiPicture :src="image" :alt="`Event image ${i + 1}`" />
+          </swiper-slide>
+        </swiper-container>
+        <UiSliderControls :swiper="swiperRef?.swiper ?? {}" />
+      </ClientOnly>
+    </div>
   </section>
 </template>
 
 <script setup>
+const { $gsap } = useNuxtApp();
 const images = [
   'home-event-1.jpg',
   'home-event-2.jpg',
@@ -49,6 +51,18 @@ const images = [
 ];
 
 const swiperRef = ref();
+
+onMounted(() => {
+  $gsap.from('.event-highlight__container', {
+    y: 50,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: '.event-highlight__container',
+      start: 'top 90%',
+      end: 'bottom 70%'
+    }
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -60,6 +74,11 @@ const swiperRef = ref();
   margin-block: vars.$spacing-block;
   position: relative;
   overflow: hidden;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: max(6rem, 24px);
+  }
   &::after {
     content: '';
     opacity: 0.5;

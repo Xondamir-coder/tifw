@@ -9,3 +9,54 @@
 .clr-inherit {
   color: inherit;
 }
+.clr-dark-primary {
+  color: vars.$clr-dark-primary;
+}
+.clr-accent-primary {
+  color: vars.$clr-accent-primary;
+}
+.clr-text-primary {
+  color: vars.$clr-text-primary;
+}
+.clr-text-secondary {
+  color: vars.$clr-text-secondary;
+}
+.clr-border {
+  color: vars.$clr-border;
+}
+.clr-placeholder {
+  color: vars.$clr-placeholder;
+}
+.clr-accent {
+  color: vars.$clr-accent;
+}
+.clr-accent-hover {
+  color: vars.$clr-accent-hover;
+}
+.clr-accent-strong {
+  color: vars.$clr-accent-strong;
+}
+.clr-yellow {
+  color: vars.$clr-yellow;
+}
+.clr-blue-dark {
+  color: vars.$clr-blue-dark;
+}
+.clr-blue {
+  color: vars.$clr-blue;
+}
+.clr-blue-light {
+  color: vars.$clr-blue-light;
+}
+.clr-success {
+  color: vars.$clr-success;
+}
+.clr-green-dark {
+  color: vars.$clr-green-dark;
+}
+.clr-bg-light {
+  color: vars.$clr-bg-light;
+}
+.clr-text-muted {
+  color: vars.$clr-text-muted;
+}

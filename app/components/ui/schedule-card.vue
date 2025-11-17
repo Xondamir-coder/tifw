@@ -1,15 +1,15 @@
 <template>
-  <div class="event-card">
-    <h3 class="heading-lg event-card__date">
+  <div class="schedule-card">
+    <h3 class="heading-lg schedule-card__date">
       {{ date }}
     </h3>
-    <div class="event-card__info">
+    <div class="schedule-card__info">
       <span>{{ data.title }}</span>
       <p v-if="data.subtitle">
         {{ data.subtitle }}
       </p>
     </div>
-    <p class="event-card__text section-subtitle">
+    <p class="schedule-card__text section-subtitle">
       {{ data.description }}
     </p>
   </div>
@@ -34,7 +34,7 @@ const date = computed(() =>
 </script>
 
 <style scoped lang="scss">
-.event-card {
+.schedule-card {
   background: #fff;
   display: grid;
   grid-template-columns: 1fr 2.05fr 2.05fr;

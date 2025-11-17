@@ -2,10 +2,10 @@
   <section class="participants">
     <div class="section-header">
       <h2 class="heading-lg clr-white">
-        {{ $t('home.participants.title') }}
+        <span class="clr-yellow">{{ $t('home.participants.title') }}</span>
       </h2>
       <p class="section-subtitle clr-white">
-        {{ $t('home.participants.description') }}
+        <span class="clr-yellow">{{ $t('home.participants.description') }}</span>
       </p>
     </div>
     <div class="participants__list">
@@ -20,11 +20,23 @@
 <script setup>
 import { SvgCoreOs, SvgEightBall, SvgEnnLabs, SvgGlobalBank, SvgLuminary } from '#components';
 
+const { $gsap } = useNuxtApp();
+
 const logos = [SvgCoreOs, SvgEightBall, SvgEnnLabs, SvgGlobalBank, SvgLuminary];
 const rows = [
   [...logos, ...logos, ...logos, ...logos],
   [...logos, ...logos, ...logos, ...logos].reverse()
 ];
+
+onMounted(() => {
+  $gsap.utils.toArray('.logo-slider').forEach((s, i) => {
+    $gsap.from(s, {
+      xPercent: i % 2 === 0 ? 50 : -50,
+      ease: 'none',
+      scrollTrigger: getDefaultScrollTrigger(s, { start: 'top-=300 bottom', end: 'bottom top' })
+    });
+  });
+});
 </script>
 
 <style lang="scss" scoped>

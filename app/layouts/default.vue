@@ -1,5 +1,5 @@
 <template>
-  <div class="default" :style="layoutStyle">
+  <div class="default" :class="{ home: $route.name.includes('index') }">
     <SvgHeroSubtract />
     <LayoutHeader />
     <slot />
@@ -7,21 +7,16 @@
   </div>
 </template>
 
-<script setup>
-const route = useRoute();
-
-const layoutStyle = computed(() => ({
-  background: route.name.includes('index')
-    ? 'linear-gradient(180deg, #010d1b 0%, #073d77 45.67%)'
-    : 'linear-gradient(180deg, #010d1b 0%, #073d77 1.28%)'
-}));
-</script>
+<script setup></script>
 
 <style scoped lang="scss">
 .default {
-  // padding-top: calc(max(7rem, 50px) + 20px);
+  --end: 1.28%;
   position: relative;
-
+  background: linear-gradient(180deg, #010d1b 0%, #073d77 var(--end));
+  &.home {
+    --end: 10%;
+  }
   @media screen and (max-width: vars.$bp-md) {
     padding-top: calc(42px + 28px);
   }

@@ -91,7 +91,7 @@ watchEffect(() => {
 });
 
 onMounted(() => {
-  document.addEventListener('click', e => {
+  document.addEventListener('assignData', e => {
     if (e.target.closest('.header__lang')) return;
     dropdownOpen.value = false;
   });
@@ -349,7 +349,9 @@ onMounted(() => {
       right: 0;
       top: calc(100% + 8px);
       color: #fff;
-      background: #ffffff1f;
+      background: rgba(#555f70, 0.5);
+
+      backdrop-filter: blur(3px);
       border-radius: 6px;
       box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
       padding: 4px;

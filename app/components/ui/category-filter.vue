@@ -22,6 +22,15 @@ defineProps({
     required: true
   }
 });
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  $gsap.from('.category-filter', {
+    y: 10,
+    opacity: 0,
+    delay: 0.2
+  });
+});
 </script>
 
 <style lang="scss" scoped>

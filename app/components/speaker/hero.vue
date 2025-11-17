@@ -36,11 +36,54 @@
 </template>
 
 <script setup>
+import { SplitText } from 'gsap/SplitText';
+
+const { $gsap } = useNuxtApp();
 defineProps({
   speaker: {
     required: true,
     type: Object
   }
+});
+onMounted(() => {
+  $gsap.fromTo(
+    '.hero__image',
+    {
+      clipPath: 'circle(0%)'
+    },
+    {
+      clipPath: 'circle(100%)',
+      duration: 3
+    }
+  );
+
+  $gsap.set('.hero__title, .hero__stats, .hero__quote', { opacity: 1 });
+  SplitText.create('.hero__title', {
+    type: 'lines',
+    mask: 'lines',
+    onSplit: self => {
+      $gsap.from(self.lines, {
+        yPercent: 100,
+        duration: 0.7,
+        stagger: 0.15,
+        delay: 0.6
+      });
+    }
+  });
+
+  $gsap.from('.hero__quote', {
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+    delay: 1
+  });
+  $gsap.from('.hero__stats>*', {
+    y: 20,
+    opacity: 0,
+    stagger: 0.15,
+    duration: 0.6,
+    delay: 1
+  });
 });
 </script>
 
@@ -61,6 +104,11 @@ defineProps({
   @media screen and (max-width: vars.$bp-md) {
     gap: 392px;
     background: vars.$clr-dark-primary;
+  }
+  &__quote,
+  &__stats,
+  &__title {
+    opacity: 0;
   }
   &__top {
     display: flex;
@@ -110,7 +158,7 @@ defineProps({
     }
   }
   &__back {
-    & > *:last-child {
+    & > *:nth-child(2) {
       order: -1;
       rotate: 180deg;
     }

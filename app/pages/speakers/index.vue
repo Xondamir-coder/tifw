@@ -58,7 +58,61 @@
 </template>
 
 <script setup>
+import { SplitText } from 'gsap/SplitText';
+
 const { speakers } = useApiStore();
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  const items = $gsap.utils.toArray('.speaker-card');
+  items.forEach((el, i) => {
+    if (isOutOfViewport(el)) {
+      $gsap.from(el, {
+        y: 50,
+        opacity: 0,
+        scrollTrigger: getDefaultScrollTrigger(el)
+      });
+    } else {
+      $gsap.from(el, {
+        y: 30,
+        rotate: i % 2 === 0 ? -3 : 3,
+        opacity: 0,
+        delay: i * 0.1 + 0.4
+      });
+    }
+  });
+
+  SplitText.create('.banner__title', {
+    type: 'lines',
+    mask: 'lines',
+    onSplit: self => {
+      $gsap.from(self.lines, {
+        yPercent: -100,
+        scrollTrigger: getDefaultScrollTrigger(self.elements[0], { start: 'top bottom' })
+      });
+    }
+  });
+  SplitText.create('.banner__text', {
+    type: 'lines',
+    mask: 'lines',
+    onSplit: self => {
+      $gsap.from(self.lines, {
+        yPercent: -100,
+        scrollTrigger: getDefaultScrollTrigger(self.elements[0], { start: 'top bottom' })
+      });
+    }
+  });
+  $gsap.fromTo(
+    '.banner__picture',
+    {
+      clipPath: 'inset(100% 0 0 0)'
+    },
+    {
+      clipPath: 'inset(0% 0 0 0)',
+      scrollTrigger: getDefaultScrollTrigger('.banner__picture')
+    }
+  );
+});
 </script>
 
 <style lang="scss" scoped>

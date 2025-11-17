@@ -38,8 +38,7 @@ defineProps({
   gap: max(2.5rem, 22px);
   padding: max(2rem, 12px);
   fill: #fff;
-  transition: all 0.4s;
-  &:hover {
+  &:hover &__bg {
     fill: vars.$clr-bg-light;
   }
   & > *:not(.general-card__bg) {
@@ -54,6 +53,7 @@ defineProps({
   &__bg {
     position: absolute;
     inset: 0;
+    transition: all 0.4s;
   }
   &__content {
     display: flex;

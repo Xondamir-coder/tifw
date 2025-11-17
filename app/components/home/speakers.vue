@@ -1,8 +1,12 @@
 <template>
   <section class="speakers">
     <div class="section-header">
-      <h2 class="heading-lg clr-white">{{ $t('home.speakers.title') }}</h2>
-      <p class="speakers__description section-subtitle">{{ $t('home.speakers.description') }}</p>
+      <h2 class="heading-lg clr-white">
+        <span class="clr-blue-dark">{{ $t('home.speakers.title') }}</span>
+      </h2>
+      <p class="speakers__description section-subtitle">
+        <span class="clr-blue-dark">{{ $t('home.speakers.description') }}</span>
+      </p>
     </div>
     <ClientOnly>
       <swiper-container
@@ -36,6 +40,22 @@
 <script setup>
 const swiperRef = ref();
 const { speakers } = useApiStore();
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  nextTick(() => {
+    $gsap.fromTo(
+      '.speaker-card__image .my-picture__image',
+      {
+        clipPath: 'inset(0 0 100% 0)'
+      },
+      {
+        clipPath: 'inset(0 0 0% 0)',
+        scrollTrigger: getDefaultScrollTrigger('.speaker-card__image')
+      }
+    );
+  });
+});
 </script>
 
 <style lang="scss" scoped>

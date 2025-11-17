@@ -19,23 +19,22 @@
 </template>
 
 <script setup>
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
+
+const { $gsap } = useNuxtApp();
 
 onMounted(() => {
   if (window.innerWidth < 992) return;
-  gsap.registerPlugin(ScrollTrigger, SplitText);
 
   // Split all h2s and set initial positions
-  const textSplits = gsap.utils.toArray('.cards__item h2').map(el => {
+  const textSplits = $gsap.utils.toArray('.cards__item h2').map(el => {
     const split = SplitText.create(el, { type: 'chars', mask: 'chars', smartWrap: true });
-    gsap.set(split.chars, { xPercent: -150 });
+    $gsap.set(split.chars, { xPercent: -150 });
     return split;
   });
 
   // Fade out main title
-  gsap.to('.cards__title-box', {
+  $gsap.to('.cards__title-box', {
     opacity: 0,
     scrollTrigger: {
       trigger: '.cards',
@@ -52,7 +51,7 @@ onMounted(() => {
     end: '+=600%',
     scrub: 1
   };
-  const master = gsap.timeline({
+  const master = $gsap.timeline({
     scrollTrigger: {
       ...masterTrigger,
       pin: true,
@@ -62,19 +61,19 @@ onMounted(() => {
   });
 
   // Animate the scroll bar filling as the master timeline progresses
-  gsap.to('.cards__scroll-bar--inside', {
+  $gsap.to('.cards__scroll-bar--inside', {
     scaleX: 1,
     ease: 'none',
     scrollTrigger: masterTrigger
   });
 
   // --- CARD MOVEMENT ANIMATIONS ---
-  const cards = gsap.utils.toArray('.cards__item');
+  const cards = $gsap.utils.toArray('.cards__item');
   cards.forEach((card, i) => {
     const image = card.firstElementChild;
     const animProps = i === 0 ? { scale: 0.53, borderRadius: 236 } : { yPercent: 100 };
 
-    const cardTl = gsap.timeline();
+    const cardTl = $gsap.timeline();
 
     // Animate current card in
     cardTl.from(card, animProps);

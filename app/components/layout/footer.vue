@@ -12,19 +12,19 @@
         <h6 class="heading-sm clr-white">{{ $t('footer.follow') }}</h6>
         <ul class="footer__icons">
           <li>
-            <NuxtLink :to="$localePath('/')" aria-label="Facebook">
-              <IconsFacebook class="footer__icon" />
-            </NuxtLink>
+            <a href="#" aria-label="Facebook" class="footer__icon">
+              <IconsFacebook />
+            </a>
           </li>
           <li>
-            <NuxtLink :to="$localePath('/')" aria-label="Twitter">
-              <IconsTwitter class="footer__icon" />
-            </NuxtLink>
+            <a href="#" aria-label="Twitter" class="footer__icon">
+              <IconsTwitter />
+            </a>
           </li>
           <li>
-            <NuxtLink :to="$localePath('/')" aria-label="Instagram">
-              <IconsInstagram class="footer__icon" />
-            </NuxtLink>
+            <a href="#" aria-label="Instagram" class="footer__icon">
+              <IconsInstagram />
+            </a>
           </li>
         </ul>
       </div>
@@ -38,7 +38,37 @@
   </footer>
 </template>
 
-<script setup></script>
+<script setup>
+import { SplitText } from 'gsap/SplitText';
+const { $gsap } = useNuxtApp();
+onMounted(() => {
+  SplitText.create('.footer__title', {
+    type: 'words',
+    mask: 'words',
+    onSplit: self => {
+      $gsap.from(self.words, {
+        yPercent: -100,
+        scrollTrigger: {
+          trigger: self.elements[0],
+          start: 'top bottom',
+          endTrigger: '.footer',
+          end: 'bottom bottom'
+        }
+      });
+    }
+  });
+  $gsap.from('.footer__icon', {
+    stagger: 0.1,
+    scale: 0,
+    scrollTrigger: {
+      trigger: '.footer__icons',
+      start: 'top bottom',
+      endTrigger: '.footer',
+      end: 'bottom bottom'
+    }
+  });
+});
+</script>
 
 <style lang="scss" scoped>
 .footer {
@@ -112,6 +142,7 @@
     height: 32px;
     stroke: #ffffff;
     transition: opacity 0.2s ease;
+    display: flex;
 
     &:hover {
       opacity: 0.8;

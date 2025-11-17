@@ -33,6 +33,38 @@ const events = [
     location: 'Выставочный центр TIFW, павильон №2'
   }
 ];
+const { $gsap } = useNuxtApp();
+
+onMounted(() => {
+  const items = $gsap.utils.toArray('.events-card');
+  items.forEach((el, i) => {
+    if (isOutOfViewport(el)) {
+      $gsap.from(el, {
+        y: 50,
+        opacity: 0,
+        scrollTrigger: getDefaultScrollTrigger(el)
+      });
+    } else {
+      $gsap.fromTo(
+        el.querySelector('.events-card__picture'),
+        {
+          clipPath: 'inset(100% 0 0 0)'
+        },
+        {
+          clipPath: 'inset(0% 0 0 0)',
+          duration: 0.8,
+          delay: i * 0.1 + 0.4
+        }
+      );
+      $gsap.from(el.lastElementChild.children, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        delay: i * 0.1 + 0.4
+      });
+    }
+  });
+});
 </script>
 
 <style lang="scss" scoped>

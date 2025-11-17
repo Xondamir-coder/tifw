@@ -11,7 +11,11 @@
   </main>
 </template>
 
-<script setup></script>
+<script setup>
+onMounted(() => {
+  useAnimateTypography();
+});
+</script>
 
 <style lang="scss" scoped>
 .home {

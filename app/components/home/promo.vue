@@ -3,14 +3,30 @@
     <div v-for="(item, i) in $tm('home.promo.blocks')" :key="i" class="promo__block">
       <div class="promo__content">
         <h3 class="promo__title">{{ $rt(item.title) }}</h3>
-        <UiButton :link="$localePath('/about')" :label="$t('home.promo.button')" />
+        <UiButton link="/about" :label="$t('home.promo.button')" />
       </div>
       <UiPicture :src="`promo-${i + 1}.png`" :alt="$rt(item.title)" class="promo__image" />
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { SplitText } from 'gsap/SplitText';
+
+const { $gsap } = useNuxtApp();
+onMounted(() => {
+  $gsap.utils.toArray('.promo__title').forEach(title => {
+    const split = SplitText.create(title, {
+      type: 'lines',
+      mask: 'lines'
+    });
+    $gsap.from(split.lines, {
+      yPercent: -100,
+      scrollTrigger: getDefaultScrollTrigger(title)
+    });
+  });
+});
+</script>
 
 <style lang="scss" scoped>
 .promo {

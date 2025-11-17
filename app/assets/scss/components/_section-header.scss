@@ -6,6 +6,15 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+  h2,
+  p {
+    position: relative;
+    span:last-child {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 0 0%);
+    }
+  }
 }
 
 .section-subtitle {

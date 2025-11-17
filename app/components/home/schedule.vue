@@ -2,18 +2,14 @@
   <section class="schedule">
     <div class="section-header">
       <h2 class="heading-lg">
-        {{ $t('home.schedule.title') }}
+        <span class="clr-bg-light">{{ $t('home.schedule.title') }}</span>
       </h2>
-
       <div class="schedule__location">
         <IconsLocation class="schedule__icon" />
         <span class="section-subtitle">{{ $t('home.schedule.location') }}</span>
       </div>
     </div>
-
-    <div class="schedule__list">
-      <UiScheduleCard v-for="(event, i) in events" :key="i" :data="event" />
-    </div>
+    <UiScheduleCards :itmes="events" />
   </section>
 </template>
 
@@ -57,12 +53,6 @@ const events = computed(() => tm('home.schedule.events').map(useMapRt));
     height: 24px;
     fill: vars.$clr-text-muted;
     flex-shrink: 0;
-  }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: max(1.6rem, 12px);
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <button v-if="!link" class="button" @click="$emit('click')">
+  <button v-if="!link" class="button" @click="$emit('assignData')">
     <span>{{ label }}</span>
     <component :is="icon" class="button__icon" />
     <div class="button__blobs">
@@ -9,7 +9,7 @@
       <span class="button__blob" />
     </div>
   </button>
-  <NuxtLink v-else :to="link" class="button" @click="$emit('click')">
+  <NuxtLink v-else :to="$localePath(link)" class="button" @click="$emit('assignData')">
     <span>{{ label }}</span>
     <component :is="icon" class="button__icon" />
     <div class="button__blobs">
@@ -40,7 +40,7 @@ defineProps({
     required: false
   }
 });
-defineEmits(['click']);
+defineEmits(['assignData']);
 </script>
 
 <style lang="scss" scoped>
@@ -61,6 +61,7 @@ defineEmits(['click']);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  animation: appear 0.5s 1s backwards;
   &:hover {
     background-color: transparent;
     transition-delay: 0.5s;

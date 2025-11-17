@@ -2,10 +2,10 @@
   <section class="participants-info">
     <div class="section-header">
       <h2 class="heading-lg">
-        {{ $t('home.participants-info.title') }}
+        <span class="clr-bg-light">{{ $t('home.participants-info.title') }}</span>
       </h2>
       <p class="section-subtitle">
-        {{ $t('home.participants-info.text') }}
+        <span class="clr-bg-light">{{ $t('home.participants-info.text') }}</span>
       </p>
     </div>
 
@@ -61,6 +61,7 @@
 
 <script setup>
 const { tm } = useI18n();
+const { $gsap } = useNuxtApp();
 
 const activeIndex = ref(0);
 const images = ['participants-info-1.jpg', 'participants-info-2.jpg', 'participants-info-3.jpg'];
@@ -71,6 +72,16 @@ const items = computed(() =>
     stats: tm('home.participants-info.items')[i].map(useMapRt)
   }))
 );
+
+onMounted(() => {
+  $gsap.to('.participants-info__content', {
+    clipPath: 'inset(0 0 0%)',
+    scrollTrigger: getDefaultScrollTrigger('.participants-info__content', {
+      start: 'top 90%',
+      end: 'bottom 70%'
+    })
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -104,6 +115,7 @@ const items = computed(() =>
     display: grid;
     grid-template-columns: 1fr 1.3fr;
     gap: max(1.6rem, 12px);
+    clip-path: inset(0 0 100%);
     @media screen and (max-width: vars.$bp-lg) {
       grid-template-columns: 1fr;
       & > * {

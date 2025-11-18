@@ -2,6 +2,7 @@ image: node:22.12.0
 pages:
   stage: deploy
   before_script:
+    - git config --global --add safe.directory "$CI_PROJECT_DIR"
     - npm -v
     - node -v
     - chown -R www-data:www-data /var/www/tifw.uz || true

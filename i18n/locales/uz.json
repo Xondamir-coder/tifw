@@ -249,5 +249,27 @@
     "send-request": "So‘rov yuborish",
     "approval": "Ro‘yxatdan o‘tish orqali siz o‘qib chiqqan va rozi ekanligingizni tasdiqlaysiz",
     "policy": "Maxfiylik siyosati"
+  },
+
+  "media": {
+    "title": "Matbuot markazi",
+    "subtitle": "Forest dunyosidan rasmiy matbuotlar, brend yangiliklari, matbuot materiallari, hikoyalar va sanoatdagi yangiliklarni kashf eting. Bizning so'nggi chiqqanlar, hamkorliklari, sanoatdagi yangiliklarni bilan bo'lishingiz."
+  },
+
+  "accreditation": {
+    "title": "Matbuot akkreditatsiyasi",
+    "subtitle": "O'quvchi tadbirlar va brend faoliyatlariga bosqichga kirish uchun ariza berishni so'rang. Akkreditatsiyalangan matbuot hamkorlari tasdiqlangan kirish, eksklyuziv kontent, rasmiy resurslarni oladi.",
+    "items": [
+      {
+        "title": "Ommabop matbuot vakillariga",
+        "text": "O'zbekiston Respublikasining qonun-qoidalariga muvofiq ravishda, vaqtincha xorijiy matbuot vakillarining akkreditatsiyasi qarori chiqishiga ikki hafta vaqt ketishi mumkin."
+      },
+      {
+        "title": "Barcha matbuot vakillari O'zbekiston Respublikasining Tashqi ishlar vazirligiga akkreditatsiya qarori chiqish to'g'risida xabar qilinishi kerak.",
+        "text": "O'zbekistonda akkreditatsiyalanmagan matbuot vakillari O'zbekiston Respublikasining Tashqi ishlar vazirligiga akkreditatsiyalanishlari kerak."
+      }
+    ],
+    "available": "O'zbekistonda xorijiy mamlakatda matbuot vakillarining akkreditatsiya jarayoni bu yerda mavjud:",
+    "contacts": "Matbuot departamenti bilan bo'lgan aloqalar:"
   }
 }

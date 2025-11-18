@@ -49,11 +49,12 @@ onMounted(() => {
   $gsap.fromTo(
     '.hero__image',
     {
-      clipPath: 'circle(0%)'
+      scale: 1.1
     },
     {
-      clipPath: 'circle(100%)',
-      duration: 3
+      opacity: 1,
+      scale: 1,
+      duration: 1
     }
   );
 
@@ -213,6 +214,7 @@ onMounted(() => {
   }
 
   &__image {
+    opacity: 0;
     pointer-events: none;
     position: absolute;
     width: 65%;

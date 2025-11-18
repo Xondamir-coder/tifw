@@ -9,7 +9,7 @@
         <span class="section-subtitle">{{ $t('home.schedule.location') }}</span>
       </div>
     </div>
-    <UiScheduleCards :itmes="events" />
+    <UiScheduleCards :items="events" />
   </section>
 </template>
 

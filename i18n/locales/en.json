@@ -250,5 +250,27 @@
     "send-request": "Send request",
     "approval": "By registering, you confirm that you have read and agree with",
     "policy": "Privacy policy"
+  },
+
+  "media": {
+    "title": "Media center",
+    "subtitle": "Explore official news, brand updates, press materials, and storytelling from the Forest universe. Stay connected with our latest launches, collaborations, and industry insights."
+  },
+
+  "accreditation": {
+    "title": "Media accreditation",
+    "subtitle": "Apply for press access to our events and brand activities. Accredited media partners receive verified entry, exclusive content, and official resources.",
+    "items": [
+      {
+        "title": "Dear Representatives of the Mass Media",
+        "text": "In accordance with the legislative requirements of the Republic of Uzbekistan, the decision on the accreditation of temporary foreign correspondents may take up to two weeks."
+      },
+      {
+        "title": "All media representatives will be notified of the accreditation decision by the Ministry of Foreign Affairs of the Republic of Uzbekistan.",
+        "text": "Representatives of the mass media, who are not accredited in Uzbekistan, must be accredited by the Ministry of Foreign Affairs of the Republic of Uzbekistan."
+      }
+    ],
+    "available": "The accreditation procedure for representatives of foreign countries in Uzbekistan is available here:",
+    "contacts": "Contacts of the Media Department:"
   }
 }

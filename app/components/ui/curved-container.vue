@@ -1,6 +1,6 @@
 <template>
   <div class="curved-container">
-    <div class="section-header">
+    <div v-if="title && text" class="section-header">
       <h1 class="heading-lg">
         {{ title }}
       </h1>
@@ -27,6 +27,7 @@ defineProps({
   }
 });
 onMounted(() => {
+  if (!document.querySelector('.section-header')) return;
   const titleSplit = SplitText.create('.section-header h1', {
     mask: 'chars',
     type: 'chars'

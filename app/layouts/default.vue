@@ -7,7 +7,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const router = useRouter();
+if (import.meta.client) {
+  router.afterEach(() => {
+    nextTick(() => {
+      ScrollTrigger.refresh();
+    });
+  });
+}
+</script>
 
 <style scoped lang="scss">
 .default {

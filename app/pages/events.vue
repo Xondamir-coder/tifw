@@ -53,14 +53,14 @@ onMounted(() => {
         {
           clipPath: 'inset(0% 0 0 0)',
           duration: 0.8,
-          delay: i * 0.1 + 0.4
+          delay: i * 0.1 + 0.2
         }
       );
       $gsap.from(el.lastElementChild.children, {
         y: 20,
         opacity: 0,
         stagger: 0.1,
-        delay: i * 0.1 + 0.4
+        delay: i * 0.1 + 0.2
       });
     }
   });

@@ -41,6 +41,7 @@
 <script setup>
 import { SplitText } from 'gsap/SplitText';
 const { $gsap } = useNuxtApp();
+
 onMounted(() => {
   SplitText.create('.footer__title', {
     type: 'words',

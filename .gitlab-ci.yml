@@ -5,7 +5,7 @@ pages:
     - git config --global --add safe.directory "$CI_PROJECT_DIR"
     - npm -v
     - node -v
-    - chown -R www-data:www-data /var/www/tifw.uz || true
+    # - chown -R www-data:www-data /var/www/tifw.uz || true
     - chmod -R 777 /var/www/tifw.uz || true 
     - rm -rf /var/www/tifw.uz/app /var/www/tifw.uz/i18n/locales /var/www/tifw.uz/public
     - rm -f /var/www/tifw.uz/.gitignore /var/www/tifw.uz/.gitlab-ci.yml /var/www/tifw.uz/README.md /var/www/tifw.uz/eslint.config.mjs /var/www/tifw.uz/nuxt.config.ts /var/www/tifw.uz/package-lock.json /var/www/tifw.uz/package.json /var/www/tifw.uz/transform-images.sh /var/www/tifw.uz/tsconfig.json

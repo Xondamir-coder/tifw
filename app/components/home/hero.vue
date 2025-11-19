@@ -161,7 +161,7 @@
           {{ $t('home.hero.subtitle') }}
         </p>
       </div>
-      <UiButton :label="$t('become-sponsor')" link="/sponsors" />
+      <UiButton :label="$t('become-sponsor')" link="/sponsors" class="hero__button" />
     </div>
   </section>
 </template>
@@ -282,26 +282,7 @@ onMounted(() => {
   }
 
   &__button {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-    background-color: vars.$clr-accent-strong;
-    border-radius: max(0.8rem, 8px);
-    font-weight: 600;
-    transition: background 0.25s ease;
-    z-index: 1;
-    padding-block: max(1.5rem, 15px);
-    padding-inline: 20px;
-
-    &:hover {
-      background-color: #ffb938;
-    }
-    &-icon {
-      width: 24px;
-      stroke: #fff;
-      fill: none;
-    }
+    animation: appear 0.5s 0.5s backwards;
   }
 
   &__background {

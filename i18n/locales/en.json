@@ -8,6 +8,7 @@
   "back": "Back",
   "exhibition-focus": "Exhibition Focus",
   "highlights": "Highlights",
+  "return-home": "Return home",
 
   "nav": {
     "about": "About",
@@ -272,5 +273,161 @@
     ],
     "available": "The accreditation procedure for representatives of foreign countries in Uzbekistan is available here:",
     "contacts": "Contacts of the Media Department:"
+  },
+
+  "slug": {
+    "title": "404 - There’s nothing here ",
+    "text": "The page may have moved to a different location."
+  },
+
+  "terms": {
+    "title": "Terms & Conditions",
+    "subtitle": "Welcome to TIFW! By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these terms, please refrain from using our site.",
+    "items": [
+      {
+        "title": "Use of the Website",
+        "subtitle": "The Expo Bank Exhibition is a premier international event uniting banking institutions from Uzbekistan and around the globe under one roof. As a dynamic platform for collaboration, innovation, and growth, the exhibition serves as a gateway to the future of banking and financial services.",
+        "bullets": [
+          "You must be at least 18 years to use this website.",
+          "You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit the use of this website by any third party",
+          "Unauthorized use of this website may give rise to a claim for damages or be a criminal offense."
+        ]
+      },
+      {
+        "title": "Intellectual Property Rights",
+        "bullets": [
+          "All content on this website, including but not limited to text, images, logos, and code, is owned by or licensed to [Your Company Name].",
+          "You may not reproduce, distribute, or otherwise exploit any content on this website without prior written consent from us."
+        ]
+      },
+      {
+        "title": "User Account",
+        "bullets": [
+          "If you create an account on our website, you are responsible for maintaining the confidentiality of your account credentials.",
+          "You agree to notify us immediately of any unauthorized use of your account.",
+          "We reserve the right to terminate accounts that violate these terms."
+        ]
+      },
+      {
+        "title": "Registration and Ticketing",
+        "bullets": [
+          "Registration for the exhibition may require you to provide accurate and complete information about yourself or your organization.",
+          "Ticket purchases are non-refundable unless the event is canceled or postponed by the organizers.",
+          "We reserve the right to refuse admission or cancel registrations that do not comply with our policies."
+        ]
+      },
+      {
+        "title": "Privacy and Data Protection",
+        "bullets": [
+          "We are committed to protecting your personal information in accordance with applicable data protection laws.",
+          "Your data will be used solely for purposes related to the exhibition, including registration, communication, and event management.",
+          "For more information on how we handle your data, please refer to our Privacy Policy."
+        ]
+      },
+      {
+        "title": "Limitation of Liability",
+        "bullets": [
+          "We make no warranties or representations about the accuracy or completeness of the website's content.",
+          "To the fullest extent permitted by law, we exclude all liability for any direct, indirect, or consequential loss arising from your use of this website.",
+          "We are not responsible for any losses arising from technical issues, interruptions, or unauthorized access to the website."
+        ]
+      }
+    ]
+  },
+
+  "policy": {
+    "title": "Privacy Policy",
+    "subtitle": "At TIFW, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy outlines how we collect, use, store, and protect your data when you use our website and services.",
+    "items": [
+      {
+        "title": "Information We Collect",
+        "subtitle": "We collect various types of information to provide and improve our services, ensure security, and enhance your experience at the TIFW exhibition.",
+        "bullets": [
+          "Personal identification information (name, email address, phone number, company name, job title)",
+          "Registration and ticketing information for exhibition attendance",
+          "Technical data including IP address, browser type, device information, and cookies",
+          "Communication preferences and correspondence with our team"
+        ]
+      },
+      {
+        "title": "How We Use Your Information",
+        "bullets": [
+          "To process your registration and manage your attendance at the exhibition",
+          "To communicate with you about the event, including updates, reminders, and promotional materials",
+          "To improve our website functionality and user experience",
+          "To comply with legal obligations and prevent fraudulent activities",
+          "To analyze attendance patterns and gather insights for future events"
+        ]
+      },
+      {
+        "title": "Data Sharing and Disclosure",
+        "bullets": [
+          "We do not sell, trade, or rent your personal information to third parties",
+          "We may share your information with event sponsors and exhibitors only with your explicit consent",
+          "We may disclose information to service providers who assist in operating our website and conducting the exhibition",
+          "We may disclose information when required by law or to protect our rights and safety"
+        ]
+      },
+      {
+        "title": "Data Security",
+        "bullets": [
+          "We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, or destruction",
+          "All sensitive data is encrypted during transmission using SSL/TLS technology",
+          "Access to personal information is restricted to authorized personnel only",
+          "Despite our efforts, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security"
+        ]
+      },
+      {
+        "title": "Your Rights and Choices",
+        "bullets": [
+          "You have the right to access, update, or delete your personal information at any time",
+          "You can opt-out of receiving promotional communications by following the unsubscribe instructions in our emails",
+          "You may request a copy of the personal data we hold about you",
+          "You have the right to lodge a complaint with the relevant data protection authority if you believe your rights have been violated"
+        ]
+      },
+      {
+        "title": "Cookies and Tracking Technologies",
+        "bullets": [
+          "Our website uses cookies to enhance your browsing experience and analyze site traffic",
+          "You can control cookie settings through your browser preferences",
+          "We use analytics tools to understand how visitors interact with our website",
+          "Third-party services may also use cookies in accordance with their own privacy policies"
+        ]
+      },
+      {
+        "title": "Data Retention",
+        "bullets": [
+          "We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy",
+          "Registration and attendee data may be kept for up to 3 years after the event for record-keeping and future event planning",
+          "You may request deletion of your data at any time, subject to legal and contractual obligations"
+        ]
+      },
+      {
+        "title": "International Data Transfers",
+        "bullets": [
+          "Your information may be transferred to and processed in countries outside of Uzbekistan",
+          "We ensure appropriate safeguards are in place to protect your data during international transfers",
+          "By using our website, you consent to the transfer of your information to other countries"
+        ]
+      },
+      {
+        "title": "Children's Privacy",
+        "bullets": [
+          "Our website and services are not intended for individuals under the age of 18",
+          "We do not knowingly collect personal information from children",
+          "If we become aware that we have collected data from a child, we will take steps to delete it promptly"
+        ]
+      },
+      {
+        "title": "Changes to This Privacy Policy",
+        "bullets": [
+          "We reserve the right to update this Privacy Policy at any time to reflect changes in our practices or legal requirements",
+          "We will notify you of significant changes by posting the updated policy on our website with a revised effective date",
+          "Your continued use of the website after changes constitutes acceptance of the updated policy",
+          "We encourage you to review this Privacy Policy periodically"
+        ]
+      }
+    ]
   }
 }

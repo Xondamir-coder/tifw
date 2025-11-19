@@ -271,5 +271,161 @@
     ],
     "available": "O'zbekistonda xorijiy mamlakatda matbuot vakillarining akkreditatsiya jarayoni bu yerda mavjud:",
     "contacts": "Matbuot departamenti bilan bo'lgan aloqalar:"
+  },
+
+  "slug": {
+    "title": "404 - Bu yerda hech narsa yo'q",
+    "text": "Sahifa boshqa joyga ko'chirilgan bo'lishi mumkin."
+  },
+
+  "terms": {
+    "title": "Shartlar va qoidalar",
+    "subtitle": "TIFW ga xush kelibsiz! Ushbu veb-saytga kirish yoki undan foydalanish orqali siz quyidagi shartlarga rioya qilishga rozilik bildirasiz. Agar siz ushbu shartlarga rozi bo'lmasangiz, iltimos, saytimizdan foydalanmang.",
+    "items": [
+      {
+        "title": "Veb-saytdan foydalanish",
+        "subtitle": "Expo Bank ko'rgazmasi O'zbekiston va butun dunyo bank muassasalarini bir tom ostida birlashtiruvchi yetakchi xalqaro tadbirdir. Hamkorlik, innovatsiya va rivojlanish uchun dinamik platforma sifatida ko'rgazma bank va moliyaviy xizmatlar kelajagiga eshik ochadi.",
+        "bullets": [
+          "Ushbu veb-saytdan foydalanish uchun kamida 18 yosh bo'lishingiz kerak.",
+          "Siz veb-saytni faqat qonuniy maqsadlarda va uchinchi tomonlarning huquqlarini buzmaydigani, cheklamaydigan yoki ushbu veb-saytdan foydalanishga to'sqinlik qilmaydigan tarzda foydalanishga rozilik bildirasiz.",
+          "Ushbu veb-saytdan ruxsatsiz foydalanish zararni qoplash da'vosiga sabab bo'lishi yoki jinoiy javobgarlikka tortilishi mumkin."
+        ]
+      },
+      {
+        "title": "Intellektual mulk huquqlari",
+        "bullets": [
+          "Ushbu veb-saytdagi barcha kontent, jumladan matn, rasmlar, logotiplar va kod TIFW ga tegishli yoki litsenziyalangan.",
+          "Bizdan oldindan yozma ruxsat olmasdan ushbu veb-saytdagi hech qanday kontentni ko'paytirish, tarqatish yoki boshqa yo'l bilan foydalana olmaysiz."
+        ]
+      },
+      {
+        "title": "Foydalanuvchi hisobi",
+        "bullets": [
+          "Agar siz veb-saytimizda hisob yaratgan bo'lsangiz, hisob ma'lumotlaringizning maxfiyligini saqlash uchun javobgarsiz.",
+          "Siz hisobingizdan ruxsatsiz foydalanilganligi haqida bizga darhol xabar berishga rozilik bildirasiz.",
+          "Biz ushbu shartlarni buzgan hisoblarni yopish huquqini o'zimizda saqlaymiz."
+        ]
+      },
+      {
+        "title": "Ro'yxatdan o'tish va chiptalar",
+        "bullets": [
+          "Ko'rgazmaga ro'yxatdan o'tish sizdan o'zingiz yoki tashkilotingiz haqida to'g'ri va to'liq ma'lumot berishingizni talab qilishi mumkin.",
+          "Chipta xaridi qaytarilmaydi, agar tadbir tashkilotchilar tomonidan bekor qilinmagan yoki qoldirilmagan bo'lsa.",
+          "Biz siyosatimizga mos kelmaydigan ro'yxatdan o'tishlarni rad etish yoki bekor qilish huquqini o'zimizda saqlaymiz."
+        ]
+      },
+      {
+        "title": "Maxfiylik va ma'lumotlarni himoya qilish",
+        "bullets": [
+          "Biz shaxsiy ma'lumotlaringizni amaldagi ma'lumotlarni himoya qilish qonunlariga muvofiq himoya qilishga intilamiz.",
+          "Sizning ma'lumotlaringiz faqat ko'rgazma bilan bog'liq maqsadlarda, jumladan ro'yxatdan o'tish, aloqa va tadbir boshqaruvi uchun ishlatiladi.",
+          "Ma'lumotlaringizni qanday qayta ishlash haqida qo'shimcha ma'lumot olish uchun Maxfiylik siyosatimiz bilan tanishing."
+        ]
+      },
+      {
+        "title": "Javobgarlikning cheklanishi",
+        "bullets": [
+          "Biz veb-sayt kontentining aniqligi yoki to'liqligi haqida hech qanday kafolat yoki bayonot bermaymiz.",
+          "Qonun ruxsat bergan eng katta darajada, biz ushbu veb-saytdan foydalanishingiz natijasida yuzaga keladigan har qanday to'g'ridan-to'g'ri, bilvosita yoki oqibat zarar uchun barcha javobgarlikni istasnoga chiqaramiz.",
+          "Biz texnik muammolar, uzilishlar yoki veb-saytga ruxsatsiz kirishdan kelib chiqadigan har qanday yo'qotishlar uchun javobgar emasmiz."
+        ]
+      }
+    ]
+  },
+
+  "policy": {
+    "title": "Maxfiylik siyosati",
+    "subtitle": "TIFW kompaniyasida biz sizning maxfiyligingizni himoya qilish va shaxsiy ma'lumotlaringiz xavfsizligini ta'minlashga sodiqmiz. Ushbu Maxfiylik siyosati bizning veb-saytimiz va xizmatlarimizdan foydalanganda ma'lumotlaringizni qanday yig'ishimiz, ishlatishimiz, saqlashimiz va himoya qilishimizni tushuntiradi.",
+    "items": [
+      {
+        "title": "Biz to'playdigan ma'lumotlar",
+        "subtitle": "Biz xizmatlarimizni taqdim etish va yaxshilash, xavfsizlikni ta'minlash va TIFW ko'rgazmasida tajribangizni yaxshilash uchun turli xil ma'lumotlarni to'playmiz.",
+        "bullets": [
+          "Shaxsni tasdiqlovchi ma'lumotlar (ism, elektron pochta manzili, telefon raqami, kompaniya nomi, lavozim)",
+          "Ko'rgazmaga tashrif buyurish uchun ro'yxatdan o'tish va chipta ma'lumotlari",
+          "IP-manzil, brauzer turi, qurilma ma'lumotlari va cookie fayllarini o'z ichiga olgan texnik ma'lumotlar",
+          "Aloqa imkoniyatlari va jamoamiz bilan yozishmalar"
+        ]
+      },
+      {
+        "title": "Ma'lumotlaringizdan qanday foydalanamiz",
+        "bullets": [
+          "Ro'yxatdan o'tishingizni qayta ishlash va ko'rgazmaga tashrifingizni boshqarish uchun",
+          "Tadbir haqida siz bilan aloqa qilish, jumladan yangilanishlar, eslatmalar va reklama materiallari",
+          "Veb-sayt funksionalligini va foydalanuvchi tajribasini yaxshilash uchun",
+          "Qonuniy majburiyatlarga rioya qilish va firibgarlik faoliyatining oldini olish uchun",
+          "Tashrif naqshlarini tahlil qilish va kelajakdagi tadbirlar uchun ma'lumot to'plash uchun"
+        ]
+      },
+      {
+        "title": "Ma'lumotlarni almashish va oshkor qilish",
+        "bullets": [
+          "Biz sizning shaxsiy ma'lumotlaringizni uchinchi tomonlarga sotmaymiz, almashtirmaymiz yoki ijaraga bermaymiz",
+          "Biz sizning ma'lumotlaringizni tadbir homiylari va eksponentlar bilan faqat sizning aniq roziligingiz bilan baham ko'rishimiz mumkin",
+          "Biz veb-saytimizni boshqarishda va ko'rgazmani o'tkazishda yordam beradigan xizmat ko'rsatuvchi provayderlarga ma'lumotlarni oshkor qilishimiz mumkin",
+          "Qonun talab qilganda yoki huquqlarimiz va xavfsizligimizni himoya qilish uchun ma'lumotlarni oshkor qilishimiz mumkin"
+        ]
+      },
+      {
+        "title": "Ma'lumotlar xavfsizligi",
+        "bullets": [
+          "Biz shaxsiy ma'lumotlaringizni ruxsatsiz kirish, o'zgartirish yoki yo'q qilishdan himoya qilish uchun sanoat standarti xavfsizlik choralarini qo'llaymiz",
+          "Barcha maxfiy ma'lumotlar SSL/TLS texnologiyasidan foydalangan holda uzatish paytida shifrlangan",
+          "Shaxsiy ma'lumotlarga kirish faqat vakolatli xodimlarga cheklangan",
+          "Harakatlarimizga qaramay, internet orqali uzatishning hech bir usuli 100% xavfsiz emas va biz mutlaq xavfsizlikni kafolatlay olmaymiz"
+        ]
+      },
+      {
+        "title": "Sizning huquqlaringiz va tanlovlaringiz",
+        "bullets": [
+          "Siz istalgan vaqtda shaxsiy ma'lumotlaringizga kirish, yangilash yoki o'chirish huquqiga egasiz",
+          "Siz elektron xatlarimizda berilgan obunani bekor qilish ko'rsatmalariga amal qilish orqali reklama xabarlarini olishdan voz kechishingiz mumkin",
+          "Siz haqingizda saqlagan shaxsiy ma'lumotlar nusxasini so'rashingiz mumkin",
+          "Agar huquqlaringiz buzilgan deb hisoblasangiz, tegishli ma'lumotlarni himoya qilish organiga shikoyat qilish huquqiga egasiz"
+        ]
+      },
+      {
+        "title": "Cookie fayllari va kuzatuv texnologiyalari",
+        "bullets": [
+          "Bizning veb-saytimiz ko'rish tajribangizni yaxshilash va sayt trafigini tahlil qilish uchun cookie fayllaridan foydalanadi",
+          "Siz brauzer sozlamalari orqali cookie sozlamalarini boshqarishingiz mumkin",
+          "Biz tashrif buyuruvchilar veb-saytimiz bilan qanday muloqot qilishini tushunish uchun tahlil vositalaridan foydalanamiz",
+          "Uchinchi tomon xizmatlari ham o'zlarining maxfiylik siyosatlariga muvofiq cookie fayllaridan foydalanishi mumkin"
+        ]
+      },
+      {
+        "title": "Ma'lumotlarni saqlash",
+        "bullets": [
+          "Biz sizning shaxsiy ma'lumotlaringizni faqat ushbu siyosatda ko'rsatilgan maqsadlarni bajarish uchun zarur bo'lgan darajada saqlaymiz",
+          "Ro'yxatdan o'tish va ishtirokchilar ma'lumotlari hujjatlarni yuritish va kelajakdagi tadbirlarni rejalashtirish uchun tadbirdan keyin 3 yilgacha saqlanishi mumkin",
+          "Siz qonuniy va shartnoma majburiyatlariga rioya qilgan holda istalgan vaqtda ma'lumotlaringizni o'chirishni so'rashingiz mumkin"
+        ]
+      },
+      {
+        "title": "Xalqaro ma'lumotlar uzatish",
+        "bullets": [
+          "Sizning ma'lumotlaringiz O'zbekistondan tashqaridagi mamlakatlarga uzatilishi va qayta ishlanishi mumkin",
+          "Biz xalqaro uzatish paytida ma'lumotlaringizni himoya qilish uchun tegishli himoya choralarining mavjudligini ta'minlaymiz",
+          "Veb-saytimizdan foydalanish orqali siz ma'lumotlaringizning boshqa mamlakatlarga uzatilishiga rozilik bildirasiz"
+        ]
+      },
+      {
+        "title": "Bolalar maxfiyligi",
+        "bullets": [
+          "Bizning veb-saytimiz va xizmatlarimiz 18 yoshdan kichik shaxslar uchun mo'ljallanmagan",
+          "Biz bolalardan ongli ravishda shaxsiy ma'lumotlarni to'plamaymiz",
+          "Agar biz boladan ma'lumot to'plaganimizni bilsak, uni darhol o'chirish uchun choralar ko'ramiz"
+        ]
+      },
+      {
+        "title": "Ushbu Maxfiylik siyosatidagi o'zgarishlar",
+        "bullets": [
+          "Biz amaliyotimizdagi yoki qonuniy talablardagi o'zgarishlarni aks ettirish uchun ushbu Maxfiylik siyosatini istalgan vaqtda yangilash huquqini o'zimizda saqlaymiz",
+          "Biz muhim o'zgarishlar haqida yangilangan siyosatni veb-saytimizda qayta ko'rib chiqilgan kuchga kirish sanasi bilan joylashtirish orqali sizni xabardor qilamiz",
+          "O'zgarishlardan keyin veb-saytdan foydalanishni davom ettirishingiz yangilangan siyosatni qabul qilishni anglatadi",
+          "Biz sizga ushbu Maxfiylik siyosatini vaqti-vaqti bilan ko'rib chiqishni tavsiya qilamiz"
+        ]
+      }
+    ]
   }
 }

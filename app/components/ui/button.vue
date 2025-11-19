@@ -61,7 +61,7 @@ defineEmits(['assignData']);
   position: relative;
   overflow: hidden;
   z-index: 1;
-  animation: appear 0.5s 1s backwards;
+
   &:hover {
     background-color: transparent;
     transition-delay: 0.5s;

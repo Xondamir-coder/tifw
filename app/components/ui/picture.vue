@@ -39,7 +39,7 @@ const props = defineProps({
   },
   alt: {
     type: String,
-    required: true
+    default: 'banner'
   },
   imageClass: {
     type: String,

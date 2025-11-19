@@ -78,7 +78,7 @@ onMounted(() => {
     clipPath: 'inset(0 0 0%)',
     scrollTrigger: getDefaultScrollTrigger('.participants-info__content', {
       start: 'top 90%',
-      end: 'bottom 70%'
+      end: 'bottom 80%'
     })
   });
 });

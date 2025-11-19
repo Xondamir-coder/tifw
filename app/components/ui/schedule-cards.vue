@@ -18,7 +18,7 @@ onMounted(() => {
     $gsap.from(el, {
       yPercent: 15,
       opacity: 0,
-      scrollTrigger: getDefaultScrollTrigger(el)
+      scrollTrigger: getDefaultScrollTrigger(el, { scrub: false })
     });
   });
 });

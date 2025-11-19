@@ -1,28 +1,17 @@
 <template>
-  <button v-if="!link" class="button" @click="$emit('assignData')">
+  <component
+    :is="link ? NuxtLink : 'button'"
+    :to="link ? $localePath(link) : undefined"
+    class="button"
+    @click="$emit('assignData')"
+  >
     <span>{{ label }}</span>
     <component :is="icon" class="button__icon" />
-    <div class="button__blobs">
-      <span class="button__blob" />
-      <span class="button__blob" />
-      <span class="button__blob" />
-      <span class="button__blob" />
-    </div>
-  </button>
-  <NuxtLink v-else :to="$localePath(link)" class="button" @click="$emit('assignData')">
-    <span>{{ label }}</span>
-    <component :is="icon" class="button__icon" />
-    <div class="button__blobs">
-      <span class="button__blob" />
-      <span class="button__blob" />
-      <span class="button__blob" />
-      <span class="button__blob" />
-    </div>
-  </NuxtLink>
+  </component>
 </template>
 
 <script setup>
-import { IconsArrowRight } from '#components';
+import { IconsArrowUpRight, NuxtLink } from '#components';
 
 defineProps({
   label: {
@@ -31,7 +20,7 @@ defineProps({
   },
   icon: {
     type: Object,
-    default: IconsArrowRight,
+    default: IconsArrowUpRight,
     required: false
   },
   link: {
@@ -50,28 +39,40 @@ defineEmits(['assignData']);
   justify-content: center;
   font-weight: 600;
   gap: 8px;
-  background: vars.$clr-accent-strong;
+  background: vars.$clr-accent-hover;
   color: #fff;
-  border-radius: max(0.8rem, 8px);
   transition: all 0.4s;
   padding-block: max(1.4rem, 12px);
   padding-inline: max(2.4rem, 16px);
-  fill: none;
-  stroke: #fff;
+  fill: #fff;
+  stroke: none;
   position: relative;
-  overflow: hidden;
   z-index: 1;
 
   &:hover {
-    background-color: transparent;
-    transition-delay: 0.5s;
-    .button__blob {
-      translate: none;
-    }
+    background-color: vars.$clr-accent-strong;
     .button__icon {
-      translate: 5px;
-      scale: 0.8;
+      translate: 3px -3px;
     }
+  }
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    background-color: inherit;
+    bottom: 0;
+  }
+  &::after {
+    right: 0;
+    translate: 95%;
+    clip-path: polygon(0 -2%, 100% 14%, 100% 100%, 0% 100%);
+  }
+  &::before {
+    left: 0;
+    translate: -95%;
+    clip-path: polygon(0 -2%, 100% 0, 100% 100%, 0 86%);
   }
   &__blobs {
     position: absolute;

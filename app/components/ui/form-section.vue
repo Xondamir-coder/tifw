@@ -47,7 +47,7 @@ onMounted(() => {
     .map(el => {
       $gsap.from(el, {
         clipPath: 'inset(0 0 100%)',
-        scrollTrigger: getDefaultScrollTrigger(el)
+        scrollTrigger: getDefaultScrollTrigger(el, { start: 'top bottom', end: 'bottom 80%' })
       });
     });
 });

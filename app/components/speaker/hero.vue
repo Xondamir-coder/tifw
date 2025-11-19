@@ -1,7 +1,12 @@
 <template>
   <section class="hero">
     <div class="hero__top">
-      <UiButton :label="$t('back')" class="hero__back" @click="$router.back()" />
+      <UiButton
+        :label="$t('back')"
+        :icon="IconsArrowRight"
+        class="hero__back"
+        @click="$router.back()"
+      />
 
       <h1 class="hero__title clr-inherit">
         <span v-for="word in speaker.name.split(' ')" :key="word">{{ word }}</span>
@@ -36,6 +41,7 @@
 </template>
 
 <script setup>
+import { IconsArrowRight } from '#components';
 import { SplitText } from 'gsap/SplitText';
 
 const { $gsap } = useNuxtApp();
@@ -159,9 +165,14 @@ onMounted(() => {
     }
   }
   &__back {
+    &:hover > *:nth-child(2) {
+      translate: -3px;
+    }
     & > *:nth-child(2) {
       order: -1;
       rotate: 180deg;
+      fill: none;
+      stroke: #fff;
     }
   }
   &__content {

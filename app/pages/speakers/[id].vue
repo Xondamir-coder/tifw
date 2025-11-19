@@ -108,12 +108,7 @@ onMounted(() => {
     el.appendChild(span);
     $gsap.from(span, {
       clipPath: 'inset(0 0 100%)',
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 90%',
-        end: 'top 60%',
-        scrub: 1
-      }
+      scrollTrigger: getDefaultScrollTrigger()
     });
   };
   $gsap.utils.toArray('section > h2.heading-lg').forEach(animateEl);

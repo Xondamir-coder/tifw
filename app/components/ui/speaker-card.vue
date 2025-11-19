@@ -30,7 +30,7 @@ defineProps({
   &:hover {
     .speaker-card__name,
     .speaker-card__position {
-      letter-spacing: 1px;
+      letter-spacing: 0.2px;
     }
     .speaker-card__image-child {
       scale: 1.15;

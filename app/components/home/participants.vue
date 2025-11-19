@@ -1,5 +1,6 @@
 <template>
   <section class="participants">
+    <UiPicture src="participants-gradient.jpg" class="participants__bg" />
     <div class="section-header">
       <h2 class="heading-lg clr-white">
         <span class="clr-yellow">{{ $t('home.participants.title') }}</span>
@@ -41,7 +42,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .participants {
-  background: linear-gradient(180deg, #da9b2f 0%, #98650d 100%);
+  background: #b37b19;
   padding-top: max(4.2rem, 32px);
   padding-bottom: vars.$spacing-block;
   position: relative;
@@ -51,10 +52,21 @@ onMounted(() => {
   .section-header {
     padding-inline: var(--spacing-inline);
   }
+  & > *:not(.participants__bg) {
+    z-index: 1;
+  }
+  &__bg {
+    position: absolute;
+    height: 118%;
+    left: 0;
+    bottom: 0;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+  }
   &::before {
     content: '';
     position: absolute;
-    background: #da9b2f;
+    background: #b37b19;
     left: 0;
     top: 0;
     width: max(49%, 328px);

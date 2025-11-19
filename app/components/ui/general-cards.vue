@@ -424,7 +424,7 @@ onMounted(() => {
       $gsap.from(el, {
         y: 50,
         opacity: 0,
-        scrollTrigger: getDefaultScrollTrigger(el)
+        scrollTrigger: getDefaultScrollTrigger(el, { scrub: false })
       });
     } else {
       $gsap.from(el, {

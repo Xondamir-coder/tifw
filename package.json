@@ -10,7 +10,6 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "transform-images": "bash transform-images.sh",
     "push": "git add . && git commit && git push gitlab && git push github"
   },
   "dependencies": {

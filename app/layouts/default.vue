@@ -25,6 +25,7 @@ if (import.meta.client) {
   --end: 1.28%;
   position: relative;
   background: linear-gradient(180deg, #010d1b 0%, #073d77 var(--end));
+
   &.home {
     --end: 10%;
   }

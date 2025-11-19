@@ -4,8 +4,8 @@ export default () => {
     clipPath: 'inset(0 0 100%)',
     scrollTrigger: {
       trigger: el,
-      start: 'top 90%',
-      end: 'top 60%',
+      start: 'top bottom',
+      end: 'bottom 80%',
       scrub: 1
     }
   });

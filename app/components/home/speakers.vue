@@ -1,5 +1,6 @@
 <template>
   <section class="speakers">
+    <UiPicture src="speakers-gradient.jpg" class="speakers__bg" />
     <div class="section-header">
       <h2 class="heading-lg clr-white">
         <span class="clr-blue-dark">{{ $t('home.speakers.title') }}</span>
@@ -104,6 +105,13 @@ onMounted(() => {
       rgba(255, 255, 255, 0.25) 80%,
       rgba(255, 255, 255, 0) 100%
     );
+  }
+  &__bg {
+    position: absolute;
+    left: -10%;
+    bottom: -15%;
+    width: 161%;
+    mix-blend-mode: screen;
   }
   &__header {
     text-align: center;

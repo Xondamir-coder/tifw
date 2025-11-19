@@ -31,6 +31,8 @@ onMounted(() => {
     }
   });
 });
+
+usePageSEO('media');
 </script>
 
 <style lang="scss" scoped>

@@ -12,6 +12,7 @@
 </template>
 
 <script setup>
+usePageSEO('index');
 onMounted(() => {
   useAnimateTypography();
 });

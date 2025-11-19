@@ -73,6 +73,8 @@ onMounted(() => {
     }
   });
 });
+
+usePageSEO('accreditation');
 </script>
 
 <style lang="scss" scoped>

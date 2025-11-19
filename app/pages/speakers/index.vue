@@ -113,6 +113,8 @@ onMounted(() => {
     }
   );
 });
+
+usePageSEO('speakers');
 </script>
 
 <style lang="scss" scoped>

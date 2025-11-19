@@ -38,6 +38,8 @@ const assignData = data => {
   modalData.value = data;
   showInfoModal.value = true;
 };
+
+usePageSEO('partners');
 </script>
 
 <style lang="scss" scoped>

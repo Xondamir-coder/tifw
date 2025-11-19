@@ -11,6 +11,7 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const router = useRouter();
+
 if (import.meta.client) {
   router.afterEach(() => {
     nextTick(() => {

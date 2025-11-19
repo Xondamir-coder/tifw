@@ -65,6 +65,8 @@ onMounted(() => {
     }
   });
 });
+
+usePageSEO('events');
 </script>
 
 <style lang="scss" scoped>

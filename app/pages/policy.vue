@@ -8,6 +8,8 @@
   />
 </template>
 
-<script setup></script>
+<script setup>
+usePageSEO('policy');
+</script>
 
 <style lang="scss" scoped></style>

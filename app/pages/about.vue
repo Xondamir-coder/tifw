@@ -172,6 +172,8 @@ onMounted(() => {
     '-=1'
   );
 });
+
+usePageSEO('about');
 </script>
 
 <style lang="scss" scoped>

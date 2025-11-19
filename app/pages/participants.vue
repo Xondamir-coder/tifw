@@ -13,6 +13,8 @@ const assignData = data => {
   modalData.value = data;
   showInfoModal.value = true;
 };
+
+usePageSEO('participants');
 </script>
 
 <style lang="scss" scoped></style>
